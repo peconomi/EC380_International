@@ -61,7 +61,99 @@ options(knitr.table.format = "html")
 # Prologue
 
 ---
-# Who am I? 
+
+# Course Objectives
+
+<br>
+
+For this class we will:
+
+--
+
+* study baseline models explaining why countries trade 
+
+--
+
+* analyze policy-relevant trade tools (tariffs, quotas, subsidies)
+
+--
+
+* explore global finance through exchange rates and BoP 
+
+
+---
+
+# Course Objectives: Synergies
+
+<br>
+
+```{r, echo=FALSE, out.width="95%"}
+
+knitr::include_graphics("trade_overlap.png")
+
+```
+
+---
+
+# Today's Plan
+<br>
+
+1. __Course logistics__
+
+1. About me
+
+1. Key facts about international trade
+
+1. If time allows... overview of key models of trade
+
+---
+
+# Course logistics
+
+
+We will use .hi-pink[(IE)] while latter text is completely optional:
+
+* International Economics by Feenstra & Taylor .hi-pink[(IE)] 3rd-5th Ed.
+
+* International Economics: Theory & Policy by Krugman, Melitz, Obstfeld .hi-pink[(IETP)] 9th-11th Ed
+
+--
+
+Content will be available on Canvas. If familiar with the platform, see the course [Github](https://github.com/peconomi) page.
+
+--
+
+.pull-left[
+* .hi-slate[W1-W3:] Theory of Trade
+* .hi-slate[W4-W7:] Trade Policy
+* .hi-slate[W8-W10:] Global Finance
+]
+
+.pull-right[
+* 25% - 5 Problem Sets
+* 10% - 3 Quizzes, best 2
+* 25% - Midterm Exam
+* 40% - Final Exam
+]
+
+---
+
+# Today's Plan
+
+<br>
+
+1. Course logistics
+
+1. __About me__
+
+1. Key facts about international trade
+
+1. If time allows... overview of key models of trade
+
+---
+
+# About me
+
 
 [**Philip Economides**](https://philip-economides.com)
 
@@ -78,66 +170,230 @@ options(knitr.table.format = "html")
 - Online Office hours: Tuesday 15:00-16:00, Thursday 10:00-11:00, or by appointment
 - Email: [.mono[peconomi@uoregon.edu]](mailto:peconomi@uoregon.edu) **(use EC 380 in the subject line)**
 
----
-
-layout: true
-# Coursework & Grades
 
 ---
 
-__See syllabus for full details__
+# Today's Plan
 
-* .hi-slate[W1-W3:] Theory of Trade
-* .hi-slate[W4-W7:] Trade Policy
-* .hi-slate[W8-W10:] Global Finance
+<br>
 
-Content will be available on Canvas. If familiar with the platform, see the course [Github](https://github.com/peconomi) page.
+1. Course logistics
 
---
+1. About me
 
-* 25% - 5 Problem Sets (5pp each)
-* 10% - 3 Quizzes (5pp each), best 2
-* 25% - Midterm Exam
-* 40% - Final Exam
+1. __Key facts about international trade__
+
+1. If time allows... overview of key models of trade
 
 ---
 
+class: inverse, middle
 
-layout: true
+# International Trade:
 
-# Course Objectives
-
----
-
-We will use two textbooks:
-
-* International Economics, 3rd-5th Ed. by Feenstra & Taylor .hi-pink[(IE)]
-
-* International Economics: Theory & Policy 9th-11th Ed. by Krugman, Melitz, Obstfeld .hi-pink[(IETP)]
-
---
-
-Lectures are not a substitute for these resources, but rather the finishing touch on solidifying your knowledge. For this class we will:
-
-* study baseline models explaining why countries trade 
-* analyze theoretical and empirical applications of these models
-* explore global finance through exchange rates and BoP 
-
+## Key Facts
 
 ---
 
+# Trade growth outpaces GDP growth
 
-layout: true
+```{r, out.width="85%", echo=FALSE}
 
-# Course Objectives: Synergies
-
----
-
-```{r, echo=FALSE, out.width="95%"}
-
-knitr::include_graphics("trade_overlap.png")
+knitr::include_graphics("1_trade_growth.png")
 
 ```
+
+Recent slowdown in trade, which we will address
+
+---
+
+# Flows rising as share of GDP (US)
+
+```{r, out.width="80%", echo=FALSE}
+
+knitr::include_graphics("2_trade_share.png")
+
+```
+
+---
+
+# Trade varies in importance
+
+```{r, echo=FALSE, out.width="85%"}
+
+knitr::include_graphics("3_trade_scale.png")
+
+```
+
+Small open economies are highly reliant on trade. 
+
+---
+
+# Key Facts I
+
+<br>
+
+* Trade is important and increasingly so
+* Flows represent a large portion of US GDP
+* Trade openness varies across countries of different sizes
+
+--
+
+Questions arise:
+
+* Why do countries trade so much and why is it growing in scale?
+* What are the gains from trade?
+* How does trade translate into other changes (e.g. labor market outcomes, geopolitical tensions)
+
+.hi-slate[Part I] of this course will focus on the .hi-slate[theories of international trade]. By the time we are done, very generalized lessons will be available to us. 
+
+---
+
+# Introducing Theory
+
+<br>
+
+Main Questions:
+
+* What goods do each country trade?
+
+* How does trade affect product specialization?
+
+---
+
+# What goods do each country trade?
+
+```{r, echo=FALSE}
+
+knitr::include_graphics("4_country_goods.png")
+
+```
+
+---
+
+# Specialization and Compar. Advantage
+
+```{r, echo=FALSE}
+
+knitr::include_graphics("5_product_year.png")
+
+```
+
+
+---
+
+# Key Facts II
+
+
+<br>
+
+* Countries specialize and export core products
+
+* Trading the goods that countries are "best" at producing results in _gains from trade_
+
+--
+
+What factors, other than fundamentals, influence specialization?
+
+--
+
+- Foreign direct investment (FDI)?
+
+- Knowledge diffusion?
+
+- Cross-border migration shocks?
+
+---
+
+# Why does trade continue growing?
+
+<br>
+
+Largely attributed to reduced trade barriers over time.
+
+--
+
+We refer to this process as .hi-slate[trade liberalization].
+
+--
+
+Examples include tariff rate reductions, preferential trade agreements and alleviating non-tarif measures (e.g. lower electronics quota for French imports to USA). 
+
+--
+
+__Since trade is not frictionless, do these frictions vary across countries?__
+
+
+---
+
+# Trade friction index
+
+```{r, echo=FALSE}
+
+knitr::include_graphics("6_trade_index.png")
+
+```
+
+---
+
+# Reduced Tariffs
+
+```{r, echo=FALSE}
+
+knitr::include_graphics("7_tariffs.png")
+
+```
+
+---
+
+# Lower Transport Costs
+
+```{r, echo=FALSE, out.width="80%"}
+
+knitr::include_graphics("8_freight_rates.png")
+
+```
+
+---
+
+# Key Facts III
+
+<br>
+
+* Explicit trade barriers have fallen over time, coinciding with the growth of trade relative to broad economic acivity
+
+* Hidden barriers are the next hurdle, one which much of the literature suggests is far more impactful than existing tariff rates
+
+--
+
+Current trade theory and literature focuses on .hi-pink[heterogenous agent models], which was originally created to explain why not every firm functions as an exporter.
+
+We __will not__ be going that deep into international trade, though I can recommend some texts for those interested in understanding the most modern forms of theory. 
+
+
+---
+
+# Overview Trade Theory
+
+<br>
+
+Two strands within the field of international trade:
+
+--
+
+1. Neoclassical models of trade ('old' theories):
+
+- Ricardian model
+
+- Heckscher-Ohlin model
+
+--
+
+2. 'New' Trade Theory
+
+- Krugman model
+
+- Melitz model
 
 
 ---
@@ -147,5 +403,5 @@ exclude: true
 ```{R generate pdfs, include = F, eval = F}
 #remotes::install_github('rstudio/pagedown')
 library(pagedown)
-pagedown::chrome_print("01-Introduction.html", output = "01-Introduction.pdf")
+pagedown::chrome_print("01-intro.html", output = "01-intro.pdf")
 ```
