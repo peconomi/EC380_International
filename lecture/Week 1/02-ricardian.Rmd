@@ -1,8 +1,8 @@
 ---
-title: "What is Econometrics?"
-subtitle: "EC 320: Introduction to Econometrics"
+title: "EC 380: Lecture 2"
+subtitle: "Trade Theory: The Ricardian Model"
 author: "Philip Economides"
-date: "Winter 2022"
+date: "Fall 2022"
 output:
   xaringan::moon_reader:
     css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
@@ -18,6 +18,9 @@ class: inverse, middle
 options(htmltools.dir.version = FALSE)
 library(pacman)
 p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr)
+devtools::install_github("R-CoderDotCom/econocharts")
+
+library(econocharts)
 # Define colors
 red_pink <- "#e64173"
 met_slate <- "#272822" 
@@ -61,606 +64,375 @@ options(knitr.table.format = "html")
 # Prologue
 
 ---
-# Who am I? 
 
-[**Philip Economides**](https://philip-economides.com)
-
-- Doctoral student in economics
-
-- TA in 'metrics EC320 (UG), EC423/EC523 (UG/MSc) and EC607 (PhD)
-
-- Former RA at ESRI/Trinity College Dublin, Ireland
-
-- Focus: International Economics, Applied Econometrics
-
---
-
-Where can you find me?
-
-- Office: 520 PLC
-- Office hours: Tuesday 15:00-16:00, Thursday 10:00-11:00, or by appointment
-- Email: [.mono[peconomi@uoregon.edu]](mailto:peconomi@uoregon.edu) **(use EC 320 in the subject line)**
-
----
-
-layout: true
-
-# What will we do?
-
----
+# Overview Trade Theory
 
 <br>
 
-We will use two textbooks:
-
-* Introduction to Econometrics, 5th Ed. by C. Dougherty .hi-pink[(ItE)]
-
-* Mastering 'Metrics: the Path from Cause to Effect, by Angrist & Pischke .hi-pink[(MM)]
+.hi-pink[Why does trade occur?] Two strands within the field of international trade:
 
 --
 
-Lectures are not a substitute for these resources, but rather the finishing touch on solidifying your knowledge.
+__I. Neoclassical models of trade__ ('old' theories):
 
-Read through the prescribed readings listed in the Tentative Schedule of the syllabus .hi-pink[before each lecture].
+- Ricardian model: Technology differences spur trade
 
----
+- Heckscher-Ohlin model: Resource differences spur trade
 
-## Coursework
+--
 
-* .hi-slate[W1 & W2:] Statistics Review + Fundamental Problem
-* .hi-slate[W3:] Logic of Regressions
-* .hi-slate[W4:] SLR - Estimation
-* .hi-slate[W5:] SLR - Classical Assumptions
-* .hi-slate[W6:] .hi-pink[Midterm], SLR - Inference
-* .hi-slate[W7:] MLR - Estimation & Inference
-* .hi-slate[W8:] Non-linear & Qualitative variables
-* .hi-slate[W9:] Interaction terms & Model Specifications
-* .hi-slate[W10:] Heteroskedasticity & .hi-pink[Finals] Review
+__II. 'New' Trade Theory__
 
-Content will be available on Canvas. If you wish to download them faster, see the course [Github](https://github.com/peconomi/EC320_Econometrics) page.
+- Krugman model: Love of variety spurs trade
+
+- Melitz model: Heterogenous firms drive trade
+
 
 ---
+
+# Today's Class
 
 <br>
 
-## Grade
+We will begin looking into international trade theory, starting with the .hi-pink[Ricardo model].
 
-* 25% - Problem Sets (5pp each)
+* Single factor of production (labor)
 
-* 10% - Quizzes (5pp each)
+* Two-country model (home, foreign)
 
-* 20% - Midterm Exam
+* Technology differences across countries 
 
-* 10% - Data Project
+--
 
-* 35% - Final Exam
-
----
-
-.pull-left[TA: .hi-pink[Micaela Wood]] .pull-right[Venue:  .hi-slate[442 MCK], Thurs 16:00-17:20<br> [Click here to see location](https://map.uoregon.edu/9975e5afc)]
-
-<br>
-<br>
-
-## Labs - Learning R
-
-Develop practical skills based on the material we cover.
-
-Lab sessions will teach you how to conduct data cleaning, visualize data and produce regression analysis based on simulations and empirical questions. 
-
-Crucial for computational portions of assignments and data project.
+__To reiterate:__ Always remember to describe each model by three attributes, such as those listed above, and the model's main takeaway(s)!
 
 ---
 
-layout: true
-
-# Good Classroom Citizenship
-
----
+# Snapshot of US imports
 
 <br>
 
-As you all know very well by now:
+In 2018, the US imported approximately 28M USD in snowboards 
 
-* Wear your mask and make sure it fits you well
-* Stay home if you’re sick
-* Get to know your neighbors in class, let them know if positive
-* Watch for signs and symptoms with the daily symptom self check
-* Wash your hands frequently or use hand sanitizer
-* Complete the UO COVID-19 case and contact reporting form if you test positive or are a close contact of someone who tests positive. 
+* Almost half of which were imported from China
+* Austria, UAE and Taiwan were other notable sources
 
-UO Corona Corps: 541-346-2292; Careteam@uoregon.edu
+--
+
+The US represents the largest economy in the world, yet it resorts to imports of goods at a level that far exceeds its exports. 
+
+--
+
+For example, while 99% of shipping containers that enter Los Angeles port are fully loaded with goods, _70% of containers leaving the port are empty_. 
 
 ---
 
-layout: true
-
-# Motivation
-
----
-
-## Why study econometrics?
-
-1. Develop __skills that employers value__.
-
---
-
-1. Cultivate __healthy skepticism__.
-
---
-
-1. Learn about the world using __data__.
-
-???
-
-Government agencies and private firms rely on data to make informed decisions. Requires people who can clean and analyze data, create informative visualizations, and communicate results. .mono[R] facilitates these tasks.
-
-When should we trust the findings of a study? Junk science abounds. Blind faith in science and science denialism are harmful. Econometrics gives us a way to evaluate the quality of evidence. Makes us better citizens.
-
-Historically, high quality data were scarce. Econometricians had to think rigorously and creatively about how to learn from less than ideal data. Result: proliferation of robust methods with falsifiable assumptions.
-
----
-
-## Why study econometrics?
-
-### Provide answers to important questions
-
---
-
-- Do minimum wage policies __reduce poverty__?
-
---
-
-- Does the death penalty __deter violent crime__?
-
---
-
-- Does recreational marijuana __cross state lines__?
-
---
-
-- Are recessions __good for your health__?
-
---
-
-- How will global warming __affect the economy__?
-
---
-
-- What __explains the gender pay gap__?
-
---
-
-- Does corruption __impact exporting prospects in developing countries__?
-
----
-
-layout: true
-
-# Econometrics
-
----
-
-Most econometric inquiry concerns one of two distinct goals:
-
-1. .hi-purple[Prediction:] Accurately .purple[predict] or .purple[forecast] an outcome given a set of predictors. .purple[Given what we know about] $\color{#6A5ACD}{x}$.purple[, what values do we expect] $\color{#6A5ACD}{y}$ .purple[to take?]
-
-1. .hi-green[Causal identification:] .green[Estimate] the effect of an intervention on an outcome. .green[How does] $\color{#007935}{y}$ .green[change when we change] $\color{#007935}{x}$.green[?]
-
-???
-
-__Prediction examples__
-Netflix uses information on users and their choices to provide individualized movie recommendations.
-Some states use data on defendants to predict pretrial flight risk.
-The Federal Reserve uses economic data to forecast inflation, unemployment, and GDP.
-
-__Causal examples__
-Pharmaceutical companies run clinical trials to determine whether new medicines reduce symptoms or cause side effects.
-Tech companies use __A/B testing__ to improve user experience (and increase profit).
-Economists use __natural experiments__ to better understand how people respond to incentives.
-
---
-
-The main focus of EC 320 and EC 421 is causal identification.
-
---
-
-- But...both rely on a common set of statistical techniques.
-
---
-
-- For those interested, Professor Tim Duy teaches forecasting (EC 422) this same term.
-
----
-
-## Not all relationships are causal
-
-```{R, spurious, echo = F, dev = "svg", warning=FALSE, message=FALSE, fig.height = 6}
-cheese <- c(29.8,30.1,30.5,30.6,31.3,31.7,32.6,33.1,32.7,32.8)
-bed_ded <- c(327,456,509,497,596,573,661,741,809,717)
-
-df <- data.frame(cheese=cheese, 
-                 bed_ded=bed_ded)
-
-ggplot(df, aes(cheese, bed_ded)) +
-  geom_point(size = 4, color = "darkslategray") +
-  geom_smooth(method = "lm", se = FALSE, color = red_pink) +
-  xlab("Per Capita Cheese Consumption (lbs.)") +
-  ylab("Death by bedsheet tangling") + 
-  theme_pander(base_size = 17, base_family = "FiraSans-Regular", fc = met_slate)
-```
-
----
-
-## Correlation vs. Causation
-
-Common refrain: _"Correlation doesn't necessarily imply causation!"_
-
-- __Q:__ Why might correlation fail to describe a causal relationship?
-
---
-
-- __A:__ Omitted-variables bias, selection bias, simultaneity, reverse causality.
-
---
-
-Correlation can imply causation.
-
-- Requires strong assumptions.
-
---
-
-- **Real life often violates these assumptions!**
-
-- **Solutions:** Conduct an experiment or find a natural experiment.
-
----
-
-### Example: *Blue Paradox*
-
-[Recent study](https://www.pnas.org/content/116/12/5319) by UO economist [Grant McDermott](https://grantmcdermott.com) and coauthors.
-
-**Question:** Do commercial fishers preempt fishing bans by increasing their fishing effort before the bans go into effect?
-
-**Motivation**
-
-- Recent conservation efforts seek to preserve aquatic habitat and increase fish stocks.
-- Policy lever: Restrict fishing activity in marine protected areas.
-- Concern: Preemptive behavior could *decrease* fish stocks.
-
---
-
-**Data:**  Vessel-level data on fishing effort/intensity.
-
----
-### Example: *Blue Paradox*
-
-**Natural Experiment**
-
-Phoenix Islands Protected Area (PIPA) 
-
-- First mentioned on 1 September 2014; implemented 1 January 2015.
-- *Treatment group:* PIPA.
-- *Control group:* Outlying Kiribati islands. 
-
----
-
-### Example: *Blue Paradox*
-
-**Natural Experiment**
-
-Measure the causal effect of the fishing ban by comparing fishing effort in treatment and control regions, before-and-after PIPA.
-
-- A *difference-in-differences* comparison.
-- .hi[Assumption:] .pink[Parallel trends.] If we believe this assumption, then the observed change supports a causal interpretation. If not, then the change could reflect other factors and thus fail to isolate the causal effect of the ban.
-
----
-
-### Example: *Blue Paradox*
-
-**Results**
-
-```{r, echo=FALSE, out.width="95%", fig.align='center'}
-
-knitr::include_graphics("figure2.jpg")
-
-```
-
-
----
-
-### Example: *Blue Paradox*
-
-**Discussion**
-
-Results provide causal evidence that commercial fishers engage in preemptive behavior in response to conservation policy changes.
-
-Results are *consistent* with economic theory, but *cannot prove* that the theory is correct.
-
-- **Science cannot prove anything.**
-- Science can .hi[falsify or reject] existing hypotheses or .hi[corroborate] existing evidence.
-
----
+# Reasons for Trade
 
 <br>
 
-Also...the causal statement rests on a critical assumption.
-
-- Cannot prove that the assumption is true, but can falsify it.
-- Failure to falsify $\neq$ assumption is true.
-
----
-
-layout: true
-
-# R
-
----
-
-## What is .mono[R]?
-
-According to the [.mono[R] project website](https://www.r-project.org),
-
-> .mono[R] is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS.
+With all the manufacturing capability in the US, why purchase snowboards from abroad instead of producing them domestically?
 
 --
 
-What does that mean?
-
-- .mono[R] is __free__ and __open source__.
-
-- .mono[R] executes a variety of statistical techniques and produces beautiful graphs.
-
-- .mono[R] has a vibrant, thriving online community (see [stack overflow](https://stackoverflow.com/questions/tagged/r)).
-
-
----
-
-## Why are we using .mono[R]?
-
-1. .mono[R] is __free__.
+* Technology differences in each country? 
+* Total resources available differ in each country?
+* Production cost differences in each country?
+* Proximity to countries with more productive labor forces?
 
 --
 
-1. __.mono[R] is popular__ among economists, political scientists, psychologists, sociologists, geographers, anthropologists, biologists, data scientists, and statisticians.
+For now, consider .hi-pink[opportunity cost]. According to the __Ricardian perspective__, the US devotes domestic labor that would otherwise be used to produce these snowboards to .hi-pink[comparatively] more productive tasks. 
+
+---
+
+# Comparative Advantage
+
+<br>
+
+During the 16th and 17th century, the study of economics was in its infancy. Misguided beliefs in public policy were widely held across nations.
 
 --
 
-1. __Employers prefer .mono[R]__ over most competing software environments.
+> Mercantilism: a stockpile of gold and silver was considered an appropriate barometer for the state of the domestic economy. 
+
+> Imports $\implies$ less gold and exports $\implies$ more gold.  Tariffs set high to prevent trade deficits.
 
 --
 
-1. .mono[R] can __adapt to nearly any task__: 'metrics, spatial data analysis, machine learning, web scraping, data cleaning, website building, teaching.
+Ricardo would go on to demonstrate that under .hi-pink[balanced free trade] (no tariffs), trade benefits __every country__. This is achieved when every country exports the goods they have .hi-pink[comparative advantage] in.  
+
 
 ---
 
-```{R, statistical languages, echo = F, dev = "svg"}
-# The popularity data
-pop_df <- data.frame(
-  lang = c("SQL", "Python", "R", "SAS", "Matlab", "SPSS", "Stata"),
-  n_jobs = c(25694, 27560, 13506, 7786, 3449, 2694, 1303),
-  free = c(T, T, T, F, F, F, F)
-)
-pop_df %<>% mutate(lang = lang %>% factor(ordered = T))
-# Plot it
-ggplot(data = pop_df, aes(x = lang, y = n_jobs, fill = free)) +
-geom_col() +
-geom_hline(yintercept = 0) +
-aes(x = reorder(lang, -n_jobs), fill = reorder(free, -free)) +
-xlab("Statistical language") +
-scale_y_continuous(label = scales::comma) +
-ylab("Number of jobs") +
-ggtitle(
-  "Comparing statistical languages",
-  subtitle = "Number of job postings on Indeed.com, 2019/07/17"
-) +
-scale_fill_manual(
-  "Free?",
-  labels = c("True", "False"),
-  values = c(red_pink, "darkslategray")
-) +
-theme_pander(base_size = 17, base_family = "Fira Sans", fc = met_slate) +
-theme(legend.position = "bottom")
-```
+# Comparative Advantage Overview
 
----
-layout: false
-class: inverse, middle
-
-# .mono[R] + [Examples]
-
----
-
-# .mono[R] + Regression
-
-```{R}
-# A simple regression
-{{fit <- lm(mpg ~ 1 + wt, data = mtcars)}}
-# Show the coefficients
-coef(summary(fit))
-# A nice, clear table
-library(broom)
-tidy(fit)
-```
-
----
-
-# .mono[R] + Plotting (w/ .mono[plot])
-
-```{r, echo = F, dev = "svg"}
-# Load packages with dataset
-p_load(gapminder,tidyverse)
-# Create dataset
-plot(
-  x = gapminder$gdpPercap, y = gapminder$lifeExp,
-  xlab = "GDP per capita", ylab = "Life Expectancy"
-)
-```
-
----
-
-# .mono[R] + Plotting (w/ .mono[plot])
-
-```{r, eval = F}
-# Load packages with dataset
-p_load(gapminder)
-# Create dataset
-plot(
-  x = gapminder$gdpPercap, y = gapminder$lifeExp,
-  xlab = "GDP per capita", ylab = "Life Expectancy"
-)
-```
-
----
-
-# .mono[R] + Plotting (w/ .mono[ggplot2])
-
-```{r, echo = F, dev = "svg"}
-# Load packages
-p_load(gapminder, dplyr)
-# Create dataset
-ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
-geom_point(alpha = 0.75) +
-scale_x_continuous("GDP per capita", label = scales::comma) +
-ylab("Life Expectancy") +
-theme_pander(base_size = 17, base_family = "Fira Sans", fc = met_slate)
-```
-
----
-
-# .mono[R] + Plotting (w/ .mono[ggplot2])
-
-```{r, eval = F}
-# Load packages
-p_load(gapminder, dplyr)
-# Create dataset
-ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
-geom_point(alpha = 0.75) +
-scale_x_continuous("GDP per capita", label = scales::comma) +
-ylab("Life Expectancy") +
-theme_pander(base_size = 17, base_family = "Fira Sans", fc = met_slate)
-```
-
----
-
-# .mono[R] + More plotting (w/ .mono[ggplot2])
-
-```{r, echo = F, dev = "svg"}
-# Load packages
-p_load(gapminder, dplyr)
-# Create dataset
-ggplot(
-  data = filter(gapminder, year %in% c(1952, 2002)),
-  aes(x = gdpPercap, y = lifeExp, color = continent, group = country)
-) +
-geom_path(alpha = 0.25) +
-geom_point(aes(shape = as.character(year), size = pop), alpha = 0.75) +
-scale_x_log10("GDP per capita", label = scales::comma) +
-ylab("Life Expectancy") +
-scale_shape_manual("Year", values = c(1, 17)) +
-scale_color_viridis("Continent", discrete = T, end = 0.95) +
-guides(size = F) +
-theme_pander(base_size = 17, base_family = "Fira Sans", fc = met_slate)
-```
-
----
-
-# .mono[R] + More plotting (w/ .mono[ggplot2])
-
-```{r, eval = F}
-# Load packages
-p_load(gapminder, dplyr)
-# Create dataset
-ggplot(
-  data = filter(gapminder, year %in% c(1952, 2002)),
-  aes(x = gdpPercap, y = lifeExp, color = continent, group = country)
-) +
-geom_path(alpha = 0.25) +
-geom_point(aes(shape = as.character(year), size = pop), alpha = 0.75) +
-scale_x_log10("GDP per capita", label = scales::comma) +
-ylab("Life Expectancy") +
-scale_shape_manual("Year", values = c(1, 17)) +
-scale_color_viridis("Continent", discrete = T, end = 0.95) +
-guides(size = F) +
-theme_pander(base_size = 17, base_family = "Fira Sans", fc = met_slate)
-```
-
----
-
-# .mono[R] + Maps
-
-```{R, example: leaflet, fig.height = 6, dev = "svg"}
-p_load(leaflet)
-leaflet() %>% addTiles() %>% addMarkers(lng = -122.6793, lat = 45.51887, 
-                            popup = "Pioneer Courthouse Square")
-```
-
----
-
-# .mono[R] + Animated maps (w/ .mono[gganimate])
-
-.center[![](dc_gunshots_map.gif)]
----
-class: inverse, center, middle
-# Getting Started with .mono[R]
-
----
-layout: true
-# Starting .mono[R]
-
----
-
-## Installation
-
-- Install [.mono[R]](https://www.r-project.org/).
-- Install [.mono[RStudio]](https://www.rstudio.com/products/rstudio/download/preview/).
-- __Note:__ [All academic workstations at the UO have .mono[R]](https://library.uoregon.edu/library-technology-services/public-info/a-software), but having a copy of .mono[R] on your computer will prove useful for the econometrics sequence and 400-level elective courses.
+__Ricardo's logic:__
 
 --
 
-## Resources
+* Two countries, Portugal and England
 
-- Google and [StackOverflow](https://stackoverflow.com/questions/tagged/r)
-- Time
-- Your classmates
-- Your GE
-- Me
+--
+
+* Two goods, wine and cloth
+
+--
+
+* Portugal has absolute advantage in production of both goods
+
+--
+
+* England is particularly bad at making wine, making it _relatively_ good at cloth production
+
+--
+
+England has .hi-pink[comparative advantage] in cloth. Portugal has .hi-pink[comparative advantage] in wine. 
+
+--
+
+Free trade puts both countries in a better state than autarky would.  
 
 ---
 
-## .mono[R] basics
+# Ricardian Model of Trade
 
-.more-left[
+--
 
-1. Everything is an __object__.
+<br>
 
-1. Every object has a __name__ and __value__.
+We will go with our own version of the model. 
 
-1. You use __functions__ on these objects.
+* Two countries, Home and Foreign
+* Two goods, apple pie and potatoes
+* One factor of production, labor
 
-1. Functions come in __libraries__ (__packages__).
+--
 
-1. .mono[R] will try to __help__ you.
+Suppose in our case the home country ends up exporting apple pies and importing potatoes.
 
-1. .mono[R] has its __quirks__.
+--
 
-]
+.hi-pink[What would this imply about which good each country has comparative advantage in?]
 
-.less-right[
+---
 
-`foo`
+# Key Variables
 
-`foo <- 2`
+<br>
 
-`mean(foo)`
+.hi-pink[Marginal Product of Labor]: MPL represents the additional units of a good produced, given a one unit increase in the number of workers assigned to a particular task.
 
-`library(dplyr)`
+--
 
-`?dplyr`
+$MPL^H_{\text{pie}}=9$ and $MPL^H_{\text{potato}}=7$ represent the marginal change in number of pies and potatoes produced by the home country as the number of workers rises by one unit. 
 
-`NA; error; warning`
+--
 
-]
+Essentially boils down to how "good" each country is per unit of worker. 
+
+--
+
+$MPL^F_{\text{pie}}=10$ and $MPL^F_{\text{potato}}=12$ for Foreign with .hi-pink[absolute advantage]<br> 
+
+---
+
+# Key Variables
+
+<br>
+
+.hi-pink[Production Possibilities Frontier]: Coordinates represent various production bundles of pies and potatoes for each country is capable of producing, upon using its full labor force $\bar{L}=10$.
+
+--
+
+We can plot these rather easily by finding the .hi-pink[four axes intercepts]. Each country-good marginal product of labor times the workforce size $MPL^{\text{country}}_{\text{good}} * \bar L$
+
+--
+
+In our case this leads to...
+
+--
+
+$$\implies \bar{\text{Q}}^{H}_{pie} = 9*10=90, \ \ \ \ \bar{\text{Q}}^H_{\text{potato}}=7*10=70\\
+\implies \bar{\text{Q}}^{F}_{pie} = 10*10=100, \ \ \ \ \bar{\text{Q}}^F_{\text{potato}}=12*10=120$$
+
+---
+
+# PPF Scenario
+
+```{r, echo=FALSE, out.width="95%"}
+
+tibble(
+  country  = c("Home", "Home",
+               "Foreign", "Foreign"),
+  pies     = c(90, 0,  100, 0),
+  potatoes  = c(0, 70, 0, 120)
+) %>% ggplot() +
+  geom_line(aes(x=pies, y=potatoes, color=country), size=2) +
+  theme_bw() + 
+  scale_y_continuous(expand=c(0,0), limits=c(0,150)) + 
+  scale_x_continuous(expand=c(0,0), limits=c(0,150)) +
+  coord_fixed() + ggtitle("Production Possibility Frontiers, Home and Foreign") + 
+  theme(title = element_text(size=14),
+        legend.position = "right",
+        legend.title = element_blank(),
+        legend.text = element_text(size=16),
+        axis.title.x = element_text(size=16),
+        axis.title.y = element_text(size=16),
+        axis.text.x = element_text(size=14),
+        axis.text.y = element_text(size=14))
+
+```
+
+---
+
+# PPF Scenario
+
+
+__Assumption:__ PPFs straight due to constant MPLs 
+
+__Slope of PPF:__ equal to the marginal rate of substitution between potatoes and pies. 
+
+$$\text{Slope of PPF}^{H} =  - \frac{70}{90} = - \frac{MPL^H_{\text{potato}}*\bar L}{MPL^H_{\text{pie}}*\bar L} = - \frac{MPL^H_{\text{potato}}}{MPL^H_{\text{pie}}} = - \frac{7}{9}$$
+
+--
+
+.hi-pink[Opportunity cost] measured by slope of  PPF. For $\Delta Q^H_{\text{pie}}=1$, this would come at the cost of less potatoes being produced $\implies \Delta Q^H_{\text{potato}} = -\frac{7}{9}$.
+
+--
+
+$\frac{7}{9}$ bags of potatoes is the .hi-pink[opportunity cost] of obtaining 1 more apple pie and the slope of the PPF for Home. 
+
+
+---
+
+# Indifference Curve
+
+<br>
+
+--
+
+* PPF: whole set of possible production outcomes, all use the entire workforce
+* Any production bundle below the PPF line is suboptimal, utilizes $L<\bar L$
+* Which of these max bundles do we choose?
+
+--
+
+Depends on home's demand for the two goods. Each .hi-pink[indifference curve] shows consumption bundles of goods that economy can consume and be equally satisfied.
+
+--
+
+The consumer is __indifferent__ in its own preferences across the consumption bundles listed on a particular indifference curve. 
+
+---
+
+# Indifference Curve
+
+```{r, echo=FALSE, out.width="85%"}
+
+
+p = indifference(ncurves = 2,  # Two curves
+                  x = c(2, 4),  # Intersections
+                  xlab = "pies",              # X-axis label
+                  ylab = "potatoes",              # Y-axis label
+                  linecol = 2,  # Color of the curves
+                  pointcol = 1) # Color of the intersection points
+
+
+int <- bind_rows(curve_intersect(data.frame(x = 1:1000, y = rep(3, nrow(p$curve))), p$curve + 1))
+
+p$p + geom_point(data = int, size = 3, color = 1) +
+      annotate(geom = "text", x = int$x + 0.25, y = int$y + 0.25, label = "C") +
+  theme(axis.text.x = element_text(size=14),
+        axis.text.y = element_text(size=14),
+        axis.title.x = element_text(size=16),
+        axis.title.y = element_text(size=16))
+
+```
+
+--
+
+Indifferent between A and B and prefers any point on $I_2$ to $I_1$.
+
+
+---
+
+#  Home Equilibrium
+
+<br>
+
+Suppose we are in .hi-pink[closed economy] where Home PPF acts as a budget constraint.
+
+IC of Home's consumers tangent to PPF at __(36, 42)__.
+
+Home consumes 36 pies and 42 potatoes under autarky. 
+
+--
+
+Underlying assumption of .hi-pink[perfectly comptetitive markets] such that goods are sold at cost. 
+
+Given these resource constraints, this market generates the highest consumer welfare. 
+
+
+---
+
+# Opportunity Cost and Prices
+
+<br>
+
+* Slope of the PPF reflects the .hi-pink[opportunity cost] of producing one apple pie
+
+--
+
+* Under perfect competition the .hi-pink[opportunity cost] of should also equal the relative price of pie
+
+--
+
+* This follows from the economic principle that price reflects the .hi-pink[opportunity cost] of a good 
+
+--
+
+* We can now check that this equality between the .hi-pink[opportunity cost] and the relative price of wheat holds at point A.
+
+---
+
+# Wages
+
+
+<br>
+
+How do we solve for prices of potatoes and pies at Home under autarky?
+
+--
+
+* .hi-pink[Perfectly competitive market]: Workers hired until value of additional worker is equal to marginal cost of additional worker
+* Value represents the price of the good sold times the marginal change in units of good produced
+* Workers are paid the equivalent of their MPL times the price of that additional unit they produce
+
+
+---
+
+# Wages
+
+<br>
+
+Potato (pie) firms hire until wage equals $P_{\text{potato}} *MPL_{\text{potato}}$ $(P_{\text{pie}} *MPL_{\text{pie}})$
+
+--
+
+If we assume labor moves freely between markets, we can assume wages equalized across these industries. 
+
+--
+
+$$P_{\text{potato}} *MPL_{\text{potato}} = P_{\text{pie}} *MPL_{\text{pie}}$$
+--
+
+We can rearrange such that the price ratio is equal to the MPL ratio
+
+
+$$\frac{P_{\text{pie}}}{P_{\text{potato}}} = \frac{MPL_{\text{potato}}}{MPL_{\text{pie}}}$$
+
+Relative price of pies is equal to the opportunity cost of pies at the .hi-pink[no-trade equilibrium]. 
 
 ---
 
@@ -669,5 +441,5 @@ exclude: true
 ```{R generate pdfs, include = F, eval = F}
 #remotes::install_github('rstudio/pagedown')
 library(pagedown)
-pagedown::chrome_print("01-Introduction.html", output = "01-Introduction.pdf")
+pagedown::chrome_print("02-ricardian.html", output = "02-ricardian.pdf")
 ```

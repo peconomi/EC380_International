@@ -89,7 +89,7 @@ For this class we will:
 
 ```{r, echo=FALSE, out.width="95%"}
 
-knitr::include_graphics("trade_overlap.png")
+knitr::include_graphics("figures/trade_overlap.png")
 
 ```
 
@@ -199,7 +199,7 @@ class: inverse, middle
 
 ```{r, out.width="85%", echo=FALSE}
 
-knitr::include_graphics("1_trade_growth.png")
+knitr::include_graphics("figures/1_trade_growth.png")
 
 ```
 
@@ -211,7 +211,7 @@ Recent slowdown in trade, which we will address
 
 ```{r, out.width="80%", echo=FALSE}
 
-knitr::include_graphics("2_trade_share.png")
+knitr::include_graphics("figures/2_trade_share.png")
 
 ```
 
@@ -221,7 +221,7 @@ knitr::include_graphics("2_trade_share.png")
 
 ```{r, echo=FALSE, out.width="85%"}
 
-knitr::include_graphics("3_trade_scale.png")
+knitr::include_graphics("figures/3_trade_scale.png")
 
 ```
 
@@ -245,6 +245,8 @@ Questions arise:
 * What are the gains from trade?
 * How does trade translate into other changes (e.g. labor market outcomes, geopolitical tensions)
 
+--
+
 .hi-slate[Part I] of this course will focus on the .hi-slate[theories of international trade]. By the time we are done, very generalized lessons will be available to us. 
 
 ---
@@ -265,7 +267,7 @@ Main Questions:
 
 ```{r, echo=FALSE}
 
-knitr::include_graphics("4_country_goods.png")
+knitr::include_graphics("figures/4_country_goods.png")
 
 ```
 
@@ -275,7 +277,7 @@ knitr::include_graphics("4_country_goods.png")
 
 ```{r, echo=FALSE}
 
-knitr::include_graphics("5_product_year.png")
+knitr::include_graphics("figures/5_product_year.png")
 
 ```
 
@@ -330,7 +332,7 @@ __Since trade is not frictionless, do these frictions vary across countries?__
 
 ```{r, echo=FALSE}
 
-knitr::include_graphics("6_trade_index.png")
+knitr::include_graphics("figures/6_trade_index.png")
 
 ```
 
@@ -340,7 +342,7 @@ knitr::include_graphics("6_trade_index.png")
 
 ```{r, echo=FALSE}
 
-knitr::include_graphics("7_tariffs.png")
+knitr::include_graphics("figures/7_tariffs.png")
 
 ```
 
@@ -350,7 +352,7 @@ knitr::include_graphics("7_tariffs.png")
 
 ```{r, echo=FALSE, out.width="80%"}
 
-knitr::include_graphics("8_freight_rates.png")
+knitr::include_graphics("figures/8_freight_rates.png")
 
 ```
 
@@ -377,23 +379,40 @@ We __will not__ be going that deep into international trade, though I can recomm
 
 <br>
 
-Two strands within the field of international trade:
+.hi-pink[Why does trade occur?] Two strands within the field of international trade:
 
 --
 
-1. Neoclassical models of trade ('old' theories):
+__I. Neoclassical models of trade__ ('old' theories):
 
-- Ricardian model
+- Ricardian model: Technology differences spur trade
 
-- Heckscher-Ohlin model
+- Heckscher-Ohlin model: Resource differences spur trade
 
 --
 
-2. 'New' Trade Theory
+__II. 'New' Trade Theory__
 
-- Krugman model
+- Krugman model: Love of variety spurs trade
 
-- Melitz model
+- Melitz model: Heterogenous firms drive trade
+
+
+---
+
+# Next Class
+
+<br>
+
+We will begin looking into international trade theory, starting with the .hi-pink[Ricardo model].
+
+* Single factor of production (labor)
+
+* Two-country model (home, foreign)
+
+* Technology differences across countries 
+
+Going forward, try to describe each model by three attributes, such as those listed above, and the model's main takeaway(s)!
 
 
 ---
