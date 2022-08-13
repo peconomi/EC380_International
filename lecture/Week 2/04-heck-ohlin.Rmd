@@ -1,0 +1,775 @@
+---
+title: "EC 380: Lecture 4"
+subtitle: "Trade Theory: Heckscher-Ohlin (HO) Model"
+author: "Philip Economides"
+date: "Fall 2022"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, middle
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra)
+devtools::install_github("R-CoderDotCom/econocharts")
+
+library(econocharts)
+# Define colors
+red_pink <- "#e64173"
+met_slate <- "#272822" 
+turquoise <- "#20B2AA"
+orange <- "#FFA500"
+red <- "#fb6107"
+blue <- "#2b59c3"
+green <- "#8bb174"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+purple <- "#6A5ACD"
+slate <- "#314f4f"
+# Notes directory
+dir_slides <- "~/Lectures/01-Intro"
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)  
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+options(crayon.enabled = F)
+options(knitr.table.format = "html")
+```
+
+```{css, echo = F, eval = F}
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+```
+
+# Prologue
+
+---
+
+# To Recap
+
+### Last Time
+
+* Countries with no absolute advantage in production can still trade!
+
+--
+
+* Since then, the .hi-pink[internet] and subsequent .hi-pink[information age] have largely narrowed differences in technology
+
+--
+
+* .hi-pink[What else helps us understand what drives our need to trade goods?]
+
+--
+
+### Today
+
+
+.hi-slate[Hechscher-Ohlin Model] suggests differences in factor endowments can explain trade patterns
+
+
+---
+
+# Hechscher-Ohlin Model
+
+<br>
+
+--
+
+We will go with our own version of the model. 
+
+* Two countries, Home and Foreign
+* Two goods, steel and cloth
+* .hi-pink[Two] factors of production, labor and .hi-pink[capital]
+
+--
+
+Suppose in our case the home country ends up exporting apple pies and importing potatoes.
+
+--
+
+.hi-pink[What would this imply about which good each country has comparative advantage in?]
+
+
+---
+
+# Hechscher-Ohlin Model
+
+--
+
+__Key terms:__
+
+--
+
+.hi-slate[Factor abundance]: Relative measure, where if particular factor $x$ represents a large share of total factors, country is $x$-factor abundant. 
+
+.hi-slate[Factor scarcity]: Country has less of a particular factor relative to other factors or in comparison to another country. 
+
+--
+
+The .hi-pink[capital-labor ratio] is a comment tool of comparison for assigning countries into resource endowment groups. 
+
+--
+
+The higher $K/L$ is for a given country, relative to others, the more capital-abundant it is. 
+
+---
+
+# Hechscher-Ohlin Model
+
+<br>
+
+```{r, echo=FALSE}
+
+tibble(
+  x = c("Capital", "Labor"),
+  y = c("90 Tractors", "300 Farmers"),
+  z = c("150 Tractors", "400 Farmers")
+) %>% kbl(col.names=c("", "Ireland", "United Kingdom")) %>%
+  kable_styling()
+
+```
+
+--
+
+<br>
+
+.hi-pink[Which country is capital-abundant?]
+
+--
+
+$$\frac{K_{IRL}}{L_{IRL}} = 0.3, \ \ \ \frac{K_{UK}}{L_{UK}} = 0.375$$
+
+
+---
+
+# Hechscher-Ohlin Model
+
+### Production Costs
+
+<br>
+
+--
+
+The ratio between capital and labor implies .hi-pink[abundancy]. Countries where a given factor is relatively .hi-pink[more abundant] exhibit .hi-pink[lower input prices] per unit of the factor. 
+
+--
+
+The labor-abundant country finds labor to be relatively cheaper, per unit, than the capital-abundant country.
+
+--
+
+HO: Labor-abundant country has a .hi-pink[comparative advantage] due to its edge the cost of production of .hi-pink[labor-intensive goods]. 
+
+---
+
+# Hechscher-Ohlin Model
+
+### Production Costs
+
+<br>
+
+--
+
+Since the US is .hi-pink[capital-abundant], it faces relatively cheaper capital and faces a lower opportunity cost in production that uses relatively more capital.
+
+--
+
+This may explain US trade patterns in which .hi-pink[capital-intensive] exports of jet engines and agricultural products dominate its goods outflows. 
+
+
+
+---
+
+# Gains from Trade
+
+--
+
+<br>
+
+Ricardian model assumed a single factor $\implies$ all countries face same trade-off regardless of input levels.
+
+--
+
+HO model now considers combinations of factors, where some specific combination of two is most productive. 
+
+--
+
+.hi-pink[How does this affect our visualization?]
+
+Production possibilities frontier (PPF) will be curved instead of straight. 
+
+---
+
+# New PPF
+
+```{r, echo=FALSE, out.width="95%", warning=FALSE}
+
+tibble(
+    country  = c("Home Pre-Trade", "Home Pre-Trade",
+                 "Home Trade", "Home Trade"),
+    pies     = c(90, 0, 90, 5),
+    potatoes  = c(0, 70, 0, 85)
+) %>% ggplot() +
+    theme_bw() + 
+    scale_y_continuous(expand=c(0,0), limits=c(0,150)) + 
+    scale_x_continuous(expand=c(0,0), limits=c(0,150)) +
+    coord_fixed() + ggtitle("Production Possibility Frontier, Home") + 
+    ylab("Traditional Textiles Output") + xlab("Manufacturing Output") +
+    geom_segment(aes(x=0, xend=10, y=99, yend=99), linetype="dashed")+
+    geom_segment(aes(x=10, xend=10, y=0, yend=99), linetype="dashed")+
+    geom_segment(aes(x=0, xend=80, y=27, yend=27), linetype="dashed")+
+    geom_segment(aes(x=80, xend=80, y=0, yend=27), linetype="dashed")+
+    geom_segment(aes(x=0, xend=20, y=97, yend=97), linetype="dashed", color="red")+
+    geom_segment(aes(x=20, xend=20, y=0, yend=97), linetype="dashed", color="red")+
+    geom_segment(aes(x=0, xend=75, y=40, yend=40), linetype="dashed", color="red")+
+    geom_segment(aes(x=75, xend=75, y=0, yend=40), linetype="dashed", color="red")+
+    theme(title = element_text(size=14),
+          legend.position = "right",
+          legend.title = element_blank(),
+          legend.text = element_text(size=16),
+          axis.title.x = element_text(size=16),
+          axis.title.y = element_text(size=16),
+          axis.text.x = element_text(size=14),
+          axis.text.y = element_text(size=14))  + 
+    geom_function(fun = function(x){100 - 0.02*x - 0.003*x^2 - 0.0001*x^3} , xlim=c(0,200))
+
+```
+
+---
+
+# New PPF
+
+<br>
+
+As you can see, adjustments at the tailend of these frontiers require a disproportionately large exchange on equipment.  
+
+--
+
+Opportunity costs are .hi-pink[rising] for each type of production. 
+
+--
+
+Each unit increase in the labor-good leads to an increasingly sizeable loss of the other unit. 
+
+--
+
+.hi-pink[Why?]
+
+As you reallocate resources from a capital-intensive good to labor-intensive, you need greater amounts of factors due to factor combinations being misaligned. 
+
+
+---
+
+# Gains from Trade: Autarky
+
+--
+
+.hi-slate[Closed economy scenario:] Consider a case in which the US does __not__ trade. 
+
+In absense of trade, Home consumes exactly what it produces. 
+
+--
+
+```{r, echo=FALSE, out.width="75%", warning=FALSE}
+
+
+tibble(
+    country  = c("Home Pre-Trade", "Home Pre-Trade",
+                 "Home Trade", "Home Trade"),
+    pies     = c(90, 0, 90, 5),
+    potatoes  = c(0, 70, 0, 85)
+) %>% ggplot() +
+    theme_bw() + 
+    scale_y_continuous(expand=c(0,0), limits=c(0,150)) + 
+    scale_x_continuous(expand=c(0,0), limits=c(0,150)) +
+    coord_fixed() + ggtitle("Production Possibility Frontier, Home") + 
+    ylab("Traditional Textiles Output") + xlab("Manufacturing Output") +
+    geom_segment(aes(x=0, xend=50, y=80, yend=80), linetype="dashed", color="#0080bb")+
+    geom_segment(aes(x=50, xend=50, y=0, yend=80), linetype="dashed", color="#0080bb")+
+    geom_point(aes(x=50, y=80), size=4, color="#0080bb")+
+    theme(title = element_text(size=17),
+          legend.position = "right",
+          legend.title = element_blank(),
+          legend.text = element_text(size=20),
+          axis.title.x = element_text(size=20),
+          axis.title.y = element_text(size=20),
+          axis.text.x = element_text(size=17),
+          axis.text.y = element_text(size=17))  + 
+    geom_function(fun = function(x){100 - 0.02*x - 0.003*x^2 - 0.0001*x^3} , xlim=c(0,200))+
+    geom_function(fun = function(x){320 - 60.9*log(x+2)} , xlim=c(4,200))+ 
+    geom_function(fun = function(x){320 - 58.9*log(x-10)} , xlim=c(4,200))+
+    geom_label(aes(x=46,y=73), label="A", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=100,y=30), label="U1", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=100,y=45), label="U2", size=4, position = position_dodge(0.9),
+               vjust = 0) 
+
+```
+
+
+---
+
+# Gains from Trade: Free Trade
+
+<br>
+
+--
+
+Upon opening up trade and facing no trade costs, the world PPF is now the item of material interest.
+
+--
+
+The previous relative prices of goods changes to a .hi-pink[world relative price]. This identifies the slope of the CPC described in IE Ch. 4.2.2. 
+
+--
+
+Given that this line is not tangental to the production possibility frontier, there are other bundles of goods that reach higher indifference curves $U_i$. 
+
+--
+
+In our case, Home reaches $U_2$ by reallocating production away from textiles and towards manufacturing, given that Home is a capital intensive nation. 
+
+---
+
+# Gains from Trade: Free Trade
+
+```{r, echo=FALSE, out.width="95%", warning=FALSE}
+
+
+tibble(
+    country  = c("Home Pre-Trade", "Home Pre-Trade",
+                 "Home Trade", "Home Trade"),
+    pies     = c(90, 0, 90, 5),
+    potatoes  = c(0, 70, 0, 85)
+) %>% ggplot() +
+    theme_bw() + 
+    scale_y_continuous(expand=c(0,0), limits=c(0,150)) + 
+    scale_x_continuous(expand=c(0,0), limits=c(0,150)) +
+    coord_fixed() + ggtitle("Production Possibility Frontier, Home") + 
+    ylab("Traditional Textiles Output") + xlab("Manufacturing Output") +
+    geom_segment(aes(x=0, xend=50, y=80, yend=80), linetype="dashed", color="#0080bb")+
+    geom_segment(aes(x=50, xend=50, y=0, yend=80), linetype="dashed", color="#0080bb")+
+    geom_point(aes(x=50, y=80), size=4, color="#0080bb")+
+    geom_point(aes(x=80, y=30), size=4, color="#a42a41")+
+    theme(title = element_text(size=17),
+          legend.position = "right",
+          legend.title = element_blank(),
+          legend.text = element_text(size=20),
+          axis.title.x = element_text(size=20),
+          axis.title.y = element_text(size=20),
+          axis.text.x = element_text(size=17),
+          axis.text.y = element_text(size=17))  + 
+    geom_function(fun = function(x){100 - 0.02*x - 0.003*x^2 - 0.0001*x^3} , xlim=c(0,200))+
+    geom_function(fun = function(x){320 - 60.9*log(x+2)} , xlim=c(4,200))+ 
+    geom_function(fun = function(x){320 - 58.9*log(x-10)} , xlim=c(4,200))+
+    geom_function(fun = function(x){190 - 2.2*x} , xlim=c(20,80), linetype="dashed", color="red")+
+    geom_function(fun = function(x){208 - 2.25*x} , xlim=c(30,90), linetype="dashed", color="red")+
+    geom_label(aes(x=46,y=73), label="A", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=75,y=25), label="B", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=100,y=30), label="U1", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=100,y=45), label="U2", size=4, position = position_dodge(0.9),
+               vjust = 0) 
+
+```
+
+---
+
+# Gains from Trade: Free Trade
+
+```{r, echo=FALSE, out.width="95%", warning=FALSE}
+
+
+tibble(
+    country  = c("Home Pre-Trade", "Home Pre-Trade",
+                 "Home Trade", "Home Trade"),
+    pies     = c(90, 0, 90, 5),
+    potatoes  = c(0, 70, 0, 85)
+) %>% ggplot() +
+    theme_bw() + 
+    scale_y_continuous(expand=c(0,0), limits=c(0,150)) + 
+    scale_x_continuous(expand=c(0,0), limits=c(0,150)) +
+    coord_fixed() + ggtitle("Production Possibility Frontier, Home") + 
+    ylab("Traditional Textiles Output") + xlab("Manufacturing Output") +
+    geom_segment(aes(x=0, xend=50, y=80, yend=80), linetype="dashed", color="#0080bb")+
+    geom_segment(aes(x=50, xend=50, y=0, yend=80), linetype="dashed", color="#0080bb")+
+    geom_point(aes(x=50, y=80), size=4, color="#0080bb")+
+    geom_point(aes(x=80, y=30), size=4, color="#a42a41")+
+    geom_point(aes(x=37.5, y=125), size=4, color="#a42a41")+
+    theme(title = element_text(size=17),
+          legend.position = "right",
+          legend.title = element_blank(),
+          legend.text = element_text(size=20),
+          axis.title.x = element_text(size=20),
+          axis.title.y = element_text(size=20),
+          axis.text.x = element_text(size=17),
+          axis.text.y = element_text(size=17))  + 
+    geom_function(fun = function(x){100 - 0.02*x - 0.003*x^2 - 0.0001*x^3} , xlim=c(0,200))+
+    geom_function(fun = function(x){320 - 60.9*log(x+2)} , xlim=c(4,200))+ 
+    geom_function(fun = function(x){320 - 58.9*log(x-10)} , xlim=c(4,200))+
+    geom_function(fun = function(x){190 - 2.2*x} , xlim=c(20,80), linetype="dashed", color="red")+
+    geom_function(fun = function(x){208 - 2.25*x} , xlim=c(30,90), linetype="dashed", color="red")+
+    geom_label(aes(x=46,y=73), label="A", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=75,y=25), label="B", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=42,y=127), label="C", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=100,y=30), label="U1", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=100,y=45), label="U2", size=4, position = position_dodge(0.9),
+               vjust = 0) 
+
+```
+
+---
+
+# Gains from Trade: Free Trade
+
+```{r, echo=FALSE, out.width="95%", warning=FALSE}
+
+
+tibble(
+    country  = c("Home Pre-Trade", "Home Pre-Trade",
+                 "Home Trade", "Home Trade"),
+    pies     = c(90, 0, 90, 5),
+    potatoes  = c(0, 70, 0, 85)
+) %>% ggplot() +
+    theme_bw() + 
+    scale_y_continuous(expand=c(0,0), limits=c(0,150)) + 
+    scale_x_continuous(expand=c(0,0), limits=c(0,150)) +
+    coord_fixed() + ggtitle("Production Possibility Frontier, Home") + 
+    ylab("Traditional Textiles Output") + xlab("Manufacturing Output") +
+#    geom_segment(aes(x=0, xend=50, y=80, yend=80), linetype="dashed", color="#0080bb")+
+#    geom_segment(aes(x=50, xend=50, y=0, yend=80), linetype="dashed", color="#0080bb")+
+#    geom_point(aes(x=50, y=80), size=4, color="#0080bb")+
+    geom_point(aes(x=80, y=30), size=4, color="#a42a41")+
+    geom_point(aes(x=37.5, y=125), size=4, color="#a42a41")+
+    theme(title = element_text(size=17),
+          legend.position = "right",
+          legend.title = element_blank(),
+          legend.text = element_text(size=20),
+          axis.title.x = element_text(size=20),
+          axis.title.y = element_text(size=20),
+          axis.text.x = element_text(size=17),
+          axis.text.y = element_text(size=17))  + 
+    geom_function(fun = function(x){100 - 0.02*x - 0.003*x^2 - 0.0001*x^3} , xlim=c(0,200))+
+    geom_function(fun = function(x){320 - 60.9*log(x+2)} , xlim=c(4,200))+ 
+    geom_function(fun = function(x){320 - 58.9*log(x-10)} , xlim=c(4,200))+
+    geom_function(fun = function(x){190 - 2.2*x} , xlim=c(20,80), linetype="dashed", color="red")+
+    geom_function(fun = function(x){208 - 2.25*x} , xlim=c(30,90), linetype="dashed", color="red")+
+ #   geom_label(aes(x=46,y=73), label="A", size=4, position = position_dodge(0.9),
+#               vjust = 0) +
+    geom_label(aes(x=75,y=25), label="B", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=42,y=127), label="C", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=100,y=30), label="U1", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=100,y=45), label="U2", size=4, position = position_dodge(0.9),
+               vjust = 0) 
+
+```
+
+---
+
+
+# Gains from Trade: Free Trade
+
+```{r, echo=FALSE, out.width="95%", warning=FALSE}
+
+
+tibble(
+    country  = c("Home Pre-Trade", "Home Pre-Trade",
+                 "Home Trade", "Home Trade"),
+    pies     = c(90, 0, 90, 5),
+    potatoes  = c(0, 70, 0, 85)
+) %>% ggplot() +
+    theme_bw() + 
+    scale_y_continuous(expand=c(0,0), limits=c(0,150)) + 
+    scale_x_continuous(expand=c(0,0), limits=c(0,150)) +
+    coord_fixed() + ggtitle("Production Possibility Frontier, Home") + 
+    ylab("Traditional Textiles Output") + xlab("Manufacturing Output") +
+#    geom_segment(aes(x=0, xend=50, y=80, yend=80), linetype="dashed", color="#0080bb")+
+#    geom_segment(aes(x=50, xend=50, y=0, yend=80), linetype="dashed", color="#0080bb")+
+#    geom_point(aes(x=50, y=80), size=4, color="#0080bb")+
+    geom_point(aes(x=80, y=30), size=4, color="#a42a41")+
+    geom_segment(aes(x=0, xend=80, y=30, yend=30), linetype="dashed", color="#0080bb")+
+    geom_segment(aes(x=80, xend=80, y=0, yend=30), linetype="dashed", color="#0080bb")+
+    geom_point(aes(x=37.5, y=125), size=4, color="#a42a41")+
+    geom_segment(aes(x=0, xend=37.5, y=125, yend=125), linetype="dashed", color="#0080bb")+
+    geom_segment(aes(x=37.5, xend=37.5, y=0, yend=125), linetype="dashed", color="#0080bb")+
+    theme(title = element_text(size=17),
+          legend.position = "right",
+          legend.title = element_blank(),
+          legend.text = element_text(size=20),
+          axis.title.x = element_text(size=20),
+          axis.title.y = element_text(size=20),
+          axis.text.x = element_text(size=17),
+          axis.text.y = element_text(size=17))  + 
+    geom_function(fun = function(x){100 - 0.02*x - 0.003*x^2 - 0.0001*x^3} , xlim=c(0,200))+
+    geom_function(fun = function(x){320 - 60.9*log(x+2)} , xlim=c(4,200))+ 
+    geom_function(fun = function(x){320 - 58.9*log(x-10)} , xlim=c(4,200))+
+    #geom_function(fun = function(x){190 - 2.2*x} , xlim=c(20,80), linetype="dashed", color="red")+
+    geom_function(fun = function(x){208 - 2.25*x} , xlim=c(30,90), linetype="dashed", color="red")+
+ #   geom_label(aes(x=46,y=73), label="A", size=4, position = position_dodge(0.9),
+#               vjust = 0) +
+    geom_label(aes(x=75,y=25), label="B", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=42,y=127), label="C", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=100,y=30), label="U1", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=100,y=45), label="U2", size=4, position = position_dodge(0.9),
+               vjust = 0) 
+
+```
+
+
+---
+
+# Gains from Trade: Free Trade
+
+<br>
+
+--
+
+Since we are trading at .hi-pink[world price level], we can reach .hi-pink[higher] indifference curves.
+
+--
+
+We .hi-pink[produce at B] and .hi-pink[consume at C] at Home country.
+
+--
+
+Therefore if we produce more .hi-pink[manufacuturing output] than we consumer, we must be .hi-pink[exporting] a subset of these goods (difference between B outcome and C outcome). 
+
+--
+
+In contrast, we produce less .hi-pink[textiles] than we consume, suggesting that Home is .hi-pink[importing] the difference.
+
+---
+
+# Comparing to Ricardian Model
+
+--
+
+.hi-pink[Why B?]
+
+We must produce where the opportunity cost of producing a manufactured good is equal to the relative world price slope (CPC). 
+
+--
+
+Our notion of trade gains are pretty similar to Ricardian views, but specialization is not complete due to .hi-pink[diminishing marginal productivty] associated with each factor. 
+
+--
+
+.hi-pink[Diminishing marginal productivty]: Holding your other factor fixed, the marginal unit increase of a given factor yields increasingly smaller contributions to overall output. 
+
+---
+
+# Comparing to Ricardian Model
+
+```{r, echo=FALSE, out.width="65%", warning=FALSE}
+
+
+tibble(
+    country  = c("Home Pre-Trade", "Home Pre-Trade",
+                 "Home Trade", "Home Trade"),
+    pies     = c(90, 0, 90, 5),
+    potatoes  = c(0, 70, 0, 85)
+) %>% ggplot() +
+    theme_bw() + 
+    scale_y_continuous(expand=c(0,0), limits=c(0,100)) + 
+    scale_x_continuous(expand=c(0,0), limits=c(0,400)) + ggtitle("Diminishing Marginal Labor Product") + 
+    ylab("Goods Output") + xlab("Labor Input") +
+    geom_function(fun = function(x){5 + 0.53*x -0.0008*x^2} , xlim=c(30,380), color="#ffa600")+
+  theme(axis.text.y = element_blank(),
+        axis.text.x = element_blank(),
+        title = element_text(size=17),
+          legend.position = "right",
+          legend.title = element_blank(),
+          legend.text = element_text(size=20),
+          axis.title.x = element_text(size=20),
+          axis.title.y = element_text(size=20))
+
+```
+
+Imagine having one shovel to share between 5 workers. Sure they can exchange the shovel whenever they get tired, but including 10 more is going to make very little difference to total work output.
+
+
+---
+
+# Trade & Income Distribution
+
+--
+
+In .hi-pink[Ricardian model] we ruled out harmful effects and suggest everyone benefits in society. 
+
+--
+
+Reallocated workers simply left and shrinking industry for an expanding one and were able to exchange their unchanged labor supply for a .hi-pink[larger bundle of goods]. 
+
+--
+
+The .hi-pink[HO model] takes a more moderate view
+
+
+--
+
+Rather than capital and labor, consider two labor sectors 
+
+* Skilled
+
+* Unskilled
+
+Industries require different combinations of skilled and unskilled labor
+
+
+---
+
+# Heterogenous Income Effects
+
+<br>
+
+--
+
+We will go into this further later into the course but for now keep in mind that trade openness can have heterogeneous effects depending on which part of the skill bracket a laborer belongs to. 
+
+--
+
+It can be shown that a systematic relationship exists between endowments of factors for a country and who ends up being these winners and losers.
+
+--
+
+I'll show  you a .hi-pink[theoretical argument] for how this can occur. Later we'll examine .hi-pink[empirical evidence], based on applied econometric analysis. 
+
+
+---
+
+# Stolper-Samuelson Theorem
+
+<br>
+
+Explains theoretical outcomes of assymetric factor outcomes. 
+
+--
+
+* Income depends on input supplied to value of final product
+
+--
+
+* Wages will vary based on their skill level
+
+--
+
+* Labor input earnings (wages) demand on their demand and supply
+
+--
+
+.hi-pink[Derived demand]: Demand for a good or service that is derived from demand for something else (e.g. demand for labor is based on demand for goods and services). 
+
+---
+
+# Stolper-Samuelson Theorem
+
+<br>
+
+Under high output demand, price is high and inputs used to produce benefit by receiving greater returns on their contribution.
+
+--
+
+Any change that impacts prices will have direct impacts on outcomes.
+
+--
+
+Open trade causes the .hi-pink[export good price] to rise and .hi-pink[import good price] to fall. Demand for each factor readjusts, leading to change in returns to each factor. 
+
+--
+
+Resources leave sector of imported good and enter sector of exported good, which cause changes in demand for each input in Ricardian model.
+
+---
+
+# Stolper-Samuelson Theorem
+
+<br>
+
+If manufacturing good is the export, demand for capital factor rises and demand for labor factor falls. 
+
+--
+
+This implies income for actors used intensively for the import sector fall and rises for the intensive factor of the export sector. 
+
+--
+
+.hi-pink[Stopler-Samuelson Theorem suggests that increase in price of good raises income earned by factors intensively used in its production. Fall in price of goods lowers income of factors used intensively.]
+
+---
+
+# Stolper-Samuelson Theorem
+
+<br>
+
+According to this __theory__, a country with a capital-intensive presence (e.g. USA) will shift away from labor demand.
+
+Capital owners will benefit from trade. Laborers will lose out.
+
+--
+
+Read further into the .hi-pink[magnification effect]. This may come up in the future. 
+
+---
+
+
+# To Recap
+
+* Countries with no absolute advantage in production can still trade in both Ricardian and HO models
+
+* In HO case, advantages are driven by abundancies in different factors which vary across countries
+
+--
+
+* While Ricardian trade openness is a broad gain for everyone, HO highlights a .hi-pink[reallocation] of resources towards specific industries that may disadvantage the factor belonging predominantly to the now partially import-reliant sector. 
+
+--
+
+### Next Class
+
+
+* Specific Factors model, Model Empirics & Extensions
+
+
+
+---
+
+exclude: true
+
+```{R generate pdfs, include = F, eval = F}
+#remotes::install_github('rstudio/pagedown')
+library(pagedown)
+pagedown::chrome_print("04-heck-ohlin.html", output = "04-heck-ohlin.pdf")
+```
