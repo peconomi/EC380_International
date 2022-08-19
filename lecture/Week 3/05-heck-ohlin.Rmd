@@ -1,0 +1,647 @@
+---
+title: "EC 380: Lecture 5"
+subtitle: "Trade Theory: Specific Factors Model"
+author: "Philip Economides"
+date: "Fall 2022"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, middle
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra)
+devtools::install_github("R-CoderDotCom/econocharts")
+
+library(econocharts)
+# Define colors
+red_pink <- "#e64173"
+met_slate <- "#272822" 
+turquoise <- "#20B2AA"
+orange <- "#FFA500"
+red <- "#fb6107"
+blue <- "#2b59c3"
+green <- "#8bb174"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+purple <- "#6A5ACD"
+slate <- "#314f4f"
+# Notes directory
+dir_slides <- "~/Lectures/01-Intro"
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)  
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+options(crayon.enabled = F)
+options(knitr.table.format = "html")
+```
+
+```{css, echo = F, eval = F}
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+```
+
+# Prologue
+
+---
+
+### Last Time
+
+* Countries with no absolute advantage in production can still trade in both Ricardian and HO models
+
+* In HO case, advantages are driven by abundancies in different factors which vary across countries
+
+--
+
+* While Ricardian trade openness gains for everyone, HO highlights a .hi-pink[reallocation] of resources across industries that may disadvantage the main factor of the now import-reliant sector
+
+--
+
+### Today
+
+
+* Specific Factors model, Model Empirics & Extensions
+
+
+
+---
+
+# Specific Factors Model
+
+<br>
+
+
+.hi-pink[Short run]: factor mobility between industries is limited (e.g. repurosing a large piece of factory machinery to production of another specialized good).
+
+--
+
+Same true for labor.
+
+--
+
+Suppose world prices adjust and resources begin leaving the US steel industry. 
+
+--
+
+In long run, they may retrain and find employment elsewhere but in short run they are stuck with pay cuts and potential unemployment. 
+
+---
+
+# Specific Factors Model
+
+<br>
+
+--
+
+To address ability of production factors to reallocate across domestic industries, and incorporate  .hi-pink[heterogeneity across time], lets add conditions to the .hi-pink[HO model].
+
+--
+
+* Three factors: land, labor, capital
+
+* Two goods: steel and bread
+
+* $Q_{s} = f(K,LB)$ and $Q_{b} = f(LB,LD)$
+
+--
+
+Labor is our .hi-pink[variable factor] that varies in use between both goods.
+LD and K are .hi-pink[specific factors] because they are exclusively used for specific goods. 
+
+---
+
+# Specific Factors Model
+
+<br>
+
+Modifying the .hi-pink[HO model] slightly, we have now extended it into a .hi-pink[specific factors model].
+
+--
+
+Each good produced with a using a unique specific factor. Variable factor used for both.
+
+--
+
+Specific factors are .hi-pink[immobile] and cannot move between the two industries while the variable factor is .hi-pink[mobile].
+
+
+---
+
+# Specific Factors Model
+
+<br>
+
+---
+
+# Specific Factors Model
+
+<br>
+
+With each model we face, trade patterns are always determined by .hi-pink[comparative advantage].
+
+--
+
+Who has the edge in which good in this model? 
+
+--
+
+As with .hi-pink[HO], this will be determined by factor endowments but critical role is now played by the specific factors. 
+
+--
+
+For the two goods, they will present different needs for combinations for labor and each industry-specific factor. 
+
+--
+
+.hi-pink[Comparative advantage] for the industry of which the specific factor is relatively more abundant.
+
+---
+
+# Specific Factors Model
+
+<br>
+
+--
+
+Recall logic of comparative advantage .hi-pink[always comes back to opportunity cost.]
+
+--
+
+Ireland well-endowed with land, relative to the UK (high pop density). 
+
+--
+
+Since Ireland land-abundant, the opportunity cost of an additional unit of bread production is __lower__ than it is in the UK.
+
+--
+
+In other words, one additional loaf of bread costs less losses in terms of the capital-intensive good's output relative to the UK.
+
+--
+
+What does that imply about the UK's comparative advantage and its primary specific factor that determines this advantage?
+
+
+---
+
+# Specific Factors Model: Income
+
+--
+
+<br>
+
+How does switching from autarky to an open economy impact the .hi-pink[income distribution]?
+
+--
+
+* Each country expands production into industry reliant on specific factor that country is __relatively__ abundant in
+
+--
+
+* Demand shrinks for the __scarce__ specific factor of each economy
+
+--
+
+* Ireland would cut back on capital-intensive good, capital owners in Ireland are hurt by lower income generated from leasing capital
+
+---
+
+# Specific Factors Model: Income
+
+--
+
+<br>
+
+In contrast, Irish landowners are delighted. Per unit returns on renting land are now higher due to greater domestic demand. 
+
+* UK sees opposite effect 
+
+* UK capital owner income rises and UK landowner income falls
+
+
+--
+
+Labor outcomes are indeterminate. It depends on whether labor shares of income generated were higher in the land-industry or capital-industry for each country. 
+
+---
+
+# Specific Factors Model: Income
+
+<br>
+
+--
+
+From price perspective:
+
+* Land-good demand rises in Ireland, since world price is higher than autarky price of bread. Capital-intensive good's price falls relative to autarky.
+
+--
+
+* From UK perspective, the capital-intesive good's price has risen and land-intensive good's price falls.
+
+--
+
+Net effects of for labor, following these price changes to world prices, are ambiguous and depend on consumption patterns. 
+
+
+---
+
+# Empirical Tests
+
+--
+
+So far we have argued these points on trade gains based exclusively on theory. 
+
+--
+
+You should always ask yourself two questions:
+
+--
+
+1. Do the predictions of a generalized model hold in the data?
+
+--
+
+2. Are there other reasons these predict patterns may be observed in the data?
+
+--
+
+A great deal of work from economists works towards translating theory into empirical analysis
+
+--
+
+For example, .hi-pink[Blonigen & Wilson (2008)] examines whether port efficiency allows for greater volumne of trade
+ 
+
+---
+
+# Empirical Tests: Comparative Adv.
+
+<br>
+
+--
+
+All trade theories boil down to differences between countries establishing .hi-pink[comparative advantages] and motivating trade.
+
+--
+
+Each theory predicts which goods a country will import and export.
+
+--
+
+Empirical tests of trade are difficult due to our inability to observe an .hi-pink['autarky' counterfactual] and difficulty in .hi-pink[measuring factor endowments]. 
+
+--
+
+Rather than going between extremes of no-trade to completely free trade, we normally imagine changes in .hi-pink['trade openness'] as a result of :
+
+* Lower tariff rates and reduced trade quotas
+
+
+---
+
+# Empirical Tests: Comparative Adv.
+
+<br>
+
+--
+
+.hi-pink[Ricardian Model]: Challenging to test due to relative differences in technology, which augment labor productivity, being hard to interlink. 
+
+--
+
+.hi-pink[HO Model]: Even harder to apply tests for given the challenges involved in accurately measuring factor endowments. Our measures of land and capital values are imprecise estimates.
+
+--
+
+As a result, Ricardian models have been more frequently and successfully tested. 
+
+--
+
+.hi-pink[Findings]: As labor productivity in a particular industry rises, the intensive margin by which goods are export are exported increases. Country becomes a net exporter of that good. 
+
+
+---
+
+# Empirical Tests: Comparative Adv.
+
+<br>
+
+--
+
+Tests of HO are more mixed. 
+
+--
+
+Cross-country measures of capital, land and labor endowments are often measured using different means due to .hi-pink[methodological differences] across various national accounting bodies. 
+
+--
+
+For example, housing's contribution to CPI is based on mortgage values in Europe while the US uses a rental equivalence approach. 
+
+--
+
+.hi-pink[McQuinn et al. (2018)] highlights that these differences in methodological approaches can have severe consequences for the resulting inflation index. 
+
+
+---
+
+# Empirical Tests: Comparative Adv.
+
+<br>
+
+So how do we address international economic theories when countries are all measuring our key statistics in different manners? 
+
+--
+
+This normally requires an NGO or world body to apply data collection methods in a cross-country manner.
+
+--
+
+For example, data from .hi-pink[Enterprise Surveys] provided to me by the World Bank yields firm-level data on capital holdings, labor expenditure, land ownerships, sales, as well as trade activity. 
+
+--
+
+This has allowed me to address how .hi-pink[corruption] acts as a barrier to trade activity at the firm level and, in turn, limit nations' gains from trade. 
+
+---
+
+
+# Empirical Tests: Comparative Adv.
+
+<br>
+
+--
+
+Other differences between countries, beyond technology and factor endowments, explain differences in trade flows across countries.
+
+--
+
+* Economies of scale
+
+* Corporate structures
+
+* Economic policy
+
+* Public infrastructure
+
+* Institutional quality
+
+
+---
+
+# Extensions to Trade Theory
+
+<br>
+
+--
+
+Given these empirical concerns and other key country-level differences, further extensions to HO have been developed.
+
+--
+
+.pull-left[
+* Gravity Model
+]
+
+--
+
+.pull-right[
+* Trade vs FDI
+]
+
+--
+
+.pull-left[
+* Product Cycle
+]
+
+--
+
+.pull-right[
+* Offshoring & outsourcing
+]
+
+<br>
+
+--
+
+Each of these theoretical settings explains a portion of existing trade. 
+
+
+---
+
+# Extension: Gravity Model
+
+<br>
+
+--
+
+To explain how a country trades with other countries, we must factor in distance and GDP.
+
+--
+
+- The .hi-pink[larger] the other country is, the more demand it represents on the global market for our given good
+
+- The .hi-pink[closer] that other country is, the cheaper it is to access that market
+
+--
+
+Many empirical analyses leverage model specifications on these key factors, which explain much of the variation observed in country-level trade flows. 
+
+
+---
+
+# Extension: Product Cycle
+
+<br>
+
+--
+
+Developed by Raymond Vernon, explains exports of sophisticated manufactured goods from countries scarce in  skilled labor and capital. 
+
+--
+
+.hi-pink[HO model] would be scratching its head over this phenomenon.
+
+--
+
+Many manufactured goods go through product cycle where .hi-pink[factor inputs change over time]. 
+
+--
+
+At these early stages, product components change often and require proximity to market of demand for updates/changes.
+
+--
+
+Developing and experimenting on new components takes considerably sosphisticated capital and highly skilled labor. 
+
+---
+
+# Extension: Product Cycle
+
+--
+
+Over time, product incorporates less adjustments to design. 
+
+--
+
+Can be consistently produced without further value-added contributions from .hi-pink[development phase] factors of production. 
+
+--
+
+.hi-pink[Standardized phase] begins and production contributions are increasingly stemming from unskilled labor factor. 
+
+--
+
+In the .hi-pink[late phase] of the product cycle, when consumption exceeds local production, costs are kept low by moving out production to other countries specialized in providing unskilled labor services 
+
+--
+
+Composition of factor inputs changing over time leads to relocation of production efforts, increasingly towards unskilled labor setting. 
+
+---
+
+# Extension: Trade/FDI
+
+--
+
+In .hi-pink[product cycle] argument, firms invest abroad and some output generated is sent home for consumption.
+
+--
+
+This pattern differs greatly from .hi-pink[HO], where no investment abroad is accounted for and factor endowments cannot cross countries. 
+
+--
+
+.hi-pink[FDI]: This theory suggests cases may exist where firms elect to .hi-pink[invest abroad] rather than ship goods abroad.
+
+--
+
+.hi-pink[Intrafirm trade]: It also suggests output shipped from foreign affiliate back home is handled under one firm's umbrella.
+
+--
+
+> IE: By the mid-90s, $\frac{1}{3}$ of US goods exports and $\frac{2}{5}$ of US goods imports attributed to intrafirm trade.
+
+---
+
+# Extension: Trade/FDI
+
+<br>
+
+--
+
+.hi-pink[Why do some firms set up foreign operations instead of buying imports directly from foreign firm? Why do some firms build factories abroad to sell in a foreign market, rather than just export to that market?]
+
+--
+
+There must be scenarios in which either choice is the profit maximizing decision, dependent on a choice set of key characteristics.
+
+--
+
+The product cycle theory would suggest low income countries should be hubs for FDI, but not the case in the data.  The greatest proportion of FDI goes .hi-pink[between developed nations].
+
+--
+
+Separate theory exists to explain this .hi-pink[proximity-concentration] trade-off, but beyond scope of this class. 
+
+---
+
+# Extension: Offshore/Outsource
+
+<br>
+
+--
+
+.hi-pink[Offshoring]: Set up a plant abroad to make stuff.
+
+--
+
+.hi-pink[Outsourcing]: Contract a different enterprise to make stuff for you. Agreement can be international.  
+
+--
+
+Modernization of the trade process has made these .hi-pink[international features] of production and distribution chains more feasible.
+
+--
+
+Largely driven in the 1990s by internet availability, satellite communication, containerization of cargo and better computing power. 
+
+--
+
+Easier to succesfully manage business operations abroad (marginal cost of multinational enterprise operations lower).
+
+
+---
+
+
+# Extension: Offshore/Outsource
+
+<br>
+
+--
+
+Effects include a trend towards international production, with comparative advantages across countries featuring in individual firms' supply chains. 
+
+--
+
+Rather an specialize in goods, countries can specialize in .hi-pink[key intermediate inputs].
+
+--
+
+Trade economists refer to this as increased formations of .hi-pink[global value chains]. 
+
+--
+
+Many exports and local production processes now rely on the availability of imports. .hi-pink[Huge vulnerability if ports become congested]. 
+
+
+---
+
+### To summarise:
+
+* .hi-pink[Specific Factors Model] predicts gains and loses when switching from autarky to free trade
+
+* Model empirics are supportive of .hi-pink[Ricardo model], but have mixed results for .hi-pink[HO model]
+
+* Predictions of HO deviated from in data
+
+* These differences can be explained by patterns in FDI that substitute for what would otherwise be trade flows
+
+--
+
+### Next time
+
+Discuss issues of trade wrt jobs, wages and migration
+
+
+---
+
+exclude: true
+
+```{R generate pdfs, include = F, eval = F}
+#remotes::install_github('rstudio/pagedown')
+library(pagedown)
+pagedown::chrome_print("05-heck-ohlin.html", output = "05-heck-ohlin.pdf")
+```
