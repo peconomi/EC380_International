@@ -1,0 +1,348 @@
+---
+title: "EC 380: Lecture 9"
+subtitle: "Trade Policy: International Agreements"
+author: "Philip Economides"
+date: "Fall 2022"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, middle
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra, ggtext)
+devtools::install_github("R-CoderDotCom/econocharts")
+
+library(econocharts)
+# Define colors
+red_pink <- "#e64173"
+met_slate <- "#272822" 
+turquoise <- "#20B2AA"
+orange <- "#FFA500"
+red <- "#fb6107"
+blue <- "#2b59c3"
+green <- "#8bb174"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+purple <- "#6A5ACD"
+slate <- "#314f4f"
+# Notes directory
+dir_slides <- "~/Lectures/01-Intro"
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)  
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+options(crayon.enabled = F)
+options(knitr.table.format = "html")
+```
+
+```{css, echo = F}
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+
+
+.pull-lefter {
+  float: left;
+  width: 67%;
+}
+.pull-rightish {
+  float: right;
+  width: 25%;
+}
+
+.pull-rightish ~ p {
+  clear: both;
+}
+
+```
+
+# Prologue
+
+---
+
+# Recap
+
+### Previously
+
+* Quotas similar to tariffs but yield greater economic losses
+
+* Domestic producers tend to prefer quotas to tariffs
+
+* Not every non-tariff measure is considered protectionist
+
+--
+
+### Today
+
+Trade agreements, joint policy outcomes and assessing recent history with our new knowledge
+
+---
+
+# Coordinating Trade Policy
+
+<br>
+
+Most countries are part of the .hi-pink[World Trade Organization] and adhere to a default non-discriminatory .hi-pink["Most Favored Nations"] (MFN) tariff rate schedule that applies to each country they trade with.
+
+--
+
+An exception to this norm is the use of these .hi-pink[regional trade agreements] which apply updated (reduced) tariffs to the set of parties included in an agreement.
+
+--
+
+* Free Trade Agreement
+
+--
+
+
+* Preferential Trade Agreements
+
+--
+
+* Customs Unions
+
+
+
+
+---
+
+# Free Trade Agreement
+
+<br>
+
+--
+
+Consists of:
+
+* Reduction or elimination of tariffs on qualified
+
+--
+
+* Intellectual Property Protection
+
+--
+
+* Harmonized Product Standards
+
+U.S. has 14 FTAs with 20 countries which comprise about 40 percent of U.S. goods’ exports, with a main goal of .hi-pink[eliminating tariffs]
+
+---
+
+# Preferential Trade Agreements
+
+<br>
+
+Similar to an .hi-pink[FTA] but usually only focuses on the .hi-pink[reduction of tariffs] and covers a .hi-pink[narrower set of products]
+
+--
+
+A preferential trade agreement can also just be .hi-pink[unilateral] or for a particular amount of years.
+
+--
+
+The US maintains Preferential Trade Agreements with approximately 187 countries.
+
+---
+
+# Customs Union
+
+<br>
+
+Goes a step above and beyond. .hi-pink[Zero tariff rate] among member countries.
+
+--
+
+Standardized rates of customs duties on goods imported from other countries
+
+* EU is a prevalent example of this system, introduced in 1960s
+
+--
+
+UK exit from the European Union and the Customs Union .hi-pink[changed rules] for British businesses doing business in Europe. Rare case of **reversal** of trade liberalization.
+
+
+---
+
+# Reversal: Brexit
+
+--
+
+Voted on in 2016, took 4 years of negotiation to enact.
+
+.hi-pink[Effective date]: 31st January 2020
+
+--
+
+So if trade agreements lead to more trade and more trade boosts welfare, why did the UK reverse all the progress it made in .hi-pink[trade liberalization]?
+
+--
+
+```{r, echo=FALSE, out.width="70%"}
+
+knitr::include_graphics("figures/bojo_I.jpg")
+
+```
+
+
+---
+
+
+# Reversal: Brexit
+
+--
+
+.hi-pink[How did negotiations go?]
+
+--
+
+Huge chaos throughout. UK assumed it would face continued free access to the EU single market due to its economic importance.
+
+--
+
+In reality, UK had derived about 13% of its GDP from exports to the EU, while conversely only 3% of the EU’s GDP derived from exports to the UK.
+
+--
+
+Although no tariffs are applied to trade, UK exporters have to prove they meet EU standards
+
+* Was not previously necessary
+
+* Leads to extra charges, taxes, paperwork and the halt of some exports to EU
+
+---
+
+# Reversal: Brexit
+
+.hi-pink[How did negotiations go?]
+
+One major hurdle: .hi-pink[1998 Good Friday (Belfast) Agreement]
+
+--
+
+* This earlier international agreement promises to keep open border between Ireland and Northern Ireland
+
+* Infeasible if we need border control to check whether goods have appropriate documentation
+
+--
+
+* Compromise met by keeping NI in the European Single Market and allowing the Irish Sea to act as a trade border. 
+
+--
+
+* Goods are checked upon route between NI and rest of the UK. Politically sensitive decision for ardent UK supporters in NI.
+
+---
+
+# Unconventional Hidden Protection
+
+
+```{r, echo=FALSE, out.width="80%"}
+
+knitr::include_graphics("figures/reform_shipping.jpg")
+
+```
+
+---
+
+# Unconventional Hidden Protection
+
+Recent policy seeks to intervene with containerized trade in the US. Why?
+
+--
+
+.pull-left[
+```{r, echo=FALSE}
+
+knitr::include_graphics("figures/empty_LA.png")
+
+```
+]
+
+.pull-right[
+```{r, echo=FALSE}
+
+knitr::include_graphics("figures/empty_NY.png")
+
+```
+]
+
+---
+
+# Unconventional Hidden Protection
+
+<br>
+
+--
+
+Recently the Biden Administrative has signed into law the .hi-pink[Ocean Shipping Reform Act 2022]. This act features:
+
+--
+
+* Punish transport operators charging excessive demmurge fees
+
+--
+
+* Penalize companies denying vessel capacity allocations to US exporters
+
+--
+
+* Drive up data requirements from transport operators
+
+
+--
+
+All of these policies will translate into higher shipping costs for the average US importer. How would you expect this to affect trade outcomes? 
+
+--
+
+.hi-pink[Less imports narrow gains from trade.]
+
+---
+
+.hi-pink[In Summary]
+
+* Quotas similar to tariffs but yield greater economic losses
+
+* Domestic producers tend to prefer quotas to tariffs
+
+* Not every non-tariff measure is considered protectionist
+
+* Protectionism can and often does backfire
+
+--
+
+.hi-pink[Next time!]
+
+
+
+
+
+---
+
+exclude: true
+
+```{R generate pdfs, include = F, eval = F}
+#remotes::install_github('rstudio/pagedown')
+library(pagedown)
+pagedown::chrome_print("07-tariff-quota.html", output = "07-tariff-quota.pdf")
+```
