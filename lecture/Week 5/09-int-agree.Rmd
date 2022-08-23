@@ -82,6 +82,8 @@ options(knitr.table.format = "html")
 
 # Recap
 
+<br>
+
 ### Previously
 
 * Quotas similar to tariffs but yield greater economic losses
@@ -102,11 +104,15 @@ Trade agreements, joint policy outcomes and assessing recent history with our ne
 
 <br>
 
-Most countries are part of the .hi-pink[World Trade Organization] and adhere to a default non-discriminatory .hi-pink["Most Favored Nations"] (MFN) tariff rate schedule that applies to each country they trade with.
+Most countries part of .hi-pink[World Trade Organization] and adhere to a default non-discriminatory .hi-pink["Most Favored Nations"] (MFN) tariff rate schedule.
 
 --
 
-An exception to this norm is the use of these .hi-pink[regional trade agreements] which apply updated (reduced) tariffs to the set of parties included in an agreement.
+This .hi-pink[MFN] tariff schedule applies by default to each country within the WTO.
+
+--
+
+Exceptions in the use of .hi-pink[regional trade agreements], which apply reduced tariffs to set of parties included in an agreement.
 
 --
 
@@ -183,6 +189,230 @@ UK exit from the European Union and the Customs Union .hi-pink[changed rules] fo
 
 ---
 
+
+# Creation and Diversion
+
+
+<br>
+
+There are notable economic effects of these regional trade agreements
+
+--
+
+* Trade increases between countries through .hi-pink[two types]
+
+--
+
+* .hi-pink[Trade creation] occurs if member country imports product from other member that it originally produced for itself
+
+--
+
+* .hi-pink[Trade diversion] occurs when a member country imports a product from another member that it formerly imported from a country _outside the new trade region_
+
+---
+
+# Creation and Diversion
+
+
+<br>
+
+.hi-pink[Trade creation]
+
+--
+
+* Consumer surplus gained at home due to importing greater number of goods sold at lower prices
+
+--
+
+* Producer surplus gained by exporting country which now sells a greater volume of goods
+
+--
+
+* Beings welfare gains to both countries
+
+--
+
+Since good was not traded before, these results are directly translatable from .hi-pink[Ricardian] and .hi-pink[HO] model predictions.
+
+---
+
+# Creation and Diversion
+
+
+<br>
+
+.hi-pink[Trade diversion]
+
+--
+
+* Diversion of trade away from country outside of the new trade region
+
+--
+
+* Will bring a loss in producer surplus due to reduced export sales
+
+--
+
+* May bring losses to countries inside free trade area too in certain cases
+
+--
+
+Consider the following numerical example.
+
+---
+
+
+# Creation and Diversion
+
+.hi-pink[Numerical Example]
+
+--
+
+* Suppose China is currently the US main partner on motor part imports
+
+--
+
+* Mexico and the US negotiate a regional trade agreement that lowers tariffs
+
+--
+
+* China loses .hi-pink[producer surplus], whereas Mexico gains
+
+
+--
+
+* Mexico may not be the most efficient (lowest-cost) producer of parts
+
+--
+
+In fact, we know China was the .hi-pink[most efficient source] due to the precise reliance the US had on China. 
+
+---
+
+
+
+# Creation and Diversion
+
+Consider the following table:
+
+```{r, echo=FALSE}
+
+
+tibble(
+  a = c("From MEX, before PTA", "From CHN, before PTA", "From MEX, after PTA", "From CHN, after PTA", "From the US"),
+  b = c("$20", "$19", "$20", "$19", "$22"),
+  c = c("", "", "", "", ""),
+  d = c("", "", "", "", "")
+  ) %>% kbl(col.names=c("", "0%", "10%", "20%"),
+            table.attr = "style='width:100%;'") %>% kable_styling()
+
+
+```
+
+
+Under this free trade scenario Chinese costs are the lowest, and their goods would be imported
+
+---
+
+# Creation and Diversion
+
+<br>
+
+```{r, echo=FALSE}
+
+
+tibble(
+  a = c("From MEX, before PTA", "From CHN, before PTA", "From MEX, after PTA", "From CHN, after PTA", "From the US"),
+  b = c("$20", "$19", "$20", "$19", "$22"),
+  c = c("$22", "$20.90", "$20", "$20.90", "$22"),
+  d = c("", "", "", "", "")
+  ) %>% kbl(col.names=c("", "0%", "10%", "20%"),
+            table.attr = "style='width:100%;'") %>% kable_styling()
+
+
+```
+
+--
+
+Under the .hi-pink[10% tariff] scenario, switching into a PTA makes Mexican goods suddenly become the cheapest option. 
+
+---
+
+# Creation and Diversion
+
+<br>
+
+```{r, echo=FALSE}
+
+
+tibble(
+  a = c("From MEX, before PTA", "From CHN, before PTA", "From MEX, after PTA", "From CHN, after PTA", "From the US"),
+  b = c("$20", "$19", "$20", "$19", "$22"),
+  c = c("$22", "$20.90", "$20", "$20.90", "$22"),
+  d = c("$24", "$22.80", "$20", "$22.80", "22")
+  ) %>% kbl(col.names=c("", "0%", "10%", "20%"),
+            table.attr = "style='width:100%;'") %>% kable_styling()
+
+
+```
+
+--
+
+PTA keeps Mexican auto part costs fixed at $20.
+
+---
+
+# Creation and Diversion
+
+
+<br>
+
+.hi-pink[Under 20% tariff MFN], US would have been paying $22 to produce goods domestically. 
+
+--
+
+.hi-pink[Trade Creation]: Upon forming a PTA, the US collects no tariffs from US importers shipping from Mexico. 
+
+--
+
+* Switch to Mexican imports at $20 per unit
+
+--
+
+* US gains from cost reduction relative to its previous scenario. Mexican exports rise.
+
+--
+
+* Chinese welfare neither gains or losses due to lack of pre-existing trade. 
+
+---
+
+# Creation and Diversion
+
+
+<br>
+
+.hi-pink[Under 10% tariff MFN], US would have been paying $20.90 to produce goods using Chinese imports. 
+
+--
+
+.hi-pink[Trade Diversion]: Upon forming a PTA, the US collects no tariffs from US importers shipping from Mexico. 
+
+--
+
+* Switch from Chinese to Mexican imports at $20 per unit
+
+--
+
+* US gains 90c on lower costs but loses 1.90 in tariff revenue, per unit welfare loss
+
+--
+
+* Producer surplus falls in China due to loss of pre-existing trade. 
+
+
+---
+
 # Reversal: Brexit
 
 --
@@ -253,6 +483,30 @@ One major hurdle: .hi-pink[1998 Good Friday (Belfast) Agreement]
 
 ---
 
+# Reversal: Brexit
+
+<br>
+
+.hi-pink[What is the UK left with?]
+
+--
+
+* Brexit has reduced UK trade openness, foreign direct investment (FDI) inflows, and immigration growth
+
+--
+
+* New border frictions and higher transport costs pose new barriers to trade,
+
+--
+
+* FDI inflows are unlikely to return to levels reached in the 1990s and 2000s
+
+--
+
+* A less diverse workforce and lower FDI levels can also hamper productivity growth
+
+---
+
 # Unconventional Hidden Protection
 
 
@@ -319,20 +573,90 @@ All of these policies will translate into higher shipping costs for the average 
 
 ---
 
+# US and the WTO
+
+<br>
+
+Trump administration skeptical of dispute settlement procedure of WTO
+
+--
+
+* Used several provisions of trade law to apply tariffs that had only been used infrequently in that way
+
+--
+
+* Many countries objected to US impositions of tariffs
+
+--
+
+* Even before WTO ruling on legitimacy of tariffs, countries responded by applying tariffs to US exports
+
+
+---
+
+# US and the WTO
+
+<br>
+
+--
+
+Since Dec 10 2019, WTO not able to issue rulings because several judges finished terms and US .hi-pink[blocked appointment of any new judges].
+
+--
+
+Ability of WTO to resolve issues between countries is heavily sensitive to US policitcal atmosphere.
+
+--
+
+.hi-pink[Managed Trade]: To resolve these matters and begin lowering tariff rates, US required China nearly double their imports of US goods. 
+
+--
+
+Given recent epidemic, triggering this kind of adoption of US goods has been .hi-pink[near-impossible to achieve]. 
+
+---
+
+# US and the WTO
+
+--
+
+China bought __none__ of the .hi-pink[additional $200 billion of exports] Trump's deal had promised.
+
+--
+
+* Trade war and phase on agreement did little to change China's economic policymaking
+
+--
+
+* Beijing intent on becoming more state-centered, less market-oriented
+
+--
+
+* With the December 31, 2021 deadline for the $200 billion of purchase commitments now past, US policymakers are seeking a different approach
+
+--
+
+* United States working with other major economies, e.g. Trade and Technology Council
+
+
+
+---
+
 .hi-pink[In Summary]
 
-* Quotas similar to tariffs but yield greater economic losses
+* A variety of trade agreements exist under current international norms
 
-* Domestic producers tend to prefer quotas to tariffs
+* Agreements riddled with uncertainty and not always welfare enhancing
 
-* Not every non-tariff measure is considered protectionist
+* Multi-year negotiations can make or break a domestic economy
 
-* Protectionism can and often does backfire
+*  Even if policymakers agree multilateral purchase commitments with respect to China, they should learn right lessons from US experiences
 
 --
 
 .hi-pink[Next time!]
 
+* How do international agreements fare with respect to the environment?
 
 
 

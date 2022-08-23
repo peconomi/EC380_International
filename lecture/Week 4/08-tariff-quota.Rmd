@@ -171,6 +171,65 @@ $$(\text{VA}^* - \text{VA})/ \text{VA}$$
 
 How does tariff on inputs affect our .hi-pink[protection] of the final good?
 
+--
+
+```{r, echo=FALSE}
+
+p_d = 1500
+v_i = 250
+t_f = 1.1
+t_i = 1.5
+
+tibble( Variable = c("Price of Domestic Final Good", 
+                     "Value of Imported Inputs", "Domestic VA", 
+                     "Effective Rate of Protection, %"),
+        `No Tariff` = c(p_d, v_i, p_d - v_i, 0),
+        `10% Tariff: Final Good` = c("", "","" , ""),
+        `50% Tariff: Input Good` = c("", "","" , "")) %>% 
+  kbl() %>% 
+  kable_styling()
+
+
+
+```
+
+
+---
+
+# Inputs & Outputs
+
+Now consider a case in which the .hi-pink[final good] receives a .hi-pink[10% tariff rate]
+
+```{r, echo=FALSE}
+
+p_d = 1500
+v_i = 250
+t_f = 1.1
+t_i = 1.5
+
+tibble( Variable = c("Price of Domestic Final Good", 
+                     "Value of Imported Inputs", "Domestic VA", 
+                     "Effective Rate of Protection, %"),
+        `No Tariff` = c(p_d, v_i, p_d - v_i, 0),
+        `10% Tariff: Final Good` = c(p_d*t_f, v_i, p_d*t_f -v_i , 100*(p_d*t_f - v_i - (p_d - v_i))/(p_d - v_i)),
+        `50% Tariff: Input Good` = c("", "","" , "")) %>% 
+  kbl() %>% 
+  kable_styling()
+
+
+
+```
+
+--
+
+The scale of protectionism rises.
+
+---
+
+# Inputs & Outputs
+
+How does .hi-pink[key inputs tariff] affect protection on the final good?
+
 ```{r, echo=FALSE}
 
 p_d = 1500
@@ -194,6 +253,29 @@ tibble( Variable = c("Price of Domestic Final Good",
 --
 
 Protection is eroded! Down from 12% to 2%. 
+
+
+---
+
+
+
+# Inputs & Outputs
+
+--
+
+<br>
+
+When targetting specific industries for protection, once needs to anticipate the interaction a variety of commodity-specific tariffs has.
+
+--
+
+This exercise, while limited, gives a very convenient way of perceiving this issue.
+
+--
+
+* In practice, value-added is difficult to measure
+
+* Rate of protection can scale beyond the 0-100% range, making it confusing for some users
 
 
 ---
@@ -415,6 +497,149 @@ However, when $D$ shifts to the right, $\bar{Q}$ $\implies$ $Q_1*$ and $P_q$ hav
 --
 
 This assumes we are examining small country outcomes where world price is not responsive to domestic trade policies.
+
+
+---
+
+# Quota: Empirics (MFA)
+
+
+--
+
+<br>
+
+.hi-pink[GATT] - the General Agreement on Tariffs and Trade generally states that countries should not use quotas to restrict imports.
+
+--
+
+* Major exception allows .hi-pink[industrial countries] to restrict imports of textiles and apparels from .hi-pink[developing countries] ('74)
+
+--
+
+* Restrictions were usually very specific regarding each type of clothing
+
+--
+
+This .hi-pink[Multifibre Agreement] (MFA) had its days numbered, given the increasing appeal of trade liberalization and the associated welfare gains across countries.
+
+---
+
+
+# Quota: Empirics (MFA)
+
+
+--
+
+<br>
+
+Under .hi-pink[Uruguay Round] of WTO negotiations ('86-'94), countries were able to negotiate an end to this system of import quotas.
+
+--
+
+* China posed to be the biggest provided of textile exports
+
+--
+
+* Other developing countries, possibly threatening their workers' livelihoods
+
+--
+
+* Importing country industries had similar concerns
+
+--
+
+.hi-pink[MFA officially ended on January 1st 2005.]
+
+
+
+---
+
+
+
+# Quota: Empirics (MFA)
+
+<br>
+
+--
+
+China experienced a major rise in clothing exports. For example in Jan, Feb 2005, EU saw
+
+--
+
+* 2000% increase in imports of Chinese tights and panthyhose 
+
+--
+
+* 1000% increase in imports of Chinese pullovers and jerseys 
+
+--
+
+* 300% increase in imports of Chinese trousers
+
+--
+
+.hi-pink[US imports of textiles and apparel rose 40% between '04 an '05]
+
+
+---
+
+# Quota: Empirics (MFA)
+
+```{r,  echo=FALSE, out.width="90%"}
+
+knitr::include_graphics("figures/harrigan_2009.png")
+
+```
+
+
+---
+
+# Quota: Empirics (MFA)
+
+
+```{r,  echo=FALSE, out.width="90%"}
+
+knitr::include_graphics("figures/harrigan_fig1.png")
+
+```
+
+---
+
+# Quota: Empirics (MFA)
+
+
+```{r,  echo=FALSE, out.width="90%"}
+
+knitr::include_graphics("figures/harrigan_fig2.png")
+
+```
+
+
+---
+
+# Takeaway
+
+--
+
+<br>
+
+.hi-pink[Removal of quotas had welfare gains]
+
+--
+
+Using price drop between 2004 and 2005, $b+c+d$ area estimated to be worth 6.5bn-16.2bn USD
+
+--
+
+Dividing across 111 million US households, translates to $100 in spending saved
+
+--
+
+Welfare cost of MFA represented roughly 7% of average apparel household costs 
+
+--
+
+_These gains were shortlived between June '05 and '08 then returned thereafter._
 
 
 ---
