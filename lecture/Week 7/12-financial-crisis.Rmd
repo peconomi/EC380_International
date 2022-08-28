@@ -1,0 +1,745 @@
+---
+title: "EC 380: Lecture 12"
+subtitle: "Global Finance: International Crises"
+author: "Philip Economides"
+date: "Fall 2022"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, middle
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra, ggtext)
+#devtools::install_github("R-CoderDotCom/econocharts")
+
+library(econocharts)
+# Define colors
+red_pink <- "#e64173"
+met_slate <- "#272822" 
+turquoise <- "#20B2AA"
+orange <- "#FFA500"
+red <- "#fb6107"
+blue <- "#2b59c3"
+green <- "#8bb174"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+purple <- "#6A5ACD"
+slate <- "#314f4f"
+# Notes directory
+dir_slides <- "~/Lectures/01-Intro"
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)  
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+options(crayon.enabled = F)
+options(knitr.table.format = "html")
+```
+
+```{css, echo = F}
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+
+
+.pull-lefter {
+  float: left;
+  width: 67%;
+}
+.pull-rightish {
+  float: right;
+  width: 25%;
+}
+
+.pull-rightish ~ p {
+  clear: both;
+}
+
+```
+
+
+# Prologue
+
+---
+
+# Global Finance
+
+### Upcoming Topics
+
+<br>
+
+* Broad look at international financial crises
+
+--
+
+* Understanding Balance of Payments in National Accounting
+
+--
+
+* Exchange Rate Dynamics
+
+--
+
+<br>
+
+This will comprise the third and last stage of .hi-pink[EC 380]
+
+
+---
+
+# Today
+
+### International Financial Crises
+
+<br>
+
+* Defining types of international financial crises
+
+--
+
+* Vulnerabilities, Triggers and Contagion
+
+--
+
+* Crisis Control
+
+
+--
+
+* Post-Crisis Reform 
+
+
+---
+
+# Types
+
+* Banking Crisis
+
+> e.g. domino of bank collapse due to insolvency
+
+--
+
+* Exchange Rate Crisis
+
+> e.g. unexpected collapse in value of developing country currency
+
+--
+
+* (Sovereign) Debt Crisis
+
+> e.g. EU debt crisis following public bailouts
+
+--
+
+* Balance of Payments Crisis
+
+> e.g. foreign currency reserves drying up 
+
+---
+
+# Banking Crises 
+
+<br>
+
+--
+
+The primary role of a bank is to provide intermediation between .hi-pink[savers] and .hi-pink[borrowers].
+
+--
+
+* Pooled deposits saved in banks used as collateral to hedge loans for major businesses
+
+--
+
+* A functional banking systems is necessary to bolster investment by firms and homeowners
+
+--
+
+Some percentages of businesses fail, banks must compensate for these bad debts through gains made elsewhere, through elevated interest rates.
+
+
+
+---
+
+# Banking Crises 
+
+<br>
+
+--
+
+Banking systems are reliant on interbanking lending channels
+
+.hi-pink[Why?]
+
+--
+
+* No bank in particular has enough money to redeem every $ of deposits it maintains
+
+--
+
+* Some % of bank's liabilities returned to depositors every day
+
+--
+
+* In cases where a bank lacks cash, it can engage in .hi-pink[interbank lending]
+
+
+--
+
+A bank is considered .hi-pink[insolvent] if even after completely liquidizing its assets, it cannot repay its outstanding liabilities owed to creditors. 
+
+
+---
+
+# Banking Crises 
+
+<br>
+
+--
+
+
+During a .hi-pink[banking crisis], an abnormally large % of borrowers fail to meet debts.
+
+--
+
+* Banks assets may suddenly deteriorate 
+
+--
+
+* Depositors may trigger a .hi-pink[run on banks]
+
+--
+
+If numerous banks struggle meeting obligations to their savers, major loss of savings. 
+
+--
+
+Remaining savings can be lost, causing households to reduce consumption. This can lead to ripple effects throughout the economy.
+
+---
+
+# Exchange Rate Crises
+
+<br>
+
+--
+
+.hi-pink[Definition]: Sudden collapse of the value of national currency.
+
+--
+
+If seeking to peg another global currency, lack of foreign reserves may break fixed exchange rate. 
+
+--
+
+Devaluation similar to .hi-pink[bank run], international currency holders sell their holdings ASAP.
+
+--
+
+---
+
+# Exchange Rate Crises
+
+<br>
+
+.hi-pink[What happens to the local economy?]
+
+--
+
+* Equivalent to available currency demand dropping significantly
+
+--
+
+* Suddenly foreign debt obligations hard to meet payments for $\implies$ potential knock-on bank crises
+
+--
+
+* Imported goods become expensive for local economy
+
+--
+
+* Indutries reliant on foreign credit suddenly see loss of liquidity, resulting in market price falls (e.g. housing market collapse)
+
+
+---
+
+# Debt Crises
+
+<br>
+
+--
+
+.hi-pink[Definition]: Widespread failure to meet debt obligations.
+
+--
+
+* Can be public or private debtors that begin struggling to meet requirement debt repayments
+
+--
+
+* In exceptional cases out of borrower's control, debt forgiveness, interest rate and term length adjustments can be applied
+
+--
+
+* .hi-pink[External debt] is debt linked to a foreign lender/borrower. International exchanges of funds result in these forms of linkages.
+
+--
+
+If debt held in a specific currency, that country presides over legal matters related to payment arrears and bankruptcy. 
+
+---
+
+# Debt Crises
+
+<br>
+
+--
+
+If a party fails to honor their debt, these losses can permuate throughout the rest of the economy. 
+
+--
+
+Widespread cases of failures to honor debt can lead to service providers declaring bankruptcy. 
+
+--
+
+.hi-pink[Spread can occur] in insolvency, in which other individuals go into bankruptcy because an intial set of individuals do.
+
+
+---
+
+# Debt Crises
+
+--
+
+Suppose economy is split into three groups;
+
+* __Group A__ is heavily indebted and holding risky portfolio of assets it investment in
+
+--
+
+* __Group B__ holds relatively correlated assets to group A but maintains low debt level
+
+--
+
+* __Group C__ holds unrelated assets and maintains low debt level
+
+--
+
+If __A__ experiences a shock in which it cannot service its debts, it may be forced to sell all of its assets to meet as much of debt as possible.
+
+--
+
+__B__ sees .hi-pink[assets fall in value] as supply on market suddenly increases. 
+
+--
+
+__B__ assets fall in value $\implies$ becomes insolent too. Group C unaffected. 
+
+
+---
+
+# Debt Crises
+
+--
+
+Governments can also fail to obligate their debts. The EU debt crisis saw repeated episodes of .hi-pink[Greece] almost defaulting on debt, following major economic collapse.
+
+<br>
+
+--
+
+.hi-pink[What happens when an entire country defaults on foreign debts?]
+
+
+--
+
+* Normally international lending agencies such as the .hi-pink[IMF] step in
+
+--
+
+* Bailouts are heavily politicized, often the distressed country is at the mercy of its neighbors
+
+--
+
+* Steep requirements can be placed on the burdened economy, extending the length of downturn to ensure bailout is provided
+
+---
+
+
+# BoP Crises
+
+<br>
+
+--
+
+.hi-pink[Definition]: Country has a current account deficit that it cannot finance. 
+
+
+--
+
+<br>
+
+Deficit is financed through selling financial assets, which includes currency reserves, as a way to generate .hi-pink[capital account net inflow] that offsets .hi-pink[current account net outflow]. 
+
+--
+
+* Foreign bankers extend loans, buy bonds, stocks or invest directly in deficit country's real estate market
+
+--
+
+* These flows must cover current accout deficit
+
+---
+
+
+
+# BoP Crises
+
+<br>
+
+--
+
+If .hi-pink[deficit country] capital investments/purchases appear too risky, capital inflows ease.
+
+--
+
+As .hi-pink[Forbes and Warnock] reveal, patterns have emerged of these flows acting as sudden stops and surges
+
+--
+
+This can put great pressure on domestic reserves, causing them to dwindle.
+
+--
+
+Ability to purchase goods abroad using their denominated currency now faces a limit and may need to stop all together. 
+
+--
+
+Ability to convert local currency into foreign debt repayment transfers also kicks in, furthering stress on .hi-pink[deficit country]. 
+
+
+---
+
+# BoP Crises
+
+```{r, echo=FALSE, out.width="90%"}
+
+knitr::include_graphics("figures/forbes_2012.png")
+```
+
+---
+
+
+# BoP Crises
+
+```{r, echo=FALSE, out.width="65%"}
+
+knitr::include_graphics("figures/forbes_fig_1.png")
+```
+
+
+--
+
+Help from allies and IMF act as stopgaps to slow decline. Deficit must shrink until confidence in the country is restored.
+
+
+---
+
+# Vulnerabilities
+
+--
+
+
+.hi-pink[What are the origins of a given international crisis?]
+
+--
+
+Could be due to: 
+
+* Macroeconomic imbalances
+
+--
+
+* Capital flow volatility
+
+--
+
+Long-run underlying issues for domestic economy may lead to over-reliance on foreign debt and over-leveraged credit status across households. 
+
+Can be the result of either of these two scenarios. 
+
+
+---
+
+# Economic Imbalances
+
+--
+
+
+<br>
+
+Macroimbalances can be attributes to: large budget deficits, large current account deficits, overinflated exchange rates, unsustainable private sector debt, speculative property bubbles. 
+
+--
+
+Normally these issue occur simultaneously, further complicating matters of unravelling macroeconomic imbalances.
+
+--
+
+.hi-pink[Poor fiscal policy] may lead to major public debt and high inflation domestically.
+
+--
+
+Doubt in government ability may result in government bond yields needing to rise to continue accessing foreign debt. Limits ability of government to service the economy. 
+
+
+---
+
+# Volatile Capital Flows
+
+--
+
+As .hi-pink[Warnock & Forbes (2012)] highlight, there is an ebb-and-flow to capital investment.
+
+--
+
+During good times, capital is situated in developed economies and accruing returns based on strong economy performance and high interest rates.
+
+--
+
+When developed economies enter recession, central banks .hi-pink[lower interest rates] and domestic economies see slump in consumption.
+
+--
+
+Capital investors .hi-pink[migrate] to low-income/emerging countries until resurgence in developed country economy.
+
+
+--
+
+These volatile movements of large sums of capital within these transition periods can be .hi-pink[highly costly for the emerging host countries].
+
+
+
+---
+
+
+# Contagion
+
+
+
+--
+
+.hi-pink[This aspect of crises determines the scale of how 'international' or 'cross-country' a given crisis will be.]
+
+--
+
+Particularly strong cases of interbank lending across countries make these spillovers of domestic shocks into foreign countries become amplified.
+
+--
+
+As the world becomes more globalized, financial interlinkages become stronger.
+
+--
+
+Local shocks are increasingly likely to trigger worldwide reprecussions due to greater degree of .hi-pink[financial interdependence.]
+
+--
+
+.hi-pink[Lets consider an Irish case study.]
+
+
+---
+
+# Case: EU PIGS & Germany
+
+
+
+---
+
+# Crisis Control (CC)
+
+--
+
+The financial sector has always been a concern for policymakers, due to the .hi-pink[too big to fail mindset].
+
+--
+
+* Bailouts of banks can protect economy, but greater risks offer greater returns
+
+--
+
+* Encourages banks to become large enough to .hi-pink[force bailouts] in between episodes of them over-leveraging themselves
+
+--
+
+This is defined as the .hi-pink[moral hazard problem] in which bankers are able to transfer high risks to the government and taxpayer. 
+
+.hi-pink[Lets consider three measures a country can take to reduce exposure to financial crises]
+
+---
+
+
+# CC: Exchange Rate Policy
+
+Avoidance of a .hi-pink[crawling peg exchange rate system] is often reccomended.
+
+--
+
+* Regular devaluation of currency to stabilize .hi-pink[real exchange rate] in country with higher inflation than foreign partner
+
+--
+
+* If .hi-pink[domestic inflation higher than foreign], nominal devaluation keeps $R_r$ constant
+
+--
+
+* Requires monetary authority to restrict money creation, making it .hi-pink[anti-inflationary]
+
+--
+
+* Often leads to severe overvaluation of .hi-pink[real exchange rate], increasing vulnerability to crisis
+
+
+
+---
+
+# CC: Capital Controls
+
+<br>
+
+
+Capital volatility can be addressed by limiting how much capital enters and exits the country.
+
+--
+
+These .hi-pink[capital controls] are a popular policy tool in countries such as China. 
+
+
+--
+
+Can be attributed to reduced exposure to economic turmoil.
+
+--
+
+
+.hi-pink[Malaysia] enacted this policy during the Asian Financial Crisis in late 90's but failed to experience much of the warnings surrounding losses from poorer investor confidence. 
+
+---
+
+# CC: Policies
+
+
+--
+
+A budget deficit reduction may stem reserve losses and lower financial exposure.
+
+--
+
+Interest rate appreciation may boost demand for domestic currency, further helping.
+
+--
+
+.hi-pink[Macroeconomic imbalances can be relatively straightforward to address].
+
+--
+
+Political feasibility of these moves is up for question, hard to implement during economic strife. 
+
+.hi-pink[Greek government was quickly voted out after agreeing to Germany/IMF austerity plans]
+
+
+---
+
+# International Reform
+
+--
+
+<br>
+
+As a .hi-pink[lender of last resort] on the international scene, IMF is intervenes when countries reach crisis points and risk defaulting on international loans.
+
+--
+
+A great deal of focus has shifted to the .hi-pink[role of the IMF] and the .hi-pink[conditions it imposes] for bailout fund access. Issues include
+
+--
+
+* Moral Hazard Problem
+
+--
+
+* Limits to borrowing for countries
+
+--
+
+* Loans conditional on economic conditions
+
+
+
+---
+
+# Three Crises
+
+
+<br>
+
+* 1990s East Asian Financial Crisis
+
+--
+
+* 2008 Great Recession (Global)
+
+
+--
+
+* 2009 European Debt Crisis
+
+
+---
+
+# East Asian Crisis
+
+
+---
+
+# Great Recession
+
+
+---
+
+# EU Debt Crisis
+
+--
+
+Mention fiscal policy restrictions and austerity measures. 
+
+
+---
+
+exclude: true
+
+```{R generate pdfs, include = F, eval = F}
+#remotes::install_github('rstudio/pagedown')
+library(pagedown)
+pagedown::chrome_print("07-tariff-quota.html", output = "07-tariff-quota.pdf")
+```
