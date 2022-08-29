@@ -545,9 +545,8 @@ These volatile movements of large sums of capital within these transition period
 
 # Contagion
 
+<br>
 
-
---
 
 .hi-pink[This aspect of crises determines the scale of how 'international' or 'cross-country' a given crisis will be.]
 
@@ -562,16 +561,6 @@ As the world becomes more globalized, financial interlinkages become stronger.
 --
 
 Local shocks are increasingly likely to trigger worldwide reprecussions due to greater degree of .hi-pink[financial interdependence.]
-
---
-
-.hi-pink[Lets consider an Irish case study.]
-
-
----
-
-# Case: EU PIGS & Germany
-
 
 
 ---
@@ -707,7 +696,7 @@ A great deal of focus has shifted to the .hi-pink[role of the IMF] and the .hi-p
 
 --
 
-* 2008 Great Recession (Global)
+* 2008 Great Recession (Ireland)
 
 
 --
@@ -720,18 +709,178 @@ A great deal of focus has shifted to the .hi-pink[role of the IMF] and the .hi-p
 # East Asian Crisis
 
 
+<br>
+
+__Leading Up__
+
+* Private current account deficits in .hi-pink[Thailand, South Korea and Indonesia]
+
+--
+
+* Fixed exchange rate policy $\implies$ significant .hi-pink[external borrowing]
+
+--
+
+* US interest rate increases as period of pronounced growth began, USD value up
+
+--
+
+* Currency peg to USD $\implies$ suddenly exports are less competitive
+
+--
+
+* Huge capital drain to meet elevated .hi-pink[current account deficit]
+
 ---
 
-# Great Recession
+# East Asian Crisis
+
+<br>
+
+__Crisis__
+
+* Market panic, large withdrawal of credit from the crisis countries
+
+--
+
+* Triggered .hi-pink[series of bankruptcies] which would accelerate more capital flight
+
+--
+
+* Temporary policies to maintain peg were quickly exhausted (interest rate hike, domestic currency purchases)
+
+--
+
+* .hi-pink[Higher interest rates] further pressured these economies
+
+
+---
+
+# East Asian Crisis
+
+<br>
+
+__Response__
+
+* The IMF offered bailout funds conditional on economic reforms, known as the .hi-pink[structural adjustment package]
+
+--
+
+> Required countries to reduce government spending and deficits, allow insolvent banks and financial institutions to fail, and aggressively raise interest rates.
+
+--
+
+* Critics noted the contractionary nature of policies
+
+* In a recession the expected response was to increase government spending and yield greater liquidity through lower interest rates
+
+
+---
+
+# Great Recession (Ireland)
+
+<br>
+
+__Leading Up__
+
+* In the early 2000's various EU member states at different points in business cycle
+
+--
+
+* .hi-pink[Portugal, Italy, Greece, Spain] all experience boom periods
+
+--
+
+* A large proportion of interbank lending was channeling excessive Germany savings into these peripheral countries
+
+--
+
+.hi-pink[Irish banks became highly reliant on foreign borrowings] and offered excessive amounts of subprime mortgage loans
+
+
+
+
+
+---
+
+
+# Great Recession (Ireland)
+
+<br>
+
+__Crisis__
+
+* Multiple property bubbles popping simulatenously across countries
+
+--
+
+* .hi-pink[Global lending channels] froze, channels Irish banks had become particularly reliant on
+
+--
+
+* Irish housing prices tanked, as did employment in construction sector
+
+--
+
+* .hi-pink[34,500 people] left the country from April 2009 to 2010, the .hi-pink[largest net emigration since 1989]
+
+
+
+---
+
+# Great Recession (Ireland)
+
+<br>
+
+__Response__
+
+* Public bailout of banks, some failed others nationalized
+
+--
+
+* Irish .hi-pink[debt-to-GDP] rose rapidly to 120%
+
+--
+
+* Government required to implement .hi-pink[austerity measures] to receive bailout packages
+
+--
+
+* Macroprudential policy measures introduced to stabilize housing market
+
 
 
 ---
 
 # EU Debt Crisis
 
+<br>
+
+.hi-pink[Ireland among many EU countries acquiring government debt]
+
 --
 
-Mention fiscal policy restrictions and austerity measures. 
+* Widespread requirement of austerity plans
+
+--
+
+* International assymetry in business cycles combined with lax macroprudential rules prior to the crash
+
+--
+
+* More recently, countries are now held to macroeconomic monitoring with penalities imposed if countries allow their current account balances, inflation or GDP to get out of control
+
+
+
+
+---
+
+# EU Debt Crisis
+
+```{r, echo=FALSE, out.width="95%"}
+
+knitr::include_graphics("figures/debt_quake.png")
+```
 
 
 ---
