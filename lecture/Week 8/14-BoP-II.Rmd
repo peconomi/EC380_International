@@ -1,0 +1,157 @@
+---
+title: "EC 380: Lecture 14"
+subtitle: "Global Finance: Balance of Payments"
+author: "Philip Economides"
+date: "Fall 2022"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, middle
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra, ggtext)
+#devtools::install_github("R-CoderDotCom/econocharts")
+
+library(econocharts)
+# Define colors
+red_pink <- "#e64173"
+met_slate <- "#272822" 
+turquoise <- "#20B2AA"
+orange <- "#FFA500"
+red <- "#fb6107"
+blue <- "#2b59c3"
+green <- "#8bb174"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+purple <- "#6A5ACD"
+slate <- "#314f4f"
+# Notes directory
+dir_slides <- "~/Lectures/01-Intro"
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)  
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+options(crayon.enabled = F)
+options(knitr.table.format = "html")
+```
+
+```{css, echo = F}
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+
+
+.pull-lefter {
+  float: left;
+  width: 67%;
+}
+.pull-rightish {
+  float: right;
+  width: 25%;
+}
+
+.pull-rightish ~ p {
+  clear: both;
+}
+
+```
+
+
+# Prologue
+
+---
+
+# Recap
+
+### Previously
+
+* A variety of trade agreements exist under current international norms
+
+* Agreements riddled with uncertainty and not always welfare enhancing
+
+* Multi-year negotiations can make or break a domestic economy
+
+*  Even if policymakers agree multilateral purchase commitments with respect to China, they should learn right lessons from US experiences
+
+--
+
+### Today
+
+* How do international agreements fare with respect to the environment?
+
+
+---
+
+# Background
+
+The .hi-pink[WTO] nor any other central body presides over international agreements with respect to the environment
+
+--
+
+<br>
+
+There are some 200 multilateral environmental agreements.
+
+--
+
+* Each country is a producer of pollution that is then distributed globally
+
+--
+
+* These .hi-pink[externalities] are common to each country, but only a lessor proportion of costs are borne by any particular emitter of pollution
+
+--
+
+* This leads to a .hi-pink[failure of free markets] that requires intervention across government
+
+---
+
+# Notable Agreements
+
+
+* Convention on International Trade Endangering Species
+
+--
+
+* Montreal Protocol on Substances that Deplete Ozone Layer
+
+--
+
+* IMO 2020 Cutting Sulphur Oxide Emissions
+
+--
+
+WTO still influences environment indirectly. .hi-pink[GATT Article XX]: 
+
+> subject to the requirement that such measures are not applied in a manner which would constitute a disguised restriction on international trade, nothing in this Agreement shall be construed to prevent the adoption or enforcement by any contracting party of measures (b) necessary to protect human, animal or plant life or health, ... (g) relating to the conversation of exhaustible natural resources if such measures are made effective in conjunction with restrictions on domestic production or consumption. 
+
+
+---
+
+exclude: true
+
+```{R generate pdfs, include = F, eval = F}
+#remotes::install_github('rstudio/pagedown')
+library(pagedown)
+pagedown::chrome_print("14-BoP-II.html", output = "14-BoP-II.pdf")
+```

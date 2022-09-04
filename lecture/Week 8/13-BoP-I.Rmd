@@ -1,0 +1,728 @@
+---
+title: "EC 380: Lecture 13"
+subtitle: "Global Finance: Balance of Payments"
+author: "Philip Economides"
+date: "Fall 2022"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, middle
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra, ggtext)
+#devtools::install_github("R-CoderDotCom/econocharts")
+
+library(econocharts)
+# Define colors
+red_pink <- "#e64173"
+met_slate <- "#272822" 
+turquoise <- "#20B2AA"
+orange <- "#FFA500"
+red <- "#fb6107"
+blue <- "#2b59c3"
+green <- "#8bb174"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+purple <- "#6A5ACD"
+slate <- "#314f4f"
+# Notes directory
+dir_slides <- "~/Lectures/01-Intro"
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)  
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+options(crayon.enabled = F)
+options(knitr.table.format = "html")
+```
+
+```{css, echo = F}
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+
+
+.pull-lefter {
+  float: left;
+  width: 67%;
+}
+.pull-rightish {
+  float: right;
+  width: 25%;
+}
+
+.pull-rightish ~ p {
+  clear: both;
+}
+
+```
+
+
+# Prologue
+
+---
+
+# Recap
+
+### Previously
+
+* A variety of trade agreements exist under current international norms
+
+--
+
+### Today
+
+* Explore system used to track country's international transactions
+
+--
+
+* Establish relationship between domestic investment, domestic savings and international flows of goods, services, and financial assets
+
+--
+
+* Examine consequences of international indebtedness and consequences
+
+
+---
+
+# Layout
+
+<br>
+
+
+Three separate accounts for the .hi-pink[Balance of Payments]:
+
+--
+
+* Current account
+
+--
+
+* Capital account
+
+--
+
+* Financial account
+
+
+---
+
+# Current Account
+
+
+<br>
+
+.hi-pink[Current account]: Records the transactions of goods, services, investment income and unilateral transfers between residents of a country and the rest of the world. 
+
+--
+
+* Exports & imports
+
+* Income on equities
+
+* Income on debt-related assets
+
+* Repatriated income by MNE firms
+
+---
+
+# Current Account
+
+<br>
+
+--
+
+Current account inflows are .hi-pink[monetary inflows], exchanged for .hi-pink[goods/services outflows].
+
+--
+
+Country .hi-pink[current account surplus] implies CA inflows greater than CA outflows 
+
+--
+
+$\implies$ Outflow of goods, services, investment income etc of country are greater than inflows
+
+
+---
+
+
+# Capital & Financial Accounts
+
+.hi-pink[Capital account]: Records transactions of highly specialized financial assets and liabilities 
+
+--
+
+* Gifts of an embassy 
+
+* Acquisition of land for embassy use
+
+--
+
+.hi-pink[Financial account]: Tracks capital flows between economies, usually long-lasting items relative to goods or services
+
+--
+
+* Foreign investment
+
+* Purchase or sales of foreign stock & bonds
+
+* International bank lending
+
+---
+
+# CA: Trade Balance
+
+<br>
+
+The .hi-pink[trade balance] is total exports minus total imports. 
+
+--
+
+* A trade balance deficit is a case in which total imports of goods and services outweights total exports
+
+--
+
+* It is possible to maintain a deficit in goods and surplus in services, but normally the net amount of both is considered 
+
+--
+
+For the United States, the 2019 USD trade balance was $2,498$bn minus $3,114$bn, or $-616$bn. Because the number is negative, the United States had a .hi-pink[trade deficit].
+
+
+---
+
+# CA: Breakdown
+
+<br>
+
+.hi-pink[Current account] measures all current, non-financial transactions between a nation and the rest of the world. 
+
+--
+
+1. goods and services trade (trade balance)
+
+--
+
+2. earned income paid abroad and received from abroad (primary income)
+
+--
+
+3. international transfer payments (secondary income) 
+
+--
+
+All three of these items have credit and debit components in BoP and construction of CA balance. 
+
+---
+
+# CA: Breakdown
+
+```{r,echo=FALSE}
+
+tibble(
+  
+  Type = c("1. Goods and Services", "2. Primary Income", "3. Secondary Income"),
+  Credit = c("Exports", "Investment earnings income received from foreigners and compensation of employees",
+             "Transfers received from abroad"),
+  Debit  = c("Imports", "Investment earnings income paid to foreigners and compensation of employess",
+             "Transfers made to foreigners")
+  
+) %>% kbl(caption="Components of Current Account") %>%
+  kable_styling(font_size=14)
+
+
+```
+
+--
+
+.hi-pink[Investment income] items not to be confused with the flow of .hi-pink[investment capital] used to buy a business or company shares. 
+
+.hi-pink[Investment income] is the income received or paid on the existing investments. 
+
+---
+
+# CA: Primary Income
+
+<br>
+
+Useful to think of .hi-pink[primary income] as payments or receipts for use of financial capital. 
+
+> If a US company invests in Mexico’s stock market, the initial investment will not show up in the current account but will be included in the financial account. Subsequent flow of dividends back to the U.S. company will be counted in the United States as income received and in Mexico as income paid. If US company operating in Mexico pays wages from its home in the U.S., the wages are included in the primary income category of the current account and are recorded as a receipt by Mexico and payment by the US.
+
+---
+
+# CA: Secondary Income
+
+.hi-pink[Secondary income] includes payments made that are not in exchange for a good or service.
+
+Foreign aid, or the remittances (the transfer of wages earned in one country to residents of another country) of immigrants temporarily residing in another country. 
+
+
+--
+
+<br>
+
+In US, payments are small relative to the overall current account. 
+
+Transfers are sometimes _very important_ to developing countries receiving large volumes of either foreign aid or remittances from their citizens working abroad.
+
+
+---
+
+# CA: Calculate Balance
+
+--
+
+```{r, echo=FALSE}
+
+tibble(
+  
+  ID = c("1.", "1a.", "1b.", "2.", "2a.", "2b.", 
+         "3.", "4.", "4a.", "4b.", 
+         "5", "5a.", "5b.", "6", "7","8", "9"),
+  Description = c("Goods and Services exports",
+                  "Goods Exports",
+                  "Service Exports",
+                  "Primary income receipts", 
+                  "Investment income received",
+                  "Compensation of employees received",
+                  "Secondary income receipts",
+                  "Goods and Services imports", 
+                  "Goods Imports",
+                  "Service Imports",
+                  "Primary income payments",
+                  "Investment income paid",
+                  "Compensation of employees paid",
+                  "Secondary income payments",
+                  "Total Debit",
+                  "Total Credit",
+                  "Current Account Balance"
+                  ),
+  
+  Debit = c(2498, 1653, 845, 1123, 1116, 7, 143,
+            "-", "-", "-", "-", "-", "-", "-", 3764, "-", "-"),
+  Credit = c("-", "-", "-", "-", "-", "-", "-",
+             3114, 2519, 595, 866, 846, 20, 282, "-", 4262, 498)
+) %>% kbl() %>% kable_styling(font_size=12)
+
+```
+
+
+---
+
+# CA: US Case
+
+<br>
+
+US .hi-pink[current account deficit] has been trending downwards for the past 50 years. 
+
+--
+
+We will explore the causes and consequences of large current account deficits later, but here it should be noted that a current account deficit is not simply a sign of weakness. 
+
+--
+
+Rapid economic growth in US .hi-pink[raised income], increased spending power means greater imports.
+
+
+---
+
+# CA: US Case
+
+<br>
+
+Foreign incomes did not rise as rapidly. 
+
+--
+
+Current account deficit in 1990s was sign of .hi-pink[relative US economic strength].
+
+--
+
+Deficit is not sustainable in the long run and could create .hi-pink[serious future problems]. 
+
+
+---
+
+# Financial Account
+
+Main record of financial flows between countries. 
+
+--
+
+Covers all types of financial assets that can be bought and sold internationally. 
+
+--
+
+Divided into .hi-pink[three main categories], each with many subcomponents. The three main categories are:
+
+1. the net acquisition of financial asset
+
+1. the net incurrence of liabilities
+
+1. changes in financial derivatives
+
+---
+
+# Financial Account
+
+Assets include bank accounts, stocks and bonds, real property such as factories, businesses, real estate, and monetary gold and foreign currencies. 
+
+--
+
+.hi-pink[Positive net acquisition of financial assets] implies residents buying _more_ foreign assets than they are selling. 
+
+--
+
+.hi-pink[Positive net incurrence of liabilities] means foreigners purchasing _more_ of home country’s assets than they are selling. 
+
+--
+
+
+.hi-pink[Financial derivatives] are assets with a value that is derived from the value of some other asset, such as commodity prices or exchange rates, or one of many other possibilities. 
+
+---
+
+# Financial Account: Derivatives
+
+Essentially packages as .hi-pink[financial options] (puts/calls) that allow for hedging against risk.
+
+For example, farmers used them to protect against fluctuations in agricultural prices. 
+
+> Wheat farmer might sign a contract in March to sell her crop in September at a price agreed when the contract is signed. The value of the contract depends on the fluctuation in wheat prices. If prices go above the agreed price, the contract becomes more valuable to the buyer because they have a guaranteed lower price, and vice versa if prices fall over the summer. 
+
+The contract is a derivative since its value depends on the price of wheat. 
+
+---
+
+# Financial Account
+
+Presents the flow of assets during the year and not the stock of assets that have accumulated over time. 
+
+All flows are .hi-pink[“net” changes] rather than “gross” changes. 
+
+--
+
+Net changes are the differences between assets sold and assets bought, as when U.S. residents purchase shares in the Mexican stock market while simultaneously selling Mexican bonds. 
+
+Net change in US-owned assets is difference between the value of the shares purchased and the bonds sold. 
+
+--
+
+If the stocks and bonds are equal in value, then the net change is zero.
+
+---
+
+# Financial Account
+
+
+```{r, echo=FALSE}
+
+tibble(
+  
+  ID = c("1.", "2.", "3.", "3a.", "3b.", "3c.", "4.", "5.", "5a.", "5b."),
+  Description = c(
+                  "Current Account Balance",
+                  "Capital Account Balance",
+                  "Financial Account",
+                  "Net U.S. acquisition of financial assets, excluding financial derivatives (increase/outflow (+))",
+                  "Net U.S. incurrence of liabilities, excluding financial derivatives (increase/inflow (+))",
+                  "Net change in financial derivatives",
+                  "Statistical Discrepancy",
+                  "Memoranda",
+                  "Balance on current and capital accounts (lines 1 + 2)",
+                  "Balance on financial account (lines 3a − 3b + 3c)"
+                  ),
+  
+  `Billions, USD` = c("-498", "0", "-", "427", "784", "-38", "102", "-", "-498", "-396")
+) %>% kbl(caption="The US Balance of Payments, 2019") %>% kable_styling(font_size=14)
+
+```
+
+---
+
+# Financial Account
+
+
+<br>
+
+Payments abroad to buy financial assets are a debit, while payments received from abroad for selling home country assets .hi-pink[(net incurrence of liabilities)] are a credit. 
+
+--
+
+Credits viewed as the .hi-pink[inflow received when assets are sold to foreigners] and debits are the .hi-pink[payment outflow when financial assets are purchased by home country residents]. 
+
+--
+
+Conceptually similar to the credits and debits of exports and imports.
+
+
+---
+
+# Interdependence
+
+
+<br>
+
+The current, capital, and financial accounts are .hi-pink[interdependent]. 
+
+--
+
+The current and capital accounts measure the flows of goods, services, and transfers between a country and the rest of the world.
+
+--
+
+The financial account measures the net flows of asset purchases and sales.
+
+--
+
+Since each element in the current account must include a financial transaction, _current plus capital account must equal the financial account_. 
+
+---
+
+# Interdependence
+
+<br>
+
+A negative current plus capital account $\implies$ .hi-pink[net borrowing] by the home country. 
+
+--
+
+Must show up in the financial account as net borrowing as well. 
+
+--
+
+In 2019, US lent abroad through the net acquisition of financial assets worth $427$ bn. 
+
+--
+
+Also incurred liabilities or borrowed $784$ bn from foreigners. 
+
+--
+
+Balance on financial account is the .hi-pink[amount lent] minus the .hi-pink[amount borrowed] plus the .hi-pink[net change in derivatives],  −$396$ bn.
+
+
+---
+
+# Statistical Discrepancy
+
+.hi-pink[Why is Current + Capital $!=$ Financial?]
+
+--
+
+Impossible to record all transactions and to ensure they are accurately measured.
+
+--
+
+Amount of net lending or borrowing on the current and capital accounts rarely matches the amount implied by the financial account balance. 
+
+--
+
+The .hi-pink[statistical discrepancy] is size of the measurement error.
+
+--
+
+While the current and financial accounts are mirror images of each other, _a large share of a nation’s gross financial account transactions is not in response to the current account flows of goods, services, or income._
+
+---
+
+# Discrepancy Example
+
+Suppose London-based company buys stock in Chilean firm, lends money to the government of Thailand.
+
+--
+
+_Nothing to do with the movements of goods and services_. These purely financial transactions must have a net value of zero. 
+
+--
+
+The reason is that .hi-pink[the purchase of an asset is simultaneously the sale of an asset of equal value]. 
+
+--
+
+If Canadian citizen buys shares in the Mexican stock market (capital outflow), he or she must sell Canadian dollars or some other asset (capital inflow).
+
+--
+
+As a result, the financial account is a complete picture of __net flows__ of financial assets during the year.
+
+---
+
+# Financial Risks
+
+<br>
+
+.hi-pink[Certain types of financial flows introduce instability/risk]
+
+Some financial flows very mobile, represent short-run tendencies. 
+
+--
+
+Often vehicles for transmitting a financial crisis from one country to another.
+
+
+--
+
+The degree of mobility of financial flows and the potential of some flows to introduce a large element of volatility into an economy have turned the type of flows that a country receives into a major issue.
+
+---
+
+# Financial Subcomponents
+
+
+```{r, echo=FALSE}
+
+tibble(
+  
+  ID = c("3a.", "3a.i.", "3a.ii", "3a.iii", "3a.iv", 
+         "3b.", "3b.i.", "3b.ii", "3b.iii", "3c."),
+  Description = c(
+                  "Net U.S. acquisition of financial assets, 
+                  excluding financial derivatives (increase/outflow (+))",
+                  "Direct investment assets",
+                  "Portfolio investment assets",
+                  "Other investment assets",
+                  "Reserve assets",
+                  "Net U.S. incurrence of liabilities, excluding financial derivatives (increase/inflow (+))",
+                  "Direct investment liabilities",
+                  "Portfolio investment liabilities",
+                  "Other investment liabilities",
+                  "Net change in financial derivatives"
+                  ),
+  
+  `Billions, USD` = c("427", "198", "39", "189", "5", "784", "311", "232", "242", "-38")
+) %>% kbl(caption="The US Financial Account 2019, by Subcomponent") %>% kable_styling(font_size=10)
+
+```
+
+--
+
+The 2019 financial account for the United States, divided into seven subcategories representing the main components of outflows and inflows, or net assets acquired (outflow) and net liabilities incurred (inflow).
+
+---
+
+# Financial Subcomponents
+
+```{r, echo=FALSE}
+
+tibble(
+  
+  ID = c("3a.", "3a.i.", "3a.ii", "3a.iii", "3a.iv", 
+         "3b.", "3b.i.", "3b.ii", "3b.iii", "3c."),
+  Description = c(
+                  "Net U.S. acquisition of financial assets, 
+                  excluding financial derivatives (increase/outflow (+))",
+                  "Direct investment assets",
+                  "Portfolio investment assets",
+                  "Other investment assets",
+                  "Reserve assets",
+                  "Net U.S. incurrence of liabilities, excluding financial derivatives (increase/inflow (+))",
+                  "Direct investment liabilities",
+                  "Portfolio investment liabilities",
+                  "Other investment liabilities",
+                  "Net change in financial derivatives"
+                  ),
+  
+  `Billions, USD` = c("427", "198", "39", "189", "5", "784", "311", "232", "242", "-38")
+) %>% kbl(caption="The US Financial Account 2019, by Subcomponent") %>% kable_styling(font_size=10)
+
+```
+
+
+--
+
+(3a.i) represents the purchase of real property .hi-pink[outside the United States] by U.S. residents and businesses.
+
+(3b.i) represents asset purchases .hi-pink[in the United States] by foreign residents and businesses. 
+
+---
+
+# Financial Subcomponents
+
+```{r, echo=FALSE}
+
+tibble(
+  
+  ID = c("3a.", "3a.i.", "3a.ii", "3a.iii", "3a.iv", 
+         "3b.", "3b.i.", "3b.ii", "3b.iii", "3c."),
+  Description = c(
+                  "Net U.S. acquisition of financial assets, 
+                  excluding financial derivatives (increase/outflow (+))",
+                  "Direct investment assets",
+                  "Portfolio investment assets",
+                  "Other investment assets",
+                  "Reserve assets",
+                  "Net U.S. incurrence of liabilities, excluding financial derivatives (increase/inflow (+))",
+                  "Direct investment liabilities",
+                  "Portfolio investment liabilities",
+                  "Other investment liabilities",
+                  "Net change in financial derivatives"
+                  ),
+  
+  `Billions, USD` = c("427", "198", "39", "189", "5", "784", "311", "232", "242", "-38")
+) %>% kbl(caption="The US Financial Account 2019, by Subcomponent") %>% kable_styling(font_size=10)
+
+```
+
+
+--
+
+
+
+In general, FDI varies considerably and is often linked to mergers. 
+
+Once made, however, FDI is probably less likely to leave a country, particularly when compared to the next category of items in lines .hi-pink[3a.ii] & .hi-pink[3a.iii] and .hi-pink[3b.ii] & .hi-pink[3b.iii].
+
+---
+
+
+# Summary
+
+### Recapping
+
+* Contents of Balance of Payments indicate net flows
+
+* Financial Accounts should balance with Current + Capital
+
+--
+
+### Next time
+
+* Macroeconomy implications of BoP state
+
+* International Debt considerations
+
+* Investment Position, maybe some Brexit
+
+* Introducing exchange rates
+
+
+---
+
+exclude: true
+
+```{R generate pdfs, include = F, eval = F}
+#remotes::install_github('rstudio/pagedown')
+library(pagedown)
+pagedown::chrome_print("13-BoP-I.html", output = "13-BoP-I.pdf")
+```
