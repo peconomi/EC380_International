@@ -85,65 +85,67 @@ options(knitr.table.format = "html")
 
 ### Previously
 
-* A variety of trade agreements exist under current international norms
+* Contents of Balance of Payments
 
-* Agreements riddled with uncertainty and not always welfare enhancing
-
-* Multi-year negotiations can make or break a domestic economy
-
-*  Even if policymakers agree multilateral purchase commitments with respect to China, they should learn right lessons from US experiences
+* Interaction with Macroeconomy
 
 --
 
 ### Today
 
-* How do international agreements fare with respect to the environment?
+* International Debt
+
+* Investment Position
+
+* Introducing exchange rates
 
 
 ---
 
-# Background
 
-The .hi-pink[WTO] nor any other central body presides over international agreements with respect to the environment
+# Limits on Financial Flows
 
---
-
-<br>
-
-There are some 200 multilateral environmental agreements.
-
---
-
-* Each country is a producer of pollution that is then distributed globally
-
---
-
-* These .hi-pink[externalities] are common to each country, but only a lessor proportion of costs are borne by any particular emitter of pollution
-
---
-
-* This leads to a .hi-pink[failure of free markets] that requires intervention across government
 
 ---
 
-# Notable Agreements
+
+# National Accounts + Deficit
 
 
-* Convention on International Trade Endangering Species
+---
+
+# National Savings
+
+
+---
+
+# Current Account Deficit
+
+
+---
+
+
+# International Debt
+
+
+---
+
+# Investment Position
+
+
+---
+
+# Introducing exchange rates
+
+---
+
+# Summary
+
+### Recapping
 
 --
 
-* Montreal Protocol on Substances that Deplete Ozone Layer
-
---
-
-* IMO 2020 Cutting Sulphur Oxide Emissions
-
---
-
-WTO still influences environment indirectly. .hi-pink[GATT Article XX]: 
-
-> subject to the requirement that such measures are not applied in a manner which would constitute a disguised restriction on international trade, nothing in this Agreement shall be construed to prevent the adoption or enforcement by any contracting party of measures (b) necessary to protect human, animal or plant life or health, ... (g) relating to the conversation of exhaustible natural resources if such measures are made effective in conjunction with restrictions on domestic production or consumption. 
+### Next time
 
 
 ---
