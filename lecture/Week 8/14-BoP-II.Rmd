@@ -432,7 +432,7 @@ Unsustainable debt occurs for many reasons.
 
 .hi-pink[Drawbacks]
 
-Debt burdens worsen the budget position of central governments by adding payments that must be made to outsiders, and they .hi-pink[reduce the availability of public funds] for important domestic needs such as infrastructure, schools, and health care. 
+Worsens budget position by adding repayments made to outsiders $\implies$ reduces .hi-pink[availability of public funds] for important domestic needs such as infrastructure, schools, and health care.
 
 --
 
@@ -440,15 +440,15 @@ In addition, many examples of excessive debt burdens that have .hi-pink[spiralle
 
 --
 
-One notable movement is the .hi-pink[Highly Indebted Poor Country (HIPC) program]. 
+.hi-pink[Highly Indebted Poor Country (HIPC) program].
 
 --
 
-Joint venture of the World Bank, the IMF, and high-income-country governments
+Joint venture of WB, IMF, and various governments.
 
 --
 
-Provide debt forgiveness for a select group of countries that must qualify based on .hi-pink[high levels of poverty and debt] and a .hi-pink[track record of economic reform].
+Provide debt forgiveness for select countries that must qualify based on .hi-pink[high levels of poverty and debt] and a .hi-pink[track record of economic reform].
 
 
 
@@ -459,6 +459,24 @@ Provide debt forgiveness for a select group of countries that must qualify based
 
 # Investment Position
 
+<br>
+
+
+If a nation runs a .hi-pink[current account deficit], it .hi-pink[borrows from abroad] and adds to its indebtedness to foreigner.
+
+--
+
+.hi-pink[International investment position]: _Domestic assets owned by foreigners subtracted from foreign assets owned by residents of Home._
+
+--
+
+<br>
+
+International investment position of 2019 (USA) was 10,991 bn USD.
+
+--
+
+Each year a country experiences a .hi-pink[CA deficit], foreigners acquire more assets locally than its residents acquire abroad.
 
 ---
 
