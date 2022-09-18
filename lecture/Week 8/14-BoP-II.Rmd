@@ -17,7 +17,7 @@ class: inverse, middle
 ```{r Setup, include = F}
 options(htmltools.dir.version = FALSE)
 library(pacman)
-p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra, ggtext)
+p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra, ggtext, data.table)
 
 red_pink <- "#e64173"
 met_slate <- "#272822" 
@@ -478,9 +478,90 @@ International investment position of 2019 (USA) was 10,991 bn USD.
 
 Each year a country experiences a .hi-pink[CA deficit], foreigners acquire more assets locally than its residents acquire abroad.
 
+
 ---
 
-# Introducing exchange rates
+# Brexit Investment Position
+
+
+So what happened to the UK CA and capital flows during .hi-pink[Brexit]?
+
+--
+
+Quick recap:
+
+* In 2016, the UK voted to leave the European Union and strike up their on trade relationships
+
+--
+
+* Wanted continued access to .hi-pink[free trade with EU] while deviating from common tariff schedule/regulatory standards and blocking free movement of labor. 
+
+--
+
+* Negotiations were largely a source of embarrassment for the UK - quickly clear they did not have sufficient .hi-pink[bargaining power] to achieve ideal deal.
+
+---
+
+# Brexit Investment Position
+
+.hi-pink[How did the market respond?]
+
+--
+
+```{r, echo=FALSE, out.width="90%"}
+
+exr = fread("data/DEXUSUK.csv")
+
+ggplot(exr) + ylab("USD per GBP") + xlab("")+
+  geom_ribbon(aes(x=DATE, ymin=1.0, ymax=DEXUSUK), 
+              color = "#004362", fill="#006897", alpha=0.7) +
+  scale_y_continuous(expand=c(0,0))+
+  geom_vline(xintercept=16800)+
+  #scale_x_continuous(expand=c(0,0))+
+  theme_bw()+ 
+  ggtitle("UK Exchange Rate (GBP:USD)") +
+  theme(axis.text.x = element_text(size=15),
+        axis.text.y = element_text(size=15),
+        axis.title.x = element_text(size=18),
+        axis.title.y = element_text(size=18),
+        plot.title = element_text(size=18))
+
+```
+
+Severe loss of confidence in UK economic performance
+
+
+---
+
+# Current Account
+
+```{r, include=FALSE}
+
+ca_uk = fread("data/series-130922.csv")
+
+colnames(ca_uk[-c(1:7),])
+
+colnames(ca_uk) = c("year", "ca_perc")
+
+ca_uk = ca_uk[-c(1:7),] %>% mutate(ca_perc = as.numeric(ca_perc)) %>% filter(year>=2010)
+
+class(as.Date(ca_uk$year, format="%Y"))
+```
+
+```{r, echo=FALSE}
+
+ggplot(ca_uk)+
+  geom_line(aes(x=year, y=ca_perc), group=1) +
+  theme_bw() + xlab("") + ylab("%") + 
+  ggtitle("UK Current Account as % of GDP") +
+  theme(axis.text.x = element_text(size=15),
+        axis.text.y = element_text(size=15),
+        axis.title.x = element_text(size=18),
+        axis.title.y = element_text(size=18),
+        plot.title = element_text(size=18))
+
+```
+
 
 ---
 
@@ -488,10 +569,18 @@ Each year a country experiences a .hi-pink[CA deficit], foreigners acquire more 
 
 ### Recapping
 
+* National accounts and CA balance interconnected
+
+* Deficit is not a sign of economic/geopolitical weakness
+
+* A deficit implies borrowing from abroad, but investments can be very fruitful
+
+
 --
 
 ### Next time
 
+* Exchange Rate Adjustments (SR + LR)
 
 ---
 
