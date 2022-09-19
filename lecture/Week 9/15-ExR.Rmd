@@ -1,6 +1,6 @@
 ---
 title: "EC 380: Lecture 15"
-subtitle: "Global Finance: Exchange Rates"
+subtitle: "Global Finance: Exchange Rates LR"
 author: "Philip Economides"
 date: "Fall 2022"
 output:
@@ -654,7 +654,7 @@ Over time, lower transport costs, minimized import rules and regulations.
 
 ### Next Time
 
-* SR, Medium exchange rates and ExR Systems
+* SR, Medium exchange rates and parity relationships
 
 ---
 

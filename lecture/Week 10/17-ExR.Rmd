@@ -1,0 +1,796 @@
+---
+title: "EC 380: Lecture 17"
+subtitle: "Global Finance: Exchange Rate Policies"
+author: "Philip Economides"
+date: "Fall 2022"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, middle
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra, ggtext, data.table)
+
+red_pink <- "#e64173"
+met_slate <- "#272822" 
+turquoise <- "#20B2AA"
+orange <- "#FFA500"
+red <- "#fb6107"
+blue <- "#2b59c3"
+green <- "#8bb174"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+purple <- "#6A5ACD"
+slate <- "#314f4f"
+# Notes directory
+dir_slides <- "~/Lectures/01-Intro"
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)  
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+options(crayon.enabled = F)
+options(knitr.table.format = "html")
+```
+
+```{css, echo = F}
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+
+
+.pull-lefter {
+  float: left;
+  width: 67%;
+}
+.pull-rightish {
+  float: right;
+  width: 25%;
+}
+
+.pull-rightish ~ p {
+  clear: both;
+}
+
+```
+
+
+# Prologue
+
+---
+
+# Recap
+
+
+* FX market mechanisms in the medium run driven by business cycles
+
+* Short run variation in exchange rate attributed to monetary policy and speculation
+
+* Parity relationships allow us to identify breakeven points at which investment decisions are made
+
+### Today
+
+* ExR Systems and single currency areas
+
+
+---
+
+
+# Topics
+
+<br>
+
+* Reasons for holding foreign reserves, main institutions
+
+
+* Effect of $\Delta S, \Delta D$ of foreign currency on home currency
+
+
+* Identify short, medium and long term forces that affect currency value
+
+
+* __Three rules of gold standard__
+
+
+* Compare and contrast various exchange rate systems
+
+
+* Price changes and real exchange rate interactions
+
+
+* List conditions necessary to form single currency area
+
+---
+
+# Fixed Exchange Rates 
+
+Several possibilities for setting the value of the country’s currency. 
+
+--
+
+One option is to keep the exchange rate constant, or __fixed__. 
+
+--
+
+Also called .hi-pink[pegged exchange rate] systems.
+
+--
+
+Small countries often give up control over their currency and adopt the currency of another country, usually the dollar or the euro. 
+
+--
+
+More commonly, the value of a nation’s money is set equal to a fixed amount of another country’s currency, or less commonly to a basket of several currencies. 
+
+--
+
+If the exchange rate is not allowed to vary, then it is called a .hi-pink[hard peg]. 
+
+---
+
+# Fixed Exchange Rates
+
+<br>
+
+Fixed exchange rates that fluctuate within a set band are .hi-pink[soft pegs] and these, in turn, can take several forms depending on the amount of variation allowed.
+
+--
+
+```{r, echo=FALSE}
+
+tibble(
+  `Currency Regime` = c("Hard pegs", "Soft pegs", "Managed floating", 
+                        "Independently floating", "Other", "Total"),
+  Countries = c(24,88,35,30,13,190)
+) %>% kbl() %>% kable_styling(font_size=18)
+
+```
+
+---
+
+# Gold Standard
+
+<br>
+
+Historically, fixed exchange rates were the norm, often within framework that defined the value of a country’s currency in terms of a .hi-pink[fixed amount of gold]. 
+
+--
+
+After WWII, many nations shifted away from gold and pegged the value of their currencies to the USD.
+
+--
+
+During 1970s, use of .hi-pink[flexible exchange rate systems] increased, mostly in high-income industrial economies.
+
+--
+
+Many developing countries adopted flexible systems in the 1980s and 1990s, easily managed with advent of the computer and internet. 
+
+---
+
+# Gold Standard
+
+<br>
+
+There is no best exchange rate system. 
+
+--
+
+Currently, less than half of the world’s nations have flexible exchange rates.
+
+--
+
+<br>
+
+.hi-pink[Gold standards] are one type of fixed exchange rate. 
+
+--
+
+Abandoned nearly everywhere in 1930s during the Great Depression.
+
+--
+
+Restored in a modified form after WWII but has completely disappeared since the 1970s. 
+
+
+---
+
+# Gold Standard
+
+<br>
+
+Economists overwhelmingly opposed to return of gold standard, first countries to end gold standard were first ones to escape .hi-pink[Great Depression]. 
+
+--
+
+After WWII, Western economies adopted a modified gold standard under the .hi-pink[Bretton-Woods exchange rate system] (1947–1971).
+
+--
+
+<br>
+
+Abandoned in the early 1970s. Gold standards highlight a pure form of fixed exchange rate with a hard peg.
+
+
+--
+
+Under pure gold standard, nations keep .hi-pink[gold as international reserve]. 
+
+---
+
+# Gold Standard
+
+Gold used to settle most international obligations, and nations must be prepared to trade it for their own currency whenever foreigners attempt to “redeem” the home currency.
+
+--
+
+In this sense, the nation’s money is backed by gold.
+
+--
+
+There are essentially .hi-pink[three rules] that countries must follow in order to maintain a gold exchange standard.
+
+--
+
+* Must fix value of their currency unit in terms of gold.
+
+* Keep supply of domestic money fixed in some constant proportion to their supply of gold. 
+
+* Nations must stand ready and willing to provide gold in exchange for their home country currency
+
+---
+
+# Gold Standard
+
+<br>
+
+If a country _decided to print large quantities of money_ for which there is no gold backing.
+
+--
+
+
+* Purchases of domestically produced goods would rise.
+ 
+* Would cause domestic prices to rise leading to foreign goods becoming more attractive. 
+
+--
+ 
+As imports in the home country increase, foreigners accumulate an unwanted supply of the home country’s currency. 
+
+--
+
+This is the point at which gold standard would begin to become unhinged. 
+
+
+---
+
+# Gold Standard
+
+<br>
+
+If gold supplies low relative to supply of domestic currency, gold reserves will begin to run out at some point. 
+
+--
+
+This spells crisis and a .hi-pink[possible end to the gold standard].
+
+--
+
+Under a .hi-pink[fixed exchange rate system], the national supply and demand for foreign currencies may vary but the nominal exchange rate cannot.
+
+--
+
+It is the responsibility of the monetary authorities to keep the exchange rate fixed. 
+
+---
+
+# Fixed ExR Policy Action
+
+
+Suppose US & UK both on gold standard and the US demand for GBP $\uparrow$.
+
+--
+
+```{r, echo=FALSE, out.width="85%", warning=FALSE}
+
+tibble(
+    country  = c("S1", "S1",
+                 "D1", "D1",
+                 "D2", "D2"),
+    pies     = c(10, 90, 90, 5, 90, 5),
+    ExR  = c(0.95, 1.40, 1.05, 1.4, 1.15, 1.5)
+) %>% ggplot() +
+    geom_line(aes(x=pies, y=ExR, color=country), size=2) +
+    theme_bw() + 
+    scale_y_continuous(expand=c(0,0), limits=c(0.8,1.6)) + 
+    scale_x_continuous(expand=c(0,0), limits=c(0,100)) +
+    #coord_fixed() + 
+    ggtitle("US market for GBP") + 
+    theme(title = element_text(size=14),
+          legend.position = "right",
+          legend.title = element_blank(),
+          legend.text = element_text(size=16),
+          axis.title.x = element_text(size=16),
+          axis.title.y = element_text(size=16),
+          axis.text.x = element_text(size=14),
+          axis.text.y = element_text(size=14))+
+    geom_point(aes(x=54,y=1.2), size=3) + xlab("Units of GBP") + ylab("ExR, USD/GBP") +
+    geom_point(aes(x=64.5,y=1.26), size=3) +
+    geom_segment(aes(x=0, xend=54, y=1.2, yend=1.2), linetype="dashed")+
+    geom_segment(aes(x=54, xend=54, y=0.8, yend=1.2), linetype="dashed")+
+    geom_segment(aes(x=0, xend=64.5, y=1.26, yend=1.26), linetype="dashed")+
+    geom_segment(aes(x=64.5, xend=64.5, y=0.8, yend=1.26), linetype="dashed")+
+    geom_label(aes(x=59, y=1.17), label="E", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=71, y=1.25), label="E'", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+  scale_color_manual(values=c("#006797","#0087c5","#cd2828"))
+
+```
+
+
+
+---
+
+# Fixed ExR Policy Action
+
+Policymakers must counter weakening dollar and keep $R_{\text{USD per GBP}}$ fixed.
+
+```{r, echo=FALSE, out.width="85%", warning=FALSE}
+
+tibble(
+    country  = c("S1", "S1",
+                 "D1", "D1",
+                 "D2", "D2",
+                 "S2", "S2"),
+    pies     = c(10, 90, 90, 5, 90, 5, 10, 90),
+    ExR  = c(0.95, 1.40, 1.05, 1.4, 1.15, 1.5, .82, 1.27)
+) %>% ggplot() +
+    geom_line(aes(x=pies, y=ExR, color=country), size=2) +
+    theme_bw() + 
+    scale_y_continuous(expand=c(0,0), limits=c(0.8,1.6)) + 
+    scale_x_continuous(expand=c(0,0), limits=c(0,100)) +
+    #coord_fixed() + 
+    ggtitle("US market for GBP") + 
+    theme(title = element_text(size=14),
+          legend.position = "right",
+          legend.title = element_blank(),
+          legend.text = element_text(size=16),
+          axis.title.x = element_text(size=16),
+          axis.title.y = element_text(size=16),
+          axis.text.x = element_text(size=14),
+          axis.text.y = element_text(size=14))+
+    geom_point(aes(x=54,y=1.2), size=3) + xlab("Units of GBP") + ylab("ExR, USD/GBP") +
+    geom_point(aes(x=64.5,y=1.26), size=3) +
+    geom_point(aes(x=78,  y=1.2), size=3) +
+    geom_segment(aes(x=0, xend=54, y=1.2, yend=1.2), linetype="dashed")+
+    geom_segment(aes(x=54, xend=54, y=0.8, yend=1.2), linetype="dashed")+
+    geom_segment(aes(x=0, xend=64.5, y=1.26, yend=1.26), linetype="dashed")+
+    geom_segment(aes(x=64.5, xend=64.5, y=0.8, yend=1.26), linetype="dashed")+
+    geom_segment(aes(x=0, xend=78, y=1.2, yend=1.2), linetype="dashed")+
+    geom_segment(aes(x=79, xend=78, y=0.8, yend=1.2), linetype="dashed")+
+    geom_label(aes(x=59, y=1.17), label="E", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=71, y=1.25), label="E'", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+    geom_label(aes(x=80, y=1.17), label="E''", size=4, position = position_dodge(0.9),
+               vjust = 0) +
+  scale_color_manual(values=c("#006797","#0087c5","#cd2828","#cd2828"))
+
+```
+
+---
+
+# Fixed ExR Policy Action
+
+<br>
+
+There are two possibilities for the home country as it sells its gold reserves. 
+
+* Demand for gold satisfied and pressure on its currency eases
+
+* Begins to run out of gold (coffers too light). 
+
+<br>
+
+--
+
+If the latter happens, the home country may be forced into a devaluation that is accomplished by changing the gold price of its currency. 
+
+---
+
+# Fixed ExR Policy Action
+
+<br>
+
+.hi-pink[Pegged exchange rate systems] operate similarly to gold standard except that instead of gold, another currency is used to “anchor” home currency.
+
+--
+
+* Exposed to policies of external third party. 
+
+* Thailand pegged its currency to USD for many years. 
+
+* If Japan and China devalue against the dollar, also devalued against Thai currency, and Thai exports suddenly less competitive. 
+
+--
+
+The simplest way to avoid is peg to a group of currencies. Reduces the importance of any single country’s currency. 
+
+---
+
+# Fixed ExR Policy Action
+
+<br>
+
+Countries that use a .hi-pink[crawling peg] may peg to a single currency or a basket of currencies, but they regularly adjust the exchange rate. 
+
+--
+
+The changes in the peg may occur on a daily basis by a predetermined amount. 
+
+--
+
+May prevent some country-specific problems with a fixed rate but difficult to manage and has been associated with numerous exchange rate crises.
+
+---
+
+# Topics
+
+<br>
+
+* Reasons for holding foreign reserves, main institutions
+
+
+* Effect of $\Delta S, \Delta D$ of foreign currency on home currency
+
+
+* Identify short, medium and long term forces that affect currency value
+
+
+* Three rules of gold standard
+
+
+* Compare and contrast various exchange rate systems
+
+
+* __Price changes and real exchange rate interactions__
+
+
+* List conditions necessary to form single currency area
+
+---
+
+# Real Exchange Rate
+
+<br>
+
+ExR used so far does not really tell us what a foreign currency is worth. 
+
+--
+
+We still do not know the .hi-pink[purchasing power] of our domestic money when it is converted to a foreign currency. 
+
+--
+
+Suppose USD–Malaysian ringgit exchange rate is 0.25 USD per ringgit, constant over the year. 
+
+--
+
+Suppose Malaysian inflation is __4%__ and US inflation __1%__. 
+
+--
+
+After one year, 4 ringgits that cost one dollar will buy __3% less in Malaysia than the dollar buys in the United States__. 
+
+---
+
+
+
+# Real Exchange Rate
+
+
+Higher inflation in Malaysia erodes the value more rapidly than at home. 
+
+--
+
+Converted to ringgits, .hi-pink[real purchasing power] of the dollar has declined even though the exchange rate is still 0.25 USD per ringgit.
+
+--
+
+For foreign exchange participants, key item of interest is .hi-pink[purchasing power] upon conversion, not nominal units of a foreign currency. 
+
+--
+
+US importer deciding between Malaysian and Chinese textiles does not really care if she gets four ringgits per dollar or eight Chinese yuan per dollar.
+
+--
+
+_Volume of textiles that can be purchased in Malaysia with four ringgits and in China with eight yuan is the only thing that matters._
+
+
+---
+
+# Real Exchange Rate
+
+<br>
+
+.hi-pink[Real ExR] is market exchange rate adjusted for price differences. 
+
+--
+
+Let’s consider case of a cheese vendor who is trying to decide whether to stock her shop with Italian or  locally produced cheese. 
+
+--
+
+
+Suppose say that a wheel Italian cheese of a given quality costs __200 EUR__ and American cheese of the same quality costs __180 USD__. 
+
+--
+
+Suppose that the nominal exchange rate is __1.20 USD per euro__ so that __180 USD__ is equivalent to __150 EUR__. 
+
+--
+
+Italian cheese costs one-third more than American cheese, .hi-pink[real ExR] is __1.33 wheels__ of American cheese per wheel of Italian cheese.
+
+
+---
+
+# Real Exchange Rate
+
+<br>
+
+Algebra:
+
+$$\text{Real ExR} \\
+=[(\text{R} \times \text{Foreign Price})]/ (\text{Domestic Price})\\
+=[(1.20 \text{ per EUR}) \times (200\text{ EUR per wheel})]/( 180 \text{ USD per wheel})\\
+=\frac{(240 \text{ USD per wheel of Italian Cheese})}{(180 \text{ USD per wheel of American cheese})}\\
+= 1 \frac{1}{3} \text{ wheels of American cheese per wheel of Italian cheese}$$
+
+
+--
+
+.hi-pink[Whether wine or cheese, process is the same, as you'll see in your homework.]
+
+---
+
+# Real Exchange Rate
+
+<br>
+
+$$R_r = R_n (P^*/P)$$
+
+--
+
+The real rate equals the nominal rate when the price levels (purchasing powers) are the same in both countries.
+
+--
+
+
+For example, consider the current USD-EUR exchange rate, along with their price levels: $R_r = (1 \text{ USD per EUR}) \times (109.1/108.5)$ 
+
+
+--
+
+Even though we express parity in EUR to USD, .hi-pink[real exchange rates] suggest appreciated EUR value and slightly greater buying power with the dollar due to lower inflation.  
+
+
+---
+
+# Choosing Exchange Rate System
+
+<br>
+
+Active area of economic research has focused on performance characteristics of systems under different economic conditions and institutional arrangements. 
+
+--
+
+Researchers have become more concerned with understanding how varying degrees of .hi-pink[flexibility] or .hi-pink[fixity] might best serve the interests of individual countries. 
+
+--
+
+How do different systems influence core elements of a country’s macroeconomy?
+
+---
+
+# Choosing Exchange Rate System
+
+<br>
+
+.hi-pink[Traditional view]: Countries with fixed exchange rate systems were better at controlling inflation but paid a price in the form of slower economic growth. 
+
+--
+
+Governments have to be very careful about issuing new money. Exchange rate policy that limits the supply of money would also help avoid inflation. 
+
+--
+
+Limits placed on ability to manipulate money supply also remove an important monetary policy tool tused to manage economic growth.
+
+
+---
+
+# Choosing Exchange Rate System
+
+<br>
+
+.hi-pink[Research has failed to demonstrate a strong relationship between the type of exchange rate system and either inflation or economic growth.]
+
+--
+
+Before 90s, countries .hi-pink[pegged exchange rates] associated with lower inflation, but during the 90s the differences disappeared. 
+
+--
+
+Countries with .hi-pink[flexible rates] have higher average rates of economic growth, but result depends on classification of the fastest growing Asian economies. 
+
+--
+
+When they omit countries who manage flexible rates, no significant difference in growth between countries with relatively fixed and relatively flexible rates. 
+
+
+---
+
+# Choosing Exchange Rate System
+
+Neither fixed nor flexible rates offer superior protection against a currency crisis. 
+
+--
+
+_No particular system_ seems to rank above any other in its ability to provide superior macroeconomic performance.
+
+--
+
+If the goal set to minimize negative shocks to an economy, then .hi-pink[source of the shock] determines which system should be adopted. 
+
+--
+
+If originates in monetary sector (printing new money), fixed rate is better since it imposes discipline on the central bank. 
+
+--
+
+If originates in the external environment (oil shock), relatively more flexibility enables the country to adapt more easily.
+
+---
+
+# Topics
+
+<br>
+
+* Reasons for holding foreign reserves, main institutions
+
+
+* Effect of $\Delta S, \Delta D$ of foreign currency on home currency
+
+
+* Identify short, medium and long term forces that affect currency value
+
+
+* Three rules of gold standar
+
+
+* Compare and contrast various exchange rate systems
+
+
+* Price changes and real exchange rate interactions
+
+
+* __List conditions necessary to form single currency area__
+
+
+---
+
+# Single Currency Areas
+
+<br>
+
+Jan-1999, 11 members of EU .hi-pink[adopted euro] as their official currency. 
+
+--
+
+As the EU added new members, several chose to use the euro, and as of 2016, .hi-pink[19 of 28 members] had replaced their national currencies with the euro. 
+
+--
+
+Shared vision developed economic interdependence and prevent future war. 
+
+--
+
+Nation’s currency is one of its strongest symbols of national sovereignty, remarkable set of events.
+
+---
+
+# Single Currency Areas
+
+<br>
+
+
+Four potential reasons why countries might want to share a common currency. 
+
+--
+
+* Eliminates need to convert money, reduces transaction costs. Some gain in efficiency. 
+
+
+* Eliminates price fluctuations caused by changes in the exchange rate.
+
+* Can help increase political trust between countries seeking to increase their integration. 
+
+--
+
+Nations that give up their national money do not do so without cost. 
+
+---
+
+# Single Currency Areas
+
+Adoption of a .hi-pink[common currency] also means that the country no longer has its own .hi-pink[money supply as a tool] for managing its economic growth. 
+
+--
+
+* If control money supply, can influence growth of economy in the short run thru change in money supply.
+
+* Hard for monetary policy of single currency to implement interest rates that suit every member state perfectly. 
+
+* Countries give up their ability to alter their exchange rates. 
+
+* Expected to implement policies aimed at pushing down prices and wages inside their countries and do not have the option to devalue currencies to make goods cheaper. 
+
+
+---
+
+# Single Currency Areas
+
+<br>
+
+.hi-pink[Conditions for adoption of single currency]
+
+--
+
+* Business cycle must be synchronized 
+
+--
+
+* High degree of labor and capital mobility between the member countries
+
+--
+
+* Regional policies capable of addressing the imbalances that may develop
+
+--
+
+* Nations involved must be seeking a level of integration that goes beyond simple free trade
+
+
+
+
+---
+
+exclude: true
+
+```{R generate pdfs, include = F, eval = F}
+#remotes::install_github('rstudio/pagedown')
+library(pagedown)
+pagedown::chrome_print("17-ExR.html", output = "17-ExR.pdf")
+```
