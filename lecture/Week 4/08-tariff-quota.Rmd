@@ -18,9 +18,8 @@ class: inverse, middle
 options(htmltools.dir.version = FALSE)
 library(pacman)
 p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra, ggtext)
-devtools::install_github("R-CoderDotCom/econocharts")
 
-library(econocharts)
+
 # Define colors
 red_pink <- "#e64173"
 met_slate <- "#272822" 
@@ -768,5 +767,5 @@ exclude: true
 ```{R generate pdfs, include = F, eval = F}
 #remotes::install_github('rstudio/pagedown')
 library(pagedown)
-pagedown::chrome_print("07-tariff-quota.html", output = "07-tariff-quota.pdf")
+pagedown::chrome_print("08-tariff-quota.html", output = "08-tariff-quota.pdf")
 ```
