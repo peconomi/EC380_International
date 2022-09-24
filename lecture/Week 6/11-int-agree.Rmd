@@ -1,5 +1,5 @@
 ---
-title: "EC 380: Lecture 10"
+title: "EC 380: Lecture 11"
 subtitle: "Environmental Policy: International Agreements"
 author: "Philip Economides"
 date: "Fall 2022"
@@ -359,5 +359,5 @@ exclude: true
 ```{R generate pdfs, include = F, eval = F}
 #remotes::install_github('rstudio/pagedown')
 library(pagedown)
-pagedown::chrome_print("10-int-agree.html", output = "10-int-agree.pdf")
+pagedown::chrome_print("11-int-agree.html", output = "11-int-agree.pdf")
 ```
