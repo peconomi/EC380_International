@@ -114,9 +114,9 @@ knitr::include_graphics("figures/trade_overlap.png")
 
 We will use .hi-pink[(IE)] while latter text is completely optional:
 
-* International Economics by Feenstra & Taylor .hi-pink[(IE)] 3rd-5th Ed.
+* International Economics by James Gerber .hi-pink[(IE)] 7th-8th Ed.
 
-* International Economics: Theory & Policy by Krugman, Melitz, Obstfeld .hi-pink[(IETP)] 9th-11th Ed
+* International Economics by Feenstra & Taylor .hi-pink[(IE)] 3rd-5th Ed.
 
 --
 
