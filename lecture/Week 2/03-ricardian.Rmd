@@ -530,15 +530,17 @@ knitr::include_graphics("figures/real_wage_prod.png")
 
 ---
 
-# To Recap
+# Next Topic
+
+* __Readings:__ IE finish chapter 3. Slides more informative. 
 
 * Countries with no absolute advantage in production can still trade!
 
-* Some advantages are simply driven by technological differences according to this rather dated theory
+* Advantages driven by technological differences, more relevant in past
 
 --
 
-* Since then, the .hi-pink[internet] and subsequent .hi-pink[information age] have largely narrowed differences in technology
+* Recent .hi-pink[information age] narrowed differences in technology
 
 --
 
