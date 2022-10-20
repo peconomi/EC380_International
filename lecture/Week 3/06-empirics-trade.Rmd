@@ -18,9 +18,6 @@ class: inverse, middle
 options(htmltools.dir.version = FALSE)
 library(pacman)
 p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra, ggtext)
-devtools::install_github("R-CoderDotCom/econocharts")
-
-library(econocharts)
 # Define colors
 red_pink <- "#e64173"
 met_slate <- "#272822" 
@@ -339,7 +336,7 @@ To incorporate this feature into a model may make it more realistic.
 
 --
 
-.hi-pink[Both goods and labor can flow between countries, depending on the opportunitiy costs associated engaging in the wider market]
+.hi-pink[Both goods and labor can flow between countries, depending on the opportunity costs associated engaging in the wider market]
 
 ---
 
@@ -408,8 +405,6 @@ knitr::include_graphics("figure/Card_1990.png")
 
 # Migration
 
---
-
 .hi-pink[In practice], high-skilled migrant influxes show a similar lack of impact. 
 
 --
@@ -423,8 +418,6 @@ knitr::include_graphics("figure/Gandal_2004.png")
 ---
 
 # Migration: Short Run
-
---
 
 For movement of $L$ from Foreign to Home, do wages respond?
 
@@ -479,7 +472,6 @@ Recall the .hi-pink[Specific Factors model], where labor can move between indust
 
 # Migration: Short Run
 
---
 
 ```{r, test_output_II , echo=FALSE, out.width="65%", warning=FALSE, message=FALSE}
 
@@ -550,7 +542,6 @@ Shifting out origin point of $M$ causes the corresponding marginal productivity 
 
 <br>
 
---
 
 Equilibrium outcomes
 

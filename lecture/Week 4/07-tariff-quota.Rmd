@@ -141,7 +141,7 @@ Below I define key terms for this session:
 
 --
 
-* .hi-pink[Protectionism]: A concerted effort to shield domestic indutries from external competitive pressure by restricting foreign import choices. This can be achieved through subsidizing local industry, taxing imports and limiting number of goods that can enter the country, per annum. 
+* .hi-pink[Protectionism]: A concerted effort to shield domestic industries from external competitive pressure by restricting foreign import choices. This can be achieved through subsidizing local industry, taxing imports and limiting number of goods that can enter the country, per annum. 
 
 --
 

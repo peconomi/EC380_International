@@ -18,9 +18,6 @@ class: inverse, middle
 options(htmltools.dir.version = FALSE)
 library(pacman)
 p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra)
-devtools::install_github("R-CoderDotCom/econocharts")
-
-library(econocharts)
 # Define colors
 red_pink <- "#e64173"
 met_slate <- "#272822" 
