@@ -49,6 +49,8 @@ options(device = function(file, width, height) {
 })
 options(crayon.enabled = F)
 options(knitr.table.format = "html")
+
+`%ni%` <- Negate(`%in%`)
 ```
 
 ```{css, echo = F}
@@ -330,11 +332,132 @@ knitr::include_graphics("figures/fig_1.png")
 
 * International transportation is a small fraction of .hi-pink[overall emissions] but a surprisingly large fraction of .hi-pink[trade-related emissions]
 
+--
+
 * $\frac{2}{3}$ of trade-related emissions in US exports are due to international transportation
+
+--
 
 * Many exporters and products that look relatively "clean", when focusing only on output emissions, are in fact .hi-pink[heavy emitters], once incorporating transportation
 
-* Under .hi-pink[trade liberalization], transport emissions will become increasingly important, growing .hi-pink[twice as fast]` as the emission from trade-related output
+--
+
+* Under .hi-pink[trade liberalization], transport emissions will become increasingly important, growing .hi-pink[twice as fast] as the emission from trade-related output
+
+
+---
+
+# Empirics
+
+```{r, echo=FALSE, out.width="80%"}
+
+knitr::include_graphics("figures/shapiro_2016.png")
+
+```
+
+---
+
+# Empirics
+
+```{r, echo=FALSE, out.width="85%"}
+
+knitr::include_graphics("figures/tab_1_sha.png")
+
+```
+
+---
+
+# Empirics
+
+<br>
+
+* Uses a model and data to measure the .hi-pink[full welfare effects] of international trade
+
+* Although the initial .hi-pink[autarky counterfactual] is unrealistic, it provides important benchmark
+
+* Useful because it provides a sense of the magnitudes of the environmental costs of trade reform due to $CO^2$ 
+
+---
+
+# Empirics
+
+<br>
+
+*  Leading undergrade textbook laments how China's opening to trade contributed to climate change but suggests environmental costs small relative to economic benefits **(Krugman, Obstfeld, and Melitz 2012)**. 
+
+* Looking at autarky provides starting point for this kind of question before we expand out to free-trades indirect environmental impact on welfare vs its direct efficiency gains.
+
+---
+
+# Empirics
+
+```{r, echo=FALSE, out.width="85%"}
+
+knitr::include_graphics("figures/tab_3_sha.png")
+
+```
+
+---
+
+# Empirics
+
+
+```{r, echo=FALSE, out.width="75%"}
+
+knitr::include_graphics("figures/fig_1_sha.png")
+
+```
+
+---
+
+# Empirics
+
+.hi-pink[Shapiro's main findings:]
+
+1. Shows that international trade harms the environment. International trade increases global $CO^2$ emissions by 5% (1.7 gigatons of $CO^2$ annually).
+
+1. Effects are equally driven by production and transportation of traded goods.
+
+1. .hi-pink[Welfare gains] from international trade far exceed environmental costs of
+ international trade due to $CO^2$ emissions by a factor of 161.
+ 
+1. .hi-pink[Welfare gains] across every specific country in the sample, however the gains from trade and emissions incurred are disproportionately poorer for less developed countries.
+
+---
+
+# Empirics
+
+<br>
+
+.hi-pink[Shapiro's carbon tax findings:]
+
+Studies policies under three forms of carbon tax systems.
+
+--
+
+Poor countries specialized in trading goods with high weight-to-value ratios lose the most from these policies.
+
+--
+
+Why? If they regulate shipping for only *some* countries or modes of transportation, policies increase *unregulated* $CO^2$ emissions and *divert trade* to unregulated routes. 
+
+---
+
+# Empirics
+
+<br>
+
+.hi-pink[Shapiro's carbon tax findings:]
+
+Policies increase welfare in the implementing region and decreasing welfare elsewhere, even before accounting for environmental benefits. 
+
+--
+
+All three of these policies increase global welfare: decreases environmental costs of trade more than they decrease gains from trade. 
+
+--
+
+Since global welfare increases, these policies represent a potential Pareto improvement as long as a set of transfers from rich to poor countries also takes place. 
 
 ---
 
