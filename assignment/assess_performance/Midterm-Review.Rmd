@@ -149,6 +149,7 @@ join_perf = left_join(post_mid %>% select(Student, `Current Score`), df_comp %>%
 
 ggplot(join_perf, aes(x=perc_comp,y=`Current Score`)) +
   geom_point() +
+  geom_smooth(method="lm") +
   ylab("Current Score, Canvas") + xlab("% of Videos Completed, Panopto") +
   scale_y_continuous(expand=c(0,0), limits=c(0, 110)) +
   ggtitle("Co-movement of these variables") +
@@ -173,7 +174,7 @@ res <- lm(data=join_perf, `Current Score` ~ perc_comp)
 
 Involvement appears to be .hi-pink[highly predictive] of .hi-pink[performance].
 
-* 
+* Every additional one percentage point increase in .hi-pink[Panopto completions] was associated with, on average, a 0.34 percentage point increase in .hi-pink[current score]. 
 
 ---
 
