@@ -66,6 +66,8 @@ theme_empty <- theme_bw() + theme(
 ```{r, echo=FALSE, out.width="90%"}
 #getwd()
 scores <- fread("midterm_grades.csv")
+scores = scores %>% mutate(`Current Score`= ifelse(Student=="Jacobson, Jacquelyn", 61.33, `Current Score`))
+
 post_mid <- scores %>% mutate(`Current Score` = as.numeric(`Current Score`)) %>%
   filter(`Current Score` >0 ) %>% arrange(desc(`Current Score`)) 
 

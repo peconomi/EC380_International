@@ -1,5 +1,5 @@
 ---
-title: "EC 380: Lecture 13"
+title: "EC 380: Lecture 14"
 subtitle: "Global Finance: Balance of Payments"
 author: "Philip Economides"
 date: "Fall 2022"
@@ -83,13 +83,13 @@ options(knitr.table.format = "html")
 
 ### Previously
 
-* A variety of trade agreements exist under current international norms
+* With globalization has come greater economic interdependence and larger risks of .hi-pink[contagion effects] once crises crop up. 
 
 --
 
 ### Today
 
-* Explore system used to track country's international transactions
+* Explore .hi-pink[system] used to track country's international transactions
 
 --
 
@@ -97,7 +97,7 @@ options(knitr.table.format = "html")
 
 --
 
-* Examine consequences of international indebtedness and consequences
+* Examine consequences of .hi-pink[international indebtedness]
 
 
 ---
@@ -316,9 +316,9 @@ tibble(
                   "Current Account Balance"
                   ),
   
-  Debit = c(2498, 1653, 845, 1123, 1116, 7, 143,
+  Credit = c(2498, 1653, 845, 1123, 1116, 7, 143,
             "-", "-", "-", "-", "-", "-", "-", 3764, "-", "-"),
-  Credit = c("-", "-", "-", "-", "-", "-", "-",
+  Debit = c("-", "-", "-", "-", "-", "-", "-",
              3114, 2519, 595, 866, 846, 20, 282, "-", 4262, 498)
 ) %>% kbl() %>% kable_styling(font_size=12)
 
@@ -517,7 +517,7 @@ Also incurred liabilities or borrowed $784$ bn from foreigners.
 
 --
 
-Balance on financial account is the .hi-pink[amount lent] minus the .hi-pink[amount borrowed] plus the .hi-pink[net change in derivatives],  −$396$ bn.
+Balance on financial account is the .hi-pink[amount lent] minus the .hi-pink[amount borrowed] plus the .hi-pink[net change in derivatives], $-396$ bn.
 
 
 ---
@@ -722,5 +722,5 @@ exclude: true
 ```{R generate pdfs, include = F, eval = F}
 #remotes::install_github('rstudio/pagedown')
 library(pagedown)
-pagedown::chrome_print("13-BoP-I.html", output = "13-BoP-I.pdf")
+pagedown::chrome_print("14-BoP-I.html", output = "14-BoP-I.pdf")
 ```

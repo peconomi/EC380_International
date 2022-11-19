@@ -1,56 +1,39 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>EC 380: Lecture 15</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Philip Economides" />
+    <script src="15-BoP-II_files/header-attrs/header-attrs.js"></script>
+    <link href="15-BoP-II_files/remark-css/default.css" rel="stylesheet" />
+    <link href="15-BoP-II_files/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="15-BoP-II_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# EC 380: Lecture 15
+]
+.subtitle[
+## Global Finance: Balance of Payments
+]
+.author[
+### Philip Economides
+]
+.date[
+### Fall 2022
+]
+
 ---
-title: "EC 380: Lecture 15"
-subtitle: "Global Finance: Balance of Payments"
-author: "Philip Economides"
-date: "Fall 2022"
-output:
-  xaringan::moon_reader:
-    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
-    self_contained: false
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
----
+
 class: inverse, middle
 
-```{r Setup, include = F}
-options(htmltools.dir.version = FALSE)
-library(pacman)
-p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra, ggtext, data.table)
 
-red_pink <- "#e64173"
-met_slate <- "#272822" 
-turquoise <- "#20B2AA"
-orange <- "#FFA500"
-red <- "#fb6107"
-blue <- "#2b59c3"
-green <- "#8bb174"
-grey_light <- "grey70"
-grey_mid <- "grey50"
-grey_dark <- "grey20"
-purple <- "#6A5ACD"
-slate <- "#314f4f"
-# Notes directory
-dir_slides <- "~/Lectures/01-Intro"
-# Knitr options
-opts_chunk$set(
-  comment = "#>",
-  fig.align = "center",
-  fig.height = 7,
-  fig.width = 10.5,
-  warning = F,
-  message = F
-)  
-opts_chunk$set(dev = "svg")
-options(device = function(file, width, height) {
-  svg(tempfile(), width = width, height = height)
-})
-options(crayon.enabled = F)
-options(knitr.table.format = "html")
-```
 
-```{css, echo = F}
+&lt;style type="text/css"&gt;
 @media print {
   .has-continuation {
     display: block !important;
@@ -71,7 +54,7 @@ options(knitr.table.format = "html")
   clear: both;
 }
 
-```
+&lt;/style&gt;
 
 
 # Prologue
@@ -80,7 +63,7 @@ options(knitr.table.format = "html")
 
 # Recap
 
-<br>
+&lt;br&gt;
 
 ### Previously
 
@@ -103,7 +86,7 @@ options(knitr.table.format = "html")
 # Limits on Financial Flows
 
 
-<br>
+&lt;br&gt;
 
 Last time we discussed financial account flows.
 
@@ -124,7 +107,7 @@ A .hi-pink[trade-off] exists with respect to allowing greater financial flexibil
 
 # National Accounts + Deficit
 
-<br> .hi-pink[National income and product accounts (NIPA).]
+&lt;br&gt; .hi-pink[National income and product accounts (NIPA).]
 
 --
 
@@ -136,9 +119,9 @@ _Gross national product_ .hi-pink[(GNP)]: value of all final goods and services 
 
 --
 
-<br>
+&lt;br&gt;
 
-$$\text{GNP} = \text{GDP} + \text{foreign income received} - \text{income paid to foreigners} +\\ \text{foreign transgers received} - \text{transfers paid to foreigners}$$
+`$$\text{GNP} = \text{GDP} + \text{foreign income received} - \text{income paid to foreigners} +\\ \text{foreign transgers received} - \text{transfers paid to foreigners}$$`
 
 
 ---
@@ -146,19 +129,19 @@ $$\text{GNP} = \text{GDP} + \text{foreign income received} - \text{income paid t
 
 # National Accounts + Deficit
 
-<br>
+&lt;br&gt;
 
-$$\text{GNP} = \text{GDP} + (\text{Net Primary Income} + \text{Net Secondary Income})$$
-
---
-
-Standard macro: $GDP = C+I+G+X-M$ 
+`$$\text{GNP} = \text{GDP} + (\text{Net Primary Income} + \text{Net Secondary Income})$$`
 
 --
 
-$$\text{GNP} = C+I+G+  \underbrace{(X-M+ \text{Net Primary} + \text{Net Secondary})}_{\text{Current Account}}$$
+Standard macro: `\(GDP = C+I+G+X-M\)` 
 
-<br>
+--
+
+`$$\text{GNP} = C+I+G+  \underbrace{(X-M+ \text{Net Primary} + \text{Net Secondary})}_{\text{Current Account}}$$`
+
+&lt;br&gt;
 
 --
 
@@ -179,7 +162,7 @@ Individuals may .hi-pink[consume income (C)], .hi-pink[save it (S)], or use it t
 
 --
 
-$$\text{National Income} = \text{GNP} = C + S + T$$
+`$$\text{National Income} = \text{GNP} = C + S + T$$`
 
 --
 
@@ -189,7 +172,7 @@ $$ C + I + G + CA = C + S + T \ \ \implies \ \ I + G + CA = S + T$$
 
 --
 
-$$S + (T-G) = I + CA$$
+`$$S + (T-G) = I + CA$$`
 
 --
 
@@ -220,9 +203,9 @@ Recall .hi-pink[financial account] reflects the same amount of lending or borrow
 
 --
 
-If $\text{CA}<0$, financial account features net borrowing greater than net acquisition of financial assets (lending, or financial outflows). 
+If `\(\text{CA}&lt;0\)`, financial account features net borrowing greater than net acquisition of financial assets (lending, or financial outflows). 
 
-* Negative current account $\implies$ net borrowing in the financial account, inflow of financial capital. 
+* Negative current account `\(\implies\)` net borrowing in the financial account, inflow of financial capital. 
 
 * Surplus countries provide savings to rest of world, enabling sale of more goods abroad than they buy. 
 
@@ -232,7 +215,7 @@ If $\text{CA}<0$, financial account features net borrowing greater than net acqu
 
 # National Savings
 
-<br>
+&lt;br&gt;
 
 
 Hence, another name for the current account balance is .hi-pink[net foreign investment]. 
@@ -247,7 +230,7 @@ Savings rose, investment fell. Federal budgets fell into large deficits. Falling
 
 # Current Account Deficit
 
-<br>
+&lt;br&gt;
 
 .hi-pink[Are Current Account Deficits Harmful?]
 
@@ -261,7 +244,7 @@ Does not tell us why economy runs CA deficit or surplus.
 
 --
 
-$$S + (T-G) = I + CA$$
+`$$S + (T-G) = I + CA$$`
 
 --
 
@@ -271,13 +254,13 @@ We cannot say CA in deficit because .hi-pink[saving is too low] any more than we
 
 # Current Account Deficit
 
-<br>
+&lt;br&gt;
 
 General tendency in the media and public to interpret CA deficit as a sign of weakness and as harmful to the nation’s welfare. 
 
 --
 
-Deficit .hi-pink[enables more investment] than would be possible otherwise (higher investment $\implies$ higher living standards) 
+Deficit .hi-pink[enables more investment] than would be possible otherwise (higher investment `\(\implies\)` higher living standards) 
 
 --
 
@@ -287,7 +270,7 @@ Capital inflows associated with current account deficits are .hi-pink[implicit v
 
 # Current Account Deficit
 
-<br>
+&lt;br&gt;
 
 For example, between 1980 and 1991, Japan invested +$25 billion of .hi-pink[trade surplus] in US manufacturing. 
 
@@ -313,7 +296,7 @@ During the US CA deficits of the 1990s, foreign investors continued to pour in c
 
 # Current Account Deficit
 
-<br>
+&lt;br&gt;
 
 .hi-pink[CA deficits can also generate problems.]
 
@@ -349,7 +332,7 @@ International financial crises, like some biological diseases, tend to be .hi-pi
 
 --
 
-> When Mexico slipped into __peso crisis__ in late 1994 and early 1995, economists began to write about “Tequila effect” on Latin America. When Thailand’s currency lost a large share of its value in 1997, media reported crisis spreading across East Asia. In both cases, the size of a CA balances was not good predictor of whether it was drawn into the crisis.
+&gt; When Mexico slipped into __peso crisis__ in late 1994 and early 1995, economists began to write about “Tequila effect” on Latin America. When Thailand’s currency lost a large share of its value in 1997, media reported crisis spreading across East Asia. In both cases, the size of a CA balances was not good predictor of whether it was drawn into the crisis.
 
 
 ---
@@ -357,7 +340,7 @@ International financial crises, like some biological diseases, tend to be .hi-pi
 
 # International Debt
 
-<br>
+&lt;br&gt;
 
 CA deficits financed through inflows of financial capital. 
 
@@ -382,16 +365,14 @@ Debt service becomes .hi-pink[unsustainable burden], holds back economic develop
 
 --
 
-```{r, echo=FALSE}
-knitr::include_graphics("figures/african_debt.gif")
-```
+&lt;img src="figures/african_debt.gif" style="display: block; margin: auto;" /&gt;
 
 ---
 
 
 # International Debt
 
-<br>
+&lt;br&gt;
 
 Most countries, rich and poor, have external debt.
 
@@ -432,7 +413,7 @@ Unsustainable debt occurs for many reasons.
 
 .hi-pink[Drawbacks]
 
-Worsens budget position by adding repayments made to outsiders $\implies$ reduces .hi-pink[availability of public funds] for important domestic needs such as infrastructure, schools, and health care.
+Worsens budget position by adding repayments made to outsiders `\(\implies\)` reduces .hi-pink[availability of public funds] for important domestic needs such as infrastructure, schools, and health care.
 
 --
 
@@ -459,7 +440,7 @@ Provide debt forgiveness for select countries that must qualify based on .hi-pin
 
 # Investment Position
 
-<br>
+&lt;br&gt;
 
 
 If a nation runs a .hi-pink[current account deficit], it .hi-pink[borrows from abroad] and adds to its indebtedness to foreigner.
@@ -470,7 +451,7 @@ If a nation runs a .hi-pink[current account deficit], it .hi-pink[borrows from a
 
 --
 
-<br>
+&lt;br&gt;
 
 International investment position of 2019 (USA) was 10,991 bn USD.
 
@@ -508,25 +489,7 @@ Quick recap:
 
 --
 
-```{r, echo=FALSE, out.width="90%"}
-
-exr = fread("data/DEXUSUK.csv")
-
-ggplot(exr) + ylab("USD per GBP") + xlab("")+
-  geom_ribbon(aes(x=DATE, ymin=1.0, ymax=DEXUSUK), 
-              color = "#004362", fill="#006897", alpha=0.7) +
-  scale_y_continuous(expand=c(0,0))+
-  geom_vline(xintercept=16800)+
-  #scale_x_continuous(expand=c(0,0))+
-  theme_bw()+ 
-  ggtitle("UK Exchange Rate (GBP:USD)") +
-  theme(axis.text.x = element_text(size=15),
-        axis.text.y = element_text(size=15),
-        axis.title.x = element_text(size=18),
-        axis.title.y = element_text(size=18),
-        plot.title = element_text(size=18))
-
-```
+&lt;img src="15-BoP-II_files/figure-html/unnamed-chunk-3-1.svg" width="90%" style="display: block; margin: auto;" /&gt;
 
 Severe loss of confidence in UK economic performance
 
@@ -535,32 +498,9 @@ Severe loss of confidence in UK economic performance
 
 # Current Account
 
-```{r, include=FALSE}
 
-ca_uk = fread("data/series-130922.csv")
 
-colnames(ca_uk[-c(1:7),])
-
-colnames(ca_uk) = c("year", "ca_perc")
-
-ca_uk = ca_uk[-c(1:7),] %>% mutate(ca_perc = as.numeric(ca_perc)) %>% filter(year>=2010)
-
-class(as.Date(ca_uk$year, format="%Y"))
-```
-
-```{r, echo=FALSE}
-
-ggplot(ca_uk)+
-  geom_line(aes(x=year, y=ca_perc), group=1) +
-  theme_bw() + xlab("") + ylab("%") + 
-  ggtitle("UK Current Account as % of GDP") +
-  theme(axis.text.x = element_text(size=15),
-        axis.text.y = element_text(size=15),
-        axis.title.x = element_text(size=18),
-        axis.title.y = element_text(size=18),
-        plot.title = element_text(size=18))
-
-```
+&lt;img src="15-BoP-II_files/figure-html/unnamed-chunk-5-1.svg" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -586,8 +526,140 @@ ggplot(ca_uk)+
 
 exclude: true
 
-```{R generate pdfs, include = F, eval = F}
-#remotes::install_github('rstudio/pagedown')
-library(pagedown)
-pagedown::chrome_print("15-BoP-II.html", output = "15-BoP-II.pdf")
-```
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,57 +1,39 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>EC 380: Lecture 13</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Philip Economides" />
+    <script src="13-financial-crisis_files/header-attrs/header-attrs.js"></script>
+    <link href="13-financial-crisis_files/remark-css/default.css" rel="stylesheet" />
+    <link href="13-financial-crisis_files/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="13-financial-crisis_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# EC 380: Lecture 13
+]
+.subtitle[
+## Global Finance: International Crises
+]
+.author[
+### Philip Economides
+]
+.date[
+### Fall 2022
+]
+
 ---
-title: "EC 380: Lecture 13"
-subtitle: "Global Finance: International Crises"
-author: "Philip Economides"
-date: "Fall 2022"
-output:
-  xaringan::moon_reader:
-    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
-    self_contained: false
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
----
+
 class: inverse, middle
 
-```{r Setup, include = F}
-options(htmltools.dir.version = FALSE)
-library(pacman)
-p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra, ggtext)
- 
-# Define colors
-red_pink <- "#e64173"
-met_slate <- "#272822" 
-turquoise <- "#20B2AA"
-orange <- "#FFA500"
-red <- "#fb6107"
-blue <- "#2b59c3"
-green <- "#8bb174"
-grey_light <- "grey70"
-grey_mid <- "grey50"
-grey_dark <- "grey20"
-purple <- "#6A5ACD"
-slate <- "#314f4f"
-# Notes directory
-dir_slides <- "~/Lectures/01-Intro"
-# Knitr options
-opts_chunk$set(
-  comment = "#>",
-  fig.align = "center",
-  fig.height = 7,
-  fig.width = 10.5,
-  warning = F,
-  message = F
-)  
-opts_chunk$set(dev = "svg")
-options(device = function(file, width, height) {
-  svg(tempfile(), width = width, height = height)
-})
-options(crayon.enabled = F)
-options(knitr.table.format = "html")
-```
 
-```{css, echo = F}
+
+&lt;style type="text/css"&gt;
 @media print {
   .has-continuation {
     display: block !important;
@@ -72,7 +54,7 @@ options(knitr.table.format = "html")
   clear: both;
 }
 
-```
+&lt;/style&gt;
 
 
 # Prologue
@@ -83,7 +65,7 @@ options(knitr.table.format = "html")
 
 ### Upcoming Topics
 
-<br>
+&lt;br&gt;
 
 * Broad look at international financial crises
 
@@ -97,7 +79,7 @@ options(knitr.table.format = "html")
 
 --
 
-<br>
+&lt;br&gt;
 
 This will comprise the third and last stage of .hi-pink[EC 380]
 
@@ -108,7 +90,7 @@ This will comprise the third and last stage of .hi-pink[EC 380]
 
 ### International Financial Crises
 
-<br>
+&lt;br&gt;
 
 * Defining types of international financial crises
 
@@ -132,31 +114,31 @@ This will comprise the third and last stage of .hi-pink[EC 380]
 
 * Banking Crisis
 
-> e.g. domino of bank collapse due to insolvency
+&gt; e.g. domino of bank collapse due to insolvency
 
 --
 
 * Exchange Rate Crisis
 
-> e.g. unexpected collapse in value of developing country currency
+&gt; e.g. unexpected collapse in value of developing country currency
 
 --
 
 * (Sovereign) Debt Crisis
 
-> e.g. EU debt crisis following public bailouts
+&gt; e.g. EU debt crisis following public bailouts
 
 --
 
 * Balance of Payments Crisis
 
-> e.g. foreign currency reserves drying up 
+&gt; e.g. foreign currency reserves drying up 
 
 ---
 
 # Banking Crises 
 
-<br>
+&lt;br&gt;
 
 --
 
@@ -180,7 +162,7 @@ Some percentages of businesses fail, banks must compensate for these bad debts t
 
 # Banking Crises 
 
-<br>
+&lt;br&gt;
 
 --
 
@@ -210,7 +192,7 @@ A bank is considered .hi-pink[insolvent] if even after completely liquidizing it
 
 # Banking Crises 
 
-<br>
+&lt;br&gt;
 
 --
 
@@ -237,7 +219,7 @@ Remaining savings can be lost, causing households to reduce consumption. This ca
 
 # Exchange Rate Crises
 
-<br>
+&lt;br&gt;
 
 --
 
@@ -257,7 +239,7 @@ Devaluation similar to .hi-pink[bank run], international currency holders sell t
 
 # Exchange Rate Crises
 
-<br>
+&lt;br&gt;
 
 .hi-pink[What happens to the local economy?]
 
@@ -267,7 +249,7 @@ Devaluation similar to .hi-pink[bank run], international currency holders sell t
 
 --
 
-* Suddenly foreign debt obligations hard to meet payments for $\implies$ potential knock-on bank crises
+* Suddenly foreign debt obligations hard to meet payments for `\(\implies\)` potential knock-on bank crises
 
 --
 
@@ -282,7 +264,7 @@ Devaluation similar to .hi-pink[bank run], international currency holders sell t
 
 # Debt Crises
 
-<br>
+&lt;br&gt;
 
 --
 
@@ -308,7 +290,7 @@ If debt held in a specific currency, that country presides over legal matters re
 
 # Debt Crises
 
-<br>
+&lt;br&gt;
 
 --
 
@@ -351,7 +333,7 @@ __B__ sees .hi-pink[assets fall in value] as supply on market suddenly increases
 
 --
 
-__B__ assets fall in value $\implies$ becomes insolent too. Group C unaffected. 
+__B__ assets fall in value `\(\implies\)` becomes insolent too. Group C unaffected. 
 
 
 ---
@@ -362,7 +344,7 @@ __B__ assets fall in value $\implies$ becomes insolent too. Group C unaffected.
 
 Governments can also fail to obligate their debts. The EU debt crisis saw repeated episodes of .hi-pink[Greece] almost defaulting on debt, following major economic collapse.
 
-<br>
+&lt;br&gt;
 
 --
 
@@ -386,7 +368,7 @@ Governments can also fail to obligate their debts. The EU debt crisis saw repeat
 
 # BoP Crises
 
-<br>
+&lt;br&gt;
 
 --
 
@@ -395,7 +377,7 @@ Governments can also fail to obligate their debts. The EU debt crisis saw repeat
 
 --
 
-<br>
+&lt;br&gt;
 
 Deficit is financed through selling financial assets, which includes currency reserves, as a way to generate .hi-pink[capital account net inflow] that offsets .hi-pink[current account net outflow]. 
 
@@ -413,7 +395,7 @@ Deficit is financed through selling financial assets, which includes currency re
 
 # BoP Crises
 
-<br>
+&lt;br&gt;
 
 --
 
@@ -440,20 +422,14 @@ Ability to convert local currency into foreign debt repayment transfers also kic
 
 # BoP Crises
 
-```{r, echo=FALSE, out.width="90%"}
-
-knitr::include_graphics("figures/forbes_2012.png")
-```
+&lt;img src="figures/forbes_2012.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 
 # BoP Crises
 
-```{r, echo=FALSE, out.width="65%"}
-
-knitr::include_graphics("figures/forbes_fig_1.png")
-```
+&lt;img src="figures/forbes_fig_1.png" width="65%" style="display: block; margin: auto;" /&gt;
 
 
 --
@@ -494,7 +470,7 @@ Can be the result of either of these two scenarios.
 --
 
 
-<br>
+&lt;br&gt;
 
 Macroimbalances can be attributes to: large budget deficits, large current account deficits, overinflated exchange rates, unsustainable private sector debt, speculative property bubbles. 
 
@@ -517,7 +493,7 @@ Doubt in government ability may result in government bond yields needing to rise
 
 --
 
-As .hi-pink[Warnock & Forbes (2012)] highlight, there is an ebb-and-flow to capital investment.
+As .hi-pink[Warnock &amp; Forbes (2012)] highlight, there is an ebb-and-flow to capital investment.
 
 --
 
@@ -543,7 +519,7 @@ These volatile movements of large sums of capital within these transition period
 
 # Contagion
 
-<br>
+&lt;br&gt;
 
 
 .hi-pink[This aspect of crises determines the scale of how 'international' or 'cross-country' a given crisis will be.]
@@ -596,7 +572,7 @@ Avoidance of a .hi-pink[crawling peg exchange rate system] is often recommended.
 
 --
 
-* If .hi-pink[domestic inflation higher than foreign], nominal devaluation keeps $R_r$ constant
+* If .hi-pink[domestic inflation higher than foreign], nominal devaluation keeps `\(R_r\)` constant
 
 --
 
@@ -612,7 +588,7 @@ Avoidance of a .hi-pink[crawling peg exchange rate system] is often recommended.
 
 # CC: Capital Controls
 
-<br>
+&lt;br&gt;
 
 
 Capital volatility can be addressed by limiting how much capital enters and exits the country.
@@ -661,7 +637,7 @@ Political feasibility of these moves is up for question, hard to implement durin
 
 --
 
-<br>
+&lt;br&gt;
 
 As a .hi-pink[lender of last resort] on the international scene, IMF is intervenes when countries reach crisis points and risk defaulting on international loans.
 
@@ -688,7 +664,7 @@ A great deal of focus has shifted to the .hi-pink[role of the IMF] and the .hi-p
 # Three Crises
 
 
-<br>
+&lt;br&gt;
 
 * 1990s East Asian Financial Crisis
 
@@ -707,7 +683,7 @@ A great deal of focus has shifted to the .hi-pink[role of the IMF] and the .hi-p
 # East Asian Crisis
 
 
-<br>
+&lt;br&gt;
 
 __Leading Up__
 
@@ -715,7 +691,7 @@ __Leading Up__
 
 --
 
-* Fixed exchange rate policy $\implies$ significant .hi-pink[external borrowing]
+* Fixed exchange rate policy `\(\implies\)` significant .hi-pink[external borrowing]
 
 --
 
@@ -723,7 +699,7 @@ __Leading Up__
 
 --
 
-* Currency peg to USD $\implies$ suddenly exports are less competitive
+* Currency peg to USD `\(\implies\)` suddenly exports are less competitive
 
 --
 
@@ -733,7 +709,7 @@ __Leading Up__
 
 # East Asian Crisis
 
-<br>
+&lt;br&gt;
 
 __Crisis__
 
@@ -756,7 +732,7 @@ __Crisis__
 
 # East Asian Crisis
 
-<br>
+&lt;br&gt;
 
 __Response__
 
@@ -764,7 +740,7 @@ __Response__
 
 --
 
-> Required countries to reduce government spending and deficits, allow insolvent banks and financial institutions to fail, and aggressively raise interest rates.
+&gt; Required countries to reduce government spending and deficits, allow insolvent banks and financial institutions to fail, and aggressively raise interest rates.
 
 --
 
@@ -777,7 +753,7 @@ __Response__
 
 # Great Recession (Ireland)
 
-<br>
+&lt;br&gt;
 
 __Leading Up__
 
@@ -804,7 +780,7 @@ __Leading Up__
 
 # Great Recession (Ireland)
 
-<br>
+&lt;br&gt;
 
 __Crisis__
 
@@ -828,7 +804,7 @@ __Crisis__
 
 # Great Recession (Ireland)
 
-<br>
+&lt;br&gt;
 
 __Response__
 
@@ -852,7 +828,7 @@ __Response__
 
 # EU Debt Crisis
 
-<br>
+&lt;br&gt;
 
 .hi-pink[Ireland among many EU countries acquiring government debt]
 
@@ -875,18 +851,147 @@ __Response__
 
 # EU Debt Crisis
 
-```{r, echo=FALSE, out.width="90%"}
-
-knitr::include_graphics("figures/debt_quake.png")
-```
+&lt;img src="figures/debt_quake.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 
 ---
 
 exclude: true
 
-```{R generate pdfs, include = F, eval = F}
-#remotes::install_github('rstudio/pagedown')
-library(pagedown)
-pagedown::chrome_print("13-financial-crisis.html", output = "13-financial-crisis.pdf")
-```
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
