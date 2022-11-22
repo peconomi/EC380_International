@@ -1,5 +1,5 @@
 ---
-title: "EC 380: Lecture 15"
+title: "EC 380: Lecture 16"
 subtitle: "Global Finance: Exchange Rates LR"
 author: "Philip Economides"
 date: "Fall 2022"
@@ -243,13 +243,9 @@ GBP appreciated in value, relative to the USD $\implies GBP \uparrow$
 
 .hi-pink[Why hold other currencies?]
 
---
-
 Three Reasons
 
 1)  Enable trade and investment purposes. 
-
---
 
 > Traders (importers and exporters) and investors routinely transact in foreign currencies, either receiving or making payments in another country’s money. Tourists are included in this category because they hold foreign exchange in order to buy foreign goods and services.
 
@@ -260,12 +256,9 @@ Three Reasons
 
 .hi-pink[Why hold other currencies?]
 
---
-
 Three Reasons
 
 2)  Interest Rate Arbitrage. 
---
 
 > Arbitrage conveys the idea of buying something where it is relatively cheap and selling it where it is relatively expensive. Arbitrageurs borrow money where interest rates are relatively low and lend it where rates are relatively high. 
 
@@ -277,13 +270,9 @@ Keeps interest rates from diverging too far and also constitutes one of the prim
 
 .hi-pink[Why hold other currencies?]
 
---
-
 Three Reasons
 
 3)  Speculative Action. 
-
---
 
 > Speculators are businesses that buy or sell a currency because they expect its price to rise or fall. They have no need for foreign exchange to buy goods or services or financial assets; rather, they hope to realize profits or avoid losses through correctly anticipating changes in a currency’s market value.
 
@@ -599,25 +588,21 @@ According to PPP the exchange rate is $1.25 dollars to the pound.
 
 --
 
-Imagine the exchange rate is $2. Goods that sell for 800 GBP in UK sell for 1600 USD. 
+Imagine GBP:USD is $2. Goods priced at 800 GBP in UK sell for 500 GBP if imported from US and paid for in USD. .hi-pink[Arbitrage opportunity].
 
 --
 
-Home consumers can instead purchase for $1000. .hi-pink[Arbitrage opportunity].
-
---
-
-.hi-pink[Demand for pound falls until purchasing power parity is achieved].
+Brits begin exchanging GBP for USD,  demand increases for USD .hi-pink[(appreciation)] until purchasing power parity is achieved.
 
 ---
 
 # PPP Example
 
-A few unrealistic assumptions.
+A few unrealistic assumptions, consider these caveats.
 
 * Requires that goods flow costlessly across international borders and that all goods and services can be traded. 
 
-In reality, there are transportation costs involved with moving goods and some goods and services are not traded. Merchant who buys 800 GBP of goods in UK and sells for 1600 USD in the US loses some of 600 USD profit to shipping, insurance, and other transaction costs. 
+In reality, there are transportation costs involved with moving goods and some goods and services are not traded.
 
 * Bank fees for a currency broker when buying the needed pounds. 
 
@@ -663,5 +648,5 @@ exclude: true
 ```{R generate pdfs, include = F, eval = F}
 #remotes::install_github('rstudio/pagedown')
 library(pagedown)
-pagedown::chrome_print("15-ExR.html", output = "15-ExR.pdf")
+pagedown::chrome_print("16-ExR.html", output = "16-ExR.pdf")
 ```
