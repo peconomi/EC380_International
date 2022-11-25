@@ -1,6 +1,6 @@
 ---
-title: "EC 380: Lecture 16"
-subtitle: "Global Finance: Exchange Rates Med-SR"
+title: "EC 380: Lecture 17"
+subtitle: "Global Finance: Exchange Rates SR-Med"
 author: "Philip Economides"
 date: "Fall 2022"
 output:
@@ -730,7 +730,7 @@ _In equilibrium_, if investors do not care about risk, then they have no reason 
 
 Using previous equation, test described as checking whether the .hi-pink[expected rate of depreciation] is equal to the .hi-pink[forward premium]
 
-$$\underbrace{\frac{F_{\text{USD}/\text{EUR}}}{R_{\text{USD}/\text{EUR}}}-1}_{\text{Forward Premium}} = \underbrace{\frac{E(F)_{\text{USD}/\text{EUR}}}{F_{\text{USD}/\text{EUR}}}-1}_{\text{Expected Rate of Depreciation}}$$
+$$\underbrace{\frac{F_{\text{USD}/\text{EUR}}}{R_{\text{USD}/\text{EUR}}}-1}_{\text{Forward Premium}} = \underbrace{\frac{E(F)_{\text{USD}/\text{EUR}}}{R_{\text{USD}/\text{EUR}}}-1}_{\text{Expected Rate of Depreciation}}$$
 
 ---
 
@@ -768,5 +768,5 @@ exclude: true
 ```{R generate pdfs, include = F, eval = F}
 #remotes::install_github('rstudio/pagedown')
 library(pagedown)
-pagedown::chrome_print("16-ExR.html", output = "16-ExR.pdf")
+pagedown::chrome_print("17-ExR.html", output = "17-ExR.pdf")
 ```
