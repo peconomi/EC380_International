@@ -463,11 +463,11 @@ tibble(
 
 <br>
 
-Payments abroad to buy financial assets are a debit, while payments received from abroad for selling home country assets .hi-pink[(net incurrence of liabilities)] are a credit. 
+Payments abroad to buy financial assets are a credit, while payments received from abroad for selling home country assets .hi-pink[(net incurrence of liabilities)] are a debit 
 
 --
 
-Credits viewed as the .hi-pink[inflow received when assets are sold to foreigners] and debits are the .hi-pink[payment outflow when financial assets are purchased by home country residents]. 
+Debits viewed as the .hi-pink[inflow received when assets are sold to foreigners] and credit are the .hi-pink[payment outflow when financial assets are purchased by home country residents]. 
 
 --
 
