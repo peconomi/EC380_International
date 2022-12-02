@@ -1,56 +1,41 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>EC 380: Lecture 18</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Philip Economides" />
+    <script src="18-ExR_files/header-attrs/header-attrs.js"></script>
+    <link href="18-ExR_files/remark-css/default.css" rel="stylesheet" />
+    <link href="18-ExR_files/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="18-ExR_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <script src="18-ExR_files/kePrint/kePrint.js"></script>
+    <link href="18-ExR_files/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="my-css.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# EC 380: Lecture 18
+]
+.subtitle[
+## Global Finance: Exchange Rate Policies
+]
+.author[
+### Philip Economides
+]
+.date[
+### Fall 2022
+]
+
 ---
-title: "EC 380: Lecture 18"
-subtitle: "Global Finance: Exchange Rate Policies"
-author: "Philip Economides"
-date: "Fall 2022"
-output:
-  xaringan::moon_reader:
-    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
-    self_contained: false
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
----
+
 class: inverse, middle
 
-```{r Setup, include = F}
-options(htmltools.dir.version = FALSE)
-library(pacman)
-p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr, kableExtra, ggtext, data.table)
 
-red_pink <- "#e64173"
-met_slate <- "#272822" 
-turquoise <- "#20B2AA"
-orange <- "#FFA500"
-red <- "#fb6107"
-blue <- "#2b59c3"
-green <- "#8bb174"
-grey_light <- "grey70"
-grey_mid <- "grey50"
-grey_dark <- "grey20"
-purple <- "#6A5ACD"
-slate <- "#314f4f"
-# Notes directory
-dir_slides <- "~/Lectures/01-Intro"
-# Knitr options
-opts_chunk$set(
-  comment = "#>",
-  fig.align = "center",
-  fig.height = 7,
-  fig.width = 10.5,
-  warning = F,
-  message = F
-)  
-opts_chunk$set(dev = "svg")
-options(device = function(file, width, height) {
-  svg(tempfile(), width = width, height = height)
-})
-options(crayon.enabled = F)
-options(knitr.table.format = "html")
-```
 
-```{css, echo = F}
+&lt;style type="text/css"&gt;
 @media print {
   .has-continuation {
     display: block !important;
@@ -71,7 +56,7 @@ options(knitr.table.format = "html")
   clear: both;
 }
 
-```
+&lt;/style&gt;
 
 
 # Prologue
@@ -80,7 +65,7 @@ options(knitr.table.format = "html")
 
 # Recap
 
-<br>
+&lt;br&gt;
 
 
 * FX market mechanisms in the medium run driven by business cycles
@@ -99,12 +84,12 @@ options(knitr.table.format = "html")
 
 # Topics
 
-<br>
+&lt;br&gt;
 
 * Reasons for holding foreign reserves, main institutions
 
 
-* Effect of $\Delta S, \Delta D$ of foreign currency on home currency
+* Effect of `\(\Delta S, \Delta D\)` of foreign currency on home currency
 
 
 * Identify short, medium and long term forces that affect currency value
@@ -151,27 +136,52 @@ If the exchange rate is not allowed to vary, then it is called a .hi-pink[hard p
 
 # Fixed Exchange Rates
 
-<br>
+&lt;br&gt;
 
 Fixed exchange rates that fluctuate within a set band are .hi-pink[soft pegs] and these, in turn, can take several forms depending on the amount of variation allowed.
 
 --
 
-```{r, echo=FALSE}
-
-tibble(
-  `Currency Regime` = c("Hard pegs", "Soft pegs", "Managed floating", 
-                        "Independently floating", "Other", "Total"),
-  Countries = c(24,88,35,30,13,190)
-) %>% kbl() %>% kable_styling(font_size=18)
-
-```
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Currency Regime &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Countries &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Hard pegs &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Soft pegs &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 88 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Managed floating &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 35 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Independently floating &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 30 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Other &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 13 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Total &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 190 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
 ---
 
 # Gold Standard
 
-<br>
+&lt;br&gt;
 
 Historically, fixed exchange rates were the norm, often within framework that defined the value of a country’s currency in terms of a .hi-pink[fixed amount of gold]. 
 
@@ -191,7 +201,7 @@ Many developing countries adopted flexible systems in the 1980s and 1990s, easil
 
 # Gold Standard
 
-<br>
+&lt;br&gt;
 
 There is no best exchange rate system. 
 
@@ -201,7 +211,7 @@ Currently, less than half of the world’s nations have flexible exchange rates.
 
 --
 
-<br>
+&lt;br&gt;
 
 .hi-pink[Gold standards] are one type of fixed exchange rate. 
 
@@ -218,7 +228,7 @@ Restored in a modified form after WWII but has completely disappeared since the 
 
 # Gold Standard
 
-<br>
+&lt;br&gt;
 
 Economists overwhelmingly opposed to return of gold standard, first countries to end gold standard were first ones to escape .hi-pink[Great Depression]. 
 
@@ -228,7 +238,7 @@ After WWII, Western economies adopted a modified gold standard under the .hi-pin
 
 --
 
-<br>
+&lt;br&gt;
 
 Abandoned in the early 1970s. Gold standards highlight a pure form of fixed exchange rate with a hard peg.
 
@@ -263,7 +273,7 @@ There are essentially .hi-pink[three rules] that countries must follow in order 
 
 # Gold Standard
 
-<br>
+&lt;br&gt;
 
 If a country _decided to print large quantities of money_ for which there is no gold backing.
 
@@ -287,7 +297,7 @@ This is the point at which gold standard would begin to become unhinged.
 
 # Gold Standard
 
-<br>
+&lt;br&gt;
 
 If gold supplies low relative to supply of domestic currency, gold reserves will begin to run out at some point. 
 
@@ -307,12 +317,12 @@ It is the responsibility of the monetary authorities to keep the exchange rate f
 
 # Topics
 
-<br>
+&lt;br&gt;
 
 * Reasons for holding foreign reserves, main institutions
 
 
-* Effect of $\Delta S, \Delta D$ of foreign currency on home currency
+* Effect of `\(\Delta S, \Delta D\)` of foreign currency on home currency
 
 
 * Identify short, medium and long term forces that affect currency value
@@ -335,46 +345,11 @@ It is the responsibility of the monetary authorities to keep the exchange rate f
 # Fixed ExR Policy Action
 
 
-Suppose US & UK both on gold standard and the US demand for GBP $\uparrow$.
+Suppose US &amp; UK both on gold standard and the US demand for GBP `\(\uparrow\)`.
 
 --
 
-```{r, echo=FALSE, out.width="85%", warning=FALSE}
-
-tibble(
-    country  = c("S1", "S1",
-                 "D1", "D1",
-                 "D2", "D2"),
-    pies     = c(10, 90, 90, 5, 90, 5),
-    ExR  = c(0.95, 1.40, 1.05, 1.4, 1.15, 1.5)
-) %>% ggplot() +
-    geom_line(aes(x=pies, y=ExR, color=country), size=2) +
-    theme_bw() + 
-    scale_y_continuous(expand=c(0,0), limits=c(0.8,1.6)) + 
-    scale_x_continuous(expand=c(0,0), limits=c(0,100)) +
-    #coord_fixed() + 
-    ggtitle("US market for GBP") + 
-    theme(title = element_text(size=14),
-          legend.position = "right",
-          legend.title = element_blank(),
-          legend.text = element_text(size=16),
-          axis.title.x = element_text(size=16),
-          axis.title.y = element_text(size=16),
-          axis.text.x = element_text(size=14),
-          axis.text.y = element_text(size=14))+
-    geom_point(aes(x=54,y=1.2), size=3) + xlab("Units of GBP") + ylab("ExR, USD/GBP") +
-    geom_point(aes(x=64.5,y=1.26), size=3) +
-    geom_segment(aes(x=0, xend=54, y=1.2, yend=1.2), linetype="dashed")+
-    geom_segment(aes(x=54, xend=54, y=0.8, yend=1.2), linetype="dashed")+
-    geom_segment(aes(x=0, xend=64.5, y=1.26, yend=1.26), linetype="dashed")+
-    geom_segment(aes(x=64.5, xend=64.5, y=0.8, yend=1.26), linetype="dashed")+
-    geom_label(aes(x=59, y=1.17), label="E", size=4, position = position_dodge(0.9),
-               vjust = 0) +
-    geom_label(aes(x=71, y=1.25), label="E'", size=4, position = position_dodge(0.9),
-               vjust = 0) +
-  scale_color_manual(values=c("#006797","#0087c5","#cd2828"))
-
-```
+&lt;img src="18-ExR_files/figure-html/unnamed-chunk-3-1.svg" width="85%" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -382,56 +357,15 @@ tibble(
 
 # Fixed ExR Policy Action
 
-Policymakers must counter weakening dollar and keep $R_{\text{USD per GBP}}$ fixed.
+Policymakers must counter weakening dollar and keep `\(R_{\text{USD per GBP}}\)` fixed.
 
-```{r, echo=FALSE, out.width="85%", warning=FALSE}
-
-tibble(
-    country  = c("S1", "S1",
-                 "D1", "D1",
-                 "D2", "D2",
-                 "S2", "S2"),
-    pies     = c(10, 90, 90, 5, 90, 5, 10, 90),
-    ExR  = c(0.95, 1.40, 1.05, 1.4, 1.15, 1.5, .82, 1.27)
-) %>% ggplot() +
-    geom_line(aes(x=pies, y=ExR, color=country), size=2) +
-    theme_bw() + 
-    scale_y_continuous(expand=c(0,0), limits=c(0.8,1.6)) + 
-    scale_x_continuous(expand=c(0,0), limits=c(0,100)) +
-    #coord_fixed() + 
-    ggtitle("US market for GBP") + 
-    theme(title = element_text(size=14),
-          legend.position = "right",
-          legend.title = element_blank(),
-          legend.text = element_text(size=16),
-          axis.title.x = element_text(size=16),
-          axis.title.y = element_text(size=16),
-          axis.text.x = element_text(size=14),
-          axis.text.y = element_text(size=14))+
-    geom_point(aes(x=54,y=1.2), size=3) + xlab("Units of GBP") + ylab("ExR, USD/GBP") +
-    geom_point(aes(x=64.5,y=1.26), size=3) +
-    geom_point(aes(x=78,  y=1.2), size=3) +
-    geom_segment(aes(x=0, xend=54, y=1.2, yend=1.2), linetype="dashed")+
-    geom_segment(aes(x=54, xend=54, y=0.8, yend=1.2), linetype="dashed")+
-    geom_segment(aes(x=0, xend=64.5, y=1.26, yend=1.26), linetype="dashed")+
-    geom_segment(aes(x=64.5, xend=64.5, y=0.8, yend=1.26), linetype="dashed")+
-    geom_segment(aes(x=0, xend=78, y=1.2, yend=1.2), linetype="dashed")+
-    geom_segment(aes(x=79, xend=78, y=0.8, yend=1.2), linetype="dashed")+
-    geom_label(aes(x=59, y=1.17), label="E", size=4, position = position_dodge(0.9),
-               vjust = 0) +
-    geom_label(aes(x=71, y=1.25), label="E'", size=4, position = position_dodge(0.9),
-               vjust = 0) +
-    geom_label(aes(x=80, y=1.17), label="E''", size=4, position = position_dodge(0.9),
-               vjust = 0) +
-  scale_color_manual(values=c("#006797","#0087c5","#cd2828","#cd2828"))
-
-```
+&lt;img src="18-ExR_files/figure-html/unnamed-chunk-4-1.svg" width="85%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # Fixed ExR Policy Action
 
-<br>
+&lt;br&gt;
 
 There are two possibilities for the home country as it sells its gold reserves. 
 
@@ -439,7 +373,7 @@ There are two possibilities for the home country as it sells its gold reserves.
 
 * Begins to run out of gold (coffers too light). 
 
-<br>
+&lt;br&gt;
 
 --
 
@@ -449,7 +383,7 @@ If the latter happens, the home country may be forced into a devaluation that is
 
 # Fixed ExR Policy Action
 
-<br>
+&lt;br&gt;
 
 .hi-pink[Pegged exchange rate systems] operate similarly to gold standard except that instead of gold, another currency is used to “anchor” home currency.
 
@@ -469,7 +403,7 @@ The simplest way to avoid is peg to a group of currencies. Reduces the importanc
 
 # Fixed ExR Policy Action
 
-<br>
+&lt;br&gt;
 
 Countries that use a .hi-pink[crawling peg] may peg to a single currency or a basket of currencies, but they regularly adjust the exchange rate. 
 
@@ -485,12 +419,12 @@ May prevent some country-specific problems with a fixed rate but difficult to ma
 
 # Topics
 
-<br>
+&lt;br&gt;
 
 * Reasons for holding foreign reserves, main institutions
 
 
-* Effect of $\Delta S, \Delta D$ of foreign currency on home currency
+* Effect of `\(\Delta S, \Delta D\)` of foreign currency on home currency
 
 
 * Identify short, medium and long term forces that affect currency value
@@ -511,7 +445,7 @@ May prevent some country-specific problems with a fixed rate but difficult to ma
 
 # Real Exchange Rate
 
-<br>
+&lt;br&gt;
 
 ExR used so far does not really tell us what a foreign currency is worth. 
 
@@ -561,7 +495,7 @@ _Volume of textiles that can be purchased in Malaysia with four ringgits and in 
 
 # Real Exchange Rate
 
-<br>
+&lt;br&gt;
 
 .hi-pink[Real ExR] is market exchange rate adjusted for price differences. 
 
@@ -587,15 +521,15 @@ Italian cheese costs 50% more than American cheese, .hi-pink[real ExR] is __1.5 
 
 # Real Exchange Rate
 
-<br>
+&lt;br&gt;
 
 Algebra:
 
-$$\text{Real ExR} \\
+`$$\text{Real ExR} \\
 =[(\text{R} \times \text{Foreign Price})]/ (\text{Domestic Price})\\
 =[(1.25 \text{ per EUR}) \times (300\text{ EUR per wheel})]/( 250 \text{ USD per wheel})\\
 =\frac{(375 \text{ USD per wheel of Italian Cheese})}{(250 \text{ USD per wheel of American cheese})}\\
-= 1.5 \text{ wheels of American cheese per wheel of Italian cheese}$$
+= 1.5 \text{ wheels of American cheese per wheel of Italian cheese}$$`
 
 
 --
@@ -606,9 +540,9 @@ Local supply is cheaper, when establishing .hi-pink[Real ExR].
 
 # Real Exchange Rate
 
-<br>
+&lt;br&gt;
 
-$$R_r = R_n (P^*/P)$$
+`$$R_r = R_n (P^*/P)$$`
 
 --
 
@@ -617,7 +551,7 @@ The real rate equals the nominal rate when the price levels (purchasing powers) 
 --
 
 
-For example, consider the current EUR-USD exchange rate, along with their price levels: $R_r = (1 \text{ USD per EUR}) \times (109.1/108.5)$ 
+For example, consider the current EUR-USD exchange rate, along with their price levels: `\(R_r = (1 \text{ USD per EUR}) \times (109.1/108.5)\)` 
 
 
 --
@@ -629,7 +563,7 @@ Even though we express parity in EUR to USD, .hi-pink[real exchange rates] sugge
 
 # Choosing Exchange Rate System
 
-<br>
+&lt;br&gt;
 
 Economic research has focused on performance characteristics of systems under different economic conditions and institutional arrangements. 
 
@@ -645,7 +579,7 @@ How do different systems influence core elements of a country’s macroeconomy?
 
 # Choosing Exchange Rate System
 
-<br>
+&lt;br&gt;
 
 .hi-pink[Traditional view]: Countries with fixed exchange rate systems were better at controlling inflation but paid a price in the form of slower economic growth. 
 
@@ -662,7 +596,7 @@ Limits placed on ability to manipulate money supply also remove an important mon
 
 # Choosing Exchange Rate System
 
-<br>
+&lt;br&gt;
 
 .hi-pink[Research has failed to demonstrate a strong relationship between the type of exchange rate system and either inflation or economic growth.]
 
@@ -705,12 +639,12 @@ If originates in the external environment (oil shock), relatively more flexibili
 
 # Topics
 
-<br>
+&lt;br&gt;
 
 * Reasons for holding foreign reserves, main institutions
 
 
-* Effect of $\Delta S, \Delta D$ of foreign currency on home currency
+* Effect of `\(\Delta S, \Delta D\)` of foreign currency on home currency
 
 
 * Identify short, medium and long term forces that affect currency value
@@ -732,7 +666,7 @@ If originates in the external environment (oil shock), relatively more flexibili
 
 # Single Currency Areas
 
-<br>
+&lt;br&gt;
 
 Jan-1999, 11 members of EU .hi-pink[adopted euro] as their official currency. 
 
@@ -752,7 +686,7 @@ Nation’s currency is one of its strongest symbols of national sovereignty, rem
 
 # Single Currency Areas
 
-<br>
+&lt;br&gt;
 
 
 Four potential reasons why countries might want to share a common currency. 
@@ -791,7 +725,7 @@ Adoption of a .hi-pink[common currency] also means that the country no longer ha
 
 # Single Currency Areas
 
-<br>
+&lt;br&gt;
 
 .hi-pink[Conditions for adoption of single currency]
 
@@ -818,8 +752,140 @@ Adoption of a .hi-pink[common currency] also means that the country no longer ha
 
 exclude: true
 
-```{R generate pdfs, include = F, eval = F}
-#remotes::install_github('rstudio/pagedown')
-library(pagedown)
-pagedown::chrome_print("18-ExR.html", output = "18-ExR.pdf")
-```
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -1,0 +1,278 @@
+---
+title: "Final Review"
+subtitle: "EC 380: International Economic Issues"
+author: "Philip Economides"
+date: "Fall 2022"
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    # self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, middle
+
+```{r Setup, include = F}
+options(htmltools.dir.version = FALSE)
+library(pacman)
+p_load(ggthemes, viridis, knitr, extrafont, tidyverse, magrittr, wooldridge, stargazer, latex2exp, parallel, broom, wooldridge, readxl, jtools, huxtable, data.table)
+# Define colors
+red_pink <- "#e64173"
+met_slate <- "#23373b" # metropolis font color
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  #dpi = 300,
+  #cache = T,
+  warning = F,
+  message = F
+)  
+theme_simple <- theme_bw() + theme(
+  axis.line = element_line(color = met_slate),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  text = element_text(family = "Fira Sans", color = met_slate, size = 14),
+  axis.text.x = element_text(size = 12),
+  axis.text.y = element_text(size = 12),
+  axis.ticks = element_blank(),
+  plot.title = element_blank(),
+  legend.position = "none"
+)
+theme_empty <- theme_bw() + theme(
+  line = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  axis.text = element_blank(),
+  plot.title = element_blank(),
+  axis.title = element_blank(),
+  plot.margin = structure(c(0, 0, -1, -1), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+
+```
+
+# Prologue
+
+---
+
+# Exam Setting
+
+<br>
+
+As per midterm, we'll be using on-campus UO online center and off-campus third party proctoring. 
+
+* .hi-pink[120 minutes], password protected quiz exam 
+
+* Expect a mix of qualitative and quantitative short MCQ questions
+
+* Worth 40% of grade
+
+.hi-pink[Please ensure your appointment has been booked for finals week.]
+
+---
+
+# What do I bring?
+
+<br>
+
+Bring the following items
+
+* Photo ID, Duck Credentials, DUO authentication app
+
+* Know your various passwords, will need for Canvas login
+
+IF you forget anything and cannot take the exam, do not panic. Try to reschedule for a separate time slot. 
+
+* No notes, no programmable calculators
+
+.hi-pink[Try to arrive 10mins early to get started ASAP.]
+
+---
+
+# Exam Content
+
+<br>
+
+The following areas are eligible to come up in the exam:
+
+* Trade Policy: Tariffs on large and small economies
+
+* Trade Policy: International Agreements
+
+* Global Finance: Balance of Payments
+
+* Global Finance: Exchange Rates
+
+I will not include any  *quantitative* questions for *Exchange Rate Policies*
+
+
+---
+
+# Current Performance
+
+```{r, echo=FALSE, out.width="90%"}
+#getwd()
+scores <- fread("final_grades.csv")
+
+post_final <- scores %>% mutate(`Current Score` = as.numeric(`Current Score`)) %>%
+  filter(`Current Score` >0 ) %>% arrange(desc(`Current Score`)) 
+
+
+ggplot(post_final) + ggtitle("Scores Distribution") +
+  geom_density(aes(x=`Current Score`), fill="blue", alpha=0.3) +
+  scale_x_continuous(expand=c(0,0), limits=c(-10,110))+
+  xlab("Current %")+
+  geom_vline(xintercept = 81, alpha=0.8, linetype="dashed") +
+  geom_vline(xintercept = 70, alpha=0.8, linetype="dashed") +
+  geom_vline(xintercept = 55, alpha=0.8, linetype="dashed") +
+  geom_vline(xintercept = 30, alpha=0.8, linetype="dashed") +
+  theme_pander() +
+  #geom_text(aes(x=92.5, y= 0.0175), label="A")+
+  geom_label(aes(x=92.5, y= 0.0175),colour = "black", 
+             position= position_dodge(width=1), label="A") +
+    geom_label(aes(x=75.25, y= 0.0175),colour = "black", 
+             position= position_dodge(width=1), label="B") +
+    geom_label(aes(x=62.5, y= 0.0175),colour = "black", 
+             position= position_dodge(width=1), label="C") +
+    geom_label(aes(x=42.5, y= 0.0175),colour = "black", 
+             position= position_dodge(width=1), label="D") +
+    geom_label(aes(x=15, y= 0.0175),colour = "black", 
+             position= position_dodge(width=1), label="F")+
+    geom_label(aes(x=92.5, y= 0.0155),colour = "black", 
+             position= position_dodge(width=1), label="12% of class") +
+    geom_label(aes(x=75.25, y= 0.0195),colour = "black", 
+             position= position_dodge(width=1), label="38% of class") +
+    geom_label(aes(x=62.5, y= 0.0155),colour = "black", 
+             position= position_dodge(width=1), label="26% of class") +
+    geom_label(aes(x=42.5, y= 0.0195),colour = "black", 
+             position= position_dodge(width=1), label="11% of class") +
+    geom_label(aes(x=15, y= 0.0155),colour = "black", 
+             position= position_dodge(width=1), label="9% of class") +
+  ylab("mass")
+  
+post_final$count = c(1:nrow(post_final))
+post_final = post_final %>% select(c("Student", "SIS User ID", 
+                        "Current Score", "count")) %>%
+  mutate(cumul_class = 100*count/nrow(post_final),
+         letter = ifelse(`Current Score` >= 88, "A",
+                  ifelse(`Current Score` >= 83, "A-",
+                  ifelse(`Current Score` >= 79.5, "B+",
+                  ifelse(cumul_class < 45, "B",
+                  ifelse(`Current Score` >= 69.5, "B-",
+                  ifelse(cumul_class < 66, "C+",
+                  ifelse(cumul_class < 72, "C",
+                  ifelse(`Current Score` >=55, "C-",
+                  ifelse(`Current Score` >=51, "D+",
+                  ifelse(`Current Score` >=37, "D",
+                  ifelse(`Current Score` >=30, "D-","F")))))))))))) 
+
+post_final$letter[1:3] = "A+"
+```
+
+
+---
+
+# Current Performance
+
+```{r, echo=FALSE, message=FALSE, out.width="90%"}
+
+final_comp = fread("final_view_comp.csv")
+
+videos = sort(unique(final_comp$`Session Name`))
+students = sort(unique(final_comp$Name))
+df_comp  = list()
+count = 1
+
+for(v in 1:length(videos)){
+  for(s in 1:length(students)){
+    
+    df_comp[[count]] = tibble(`Session Name` = videos[v],
+                              Name = students[s])
+    count = count + 1
+    
+  }
+}
+
+df_comp = rbindlist(df_comp)
+
+df_comp = left_join(df_comp, final_comp %>% 
+            select(`Session Name`, Name, `Minutes Delivered`, `Percent Completed`) ) %>%
+            mutate(`Minutes Delivered` = ifelse(is.na(`Minutes Delivered`)==1, 0, `Minutes Delivered`),
+                   `Percent Completed` = ifelse(is.na(`Percent Completed`)==1, 0, `Percent Completed`))
+
+df_comp = df_comp %>% group_by(Name) %>% 
+  summarise(perc_comp = weighted.mean(`Percent Completed`, `Minutes Delivered`, na.rm=TRUE)) %>% 
+  arrange(desc(perc_comp))
+
+df_comp$Name = gsub(" , ", ", ", with(df_comp, paste(word(Name, 2), ",", word(Name, 1)), sep=" "))
+
+df_comp = df_comp %>% mutate(Name = ifelse(Name=="Robinson, Kennedy", "Robinson Sass, Kennedy", Name)) %>% 
+  filter(Name !="Economides, Philip")
+
+#setdiff(df_comp$Name, post_mid$Student)
+#setdiff(post_mid$Student, df_comp$Name)
+
+ggplot(df_comp) + ggtitle("Panopto Completion Distribution") +
+  geom_density(aes(x=perc_comp), fill="green", alpha=0.3) +
+  scale_x_continuous(expand=c(0,0), limits=c(0,100))+
+  xlab("%")+
+  theme_pander()
+
+```
+
+
+---
+
+# Current Performance
+
+```{r, echo=FALSE, message=FALSE}
+
+`%ni%` <- Negate(`%in%`)
+
+join_perf = left_join(post_final %>% select(Student, `Current Score`), df_comp %>% rename(Student = Name)) %>%
+  mutate(perc_comp = ifelse(is.na(perc_comp)==1, 0, perc_comp)) #%>%
+  # Filter out those who havent taken midterm yet
+  #filter(Student %ni% c("Williamson, Justin", "Wang, Shirley", "Park, Ashleigh"))
+
+ggplot(join_perf, aes(x=perc_comp,y=`Current Score`)) +
+  geom_point() +
+  geom_smooth(method="lm") +
+  ylab("Current Score, Canvas") + xlab("% of Videos Completed, Panopto") +
+  scale_y_continuous(expand=c(0,0), limits=c(0, 110)) +
+  ggtitle("Co-movement of these variables") +
+  theme_pander()
+  
+```
+
+
+---
+
+# Current Performance
+
+```{r, echo=FALSE, out.width="20%"}
+
+res <- lm(data=join_perf, `Current Score` ~ perc_comp)
+#export_summs(res, model.names = "Dep: Score")
+#stargazer(res, type="html")
+
+```
+
+Involvement appears to be .hi-pink[highly predictive] of .hi-pink[performance].
+
+* Every additional one percentage point increase in .hi-pink[Panopto completions] was associated with, on average, a 0.35 percentage point increase in .hi-pink[current score]. 
+
+---
+
+exclude: true
+
+```{R generate pdfs, include = F, eval = F}
+#remotes::install_github('rstudio/pagedown')
+library(pagedown)
+pagedown::chrome_print("Final-Review.html", output = "Final-Review.pdf")
+```

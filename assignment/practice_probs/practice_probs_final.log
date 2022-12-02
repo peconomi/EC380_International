@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7.30) (preloaded format=xelatex 2022.8.12)  27 NOV 2022 20:05
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7.30) (preloaded format=xelatex 2022.8.12)  28 NOV 2022 15:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./PBS5.tex
-(PBS5.tex
+**./practice_probs_final.tex
+(practice_probs_final.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-07-15>
 (C:\Users\phili\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -361,8 +361,8 @@ File: l3backend-xetex.def 2022-07-01 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count290
 \g__pdf_backend_annotation_int=\count291
 \g__pdf_backend_link_int=\count292
-) (PBS5.aux)
-\openout1 = `PBS5.aux'.
+) (practice_probs_final.aux)
+\openout1 = `practice_probs_final.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
 LaTeX Font Info:    ... okay on input line 42.
@@ -426,36 +426,50 @@ LaTeX Font Info:    ... okay on input line 42.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 42.
-(PBS5.out) (PBS5.out)
+(practice_probs_final.out) (practice_probs_final.out)
 \@outlinefile=\write4
-\openout4 = `PBS5.out'.
+\openout4 = `practice_probs_final.out'.
 
- [1
+LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
 
-] [2] [3]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 106
-.
 
 (C:\Users\phili\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 106
-.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
+
 
 (C:\Users\phili\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-[4] [5] [6] [7] [8] (PBS5.aux)
-Package rerunfilecheck Info: File `PBS5.out' has not changed.
+[1
+
+] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12]
+Overfull \hbox (27.16515pt too wide) in paragraph at lines 254--269
+ [][] 
+ []
+
+
+Overfull \hbox (27.16515pt too wide) in paragraph at lines 275--290
+ [][] 
+ []
+
+
+Overfull \hbox (27.16515pt too wide) in paragraph at lines 296--311
+ [][] 
+ []
+
+[13] [14] [15] [16] [17] [18] (practice_probs_final.aux)
+Package rerunfilecheck Info: File `practice_probs_final.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10438 strings out of 410653
- 159987 string characters out of 2816265
- 472127 words of memory out of 3000000
- 31375 multiletter control sequences out of 15000+600000
- 474304 words of font info for 52 fonts, out of 8000000 for 9000
+ 10459 strings out of 410653
+ 160704 string characters out of 2816265
+ 479209 words of memory out of 3000000
+ 31388 multiletter control sequences out of 15000+600000
+ 476035 words of font info for 64 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,10n,76p,262b,421s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,10n,76p,467b,421s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on PBS5.pdf (8 pages).
+Output written on practice_probs_final.pdf (18 pages).
