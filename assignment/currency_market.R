@@ -80,3 +80,12 @@ V_exr(-0.29, 180, 0.251, 50, 0, -40) %>%
 V_exr(-45, 1080, 22, 200, 10, -80) %>% 
   mutate(delta_e = 100*(`Exchange Rate`-lag(`Exchange Rate`))/lag(`Exchange Rate`))
 
+V_exr(-45, 1080, 22, 200, 10, -80) %>% 
+  mutate(delta_e = 100*(`Exchange Rate`-lag(`Exchange Rate`))/lag(`Exchange Rate`))
+
+
+## Final Exam
+V_exr(-5.2, 1000, 1/8
+      , 2, 12, 7) %>% 
+  mutate(delta_e = 100*(`Exchange Rate`-lag(`Exchange Rate`))/lag(`Exchange Rate`))
+

@@ -1,0 +1,244 @@
+%Preamble
+
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[nohead]{geometry}
+\usepackage{setspace}
+\usepackage[bottom, hang, flushmargin]{footmisc}
+\usepackage{indentfirst}
+\usepackage{endnotes}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{natbib}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\geometry{left=1in,right=1in,top=1.00in,bottom=1.0in}
+
+\begin{document}
+
+\singlespacing
+
+\noindent {EC 380: International Economic Issues \\ Instructor: P. Economides \\ Problem Set 5 \\ Fall 2022 \\ Due: 11:59 p.m. on Friday, Dec 2nd}
+
+\bigskip
+
+\doublespacing
+
+
+
+\section*{Setup}
+
+\noindent 
+Answers must be submitted online through Canvas by the stated deadline (see above).
+Please prioritize posting your submission in PDF format.
+
+\section*{Questions}
+
+\noindent Q1. Answer the following short questions:
+
+\begin{enumerate}[1)]
+	
+	\item Consider a case in which the USD-GBP exchange rate is equal to 1.25. How would you describe the rate of exchange between the pound and the dollar? 
+	
+	\vspace{0.2in}
+	For every dollar exchanged, I receive \$1.25 pounds in return.
+	\vspace{0.2in}
+	
+	\item Suppose there is a 1.25 USD-GBP exchange rate. What is the value of the GBP-USD exchange rate is?
+	
+	\vspace{0.2in}
+	$\frac{1}{1.25}=0.8$
+	\vspace{0.2in}
+	
+	\newpage
+	
+	\item Suppose the exchange rate climbs to 1.35. Has the dollar appreciated or depreciated in value?
+	
+	\vspace{0.2in}
+	Appreciated
+	\vspace{0.2in}
+	
+	\item List and explain two reasons why one holds foreign currencies. 
+	
+	\vspace{0.2in}
+	Means of exchange: Goods and service purchases require foreign currency holdings. 
+	Interest rate arbitrage can only be exploited through the exchange of currencies too.
+	\vspace{0.2in}
+	
+	\item List two key stakeholders in the currency exchange business. Explain their responsibilities.
+	
+	\vspace{0.2in}
+	Central banks manage the value of the currency and are responsible for issuing additional notes over time. 
+	Commercial banks handle currency exchanges and international transactions, often using third-party currency exchange brokers as a middle-man.
+	\vspace{0.2in}
+	
+\end{enumerate}
+
+\newpage
+
+\noindent Q2. Consider a foreign currency market in which demand is downward sloping with respect to the prevailing exchange rate and units of the foreign currency held locally in reserves. Supply is upward sloping.
+
+\begin{enumerate}[1)]
+	\item Draw a diagram of the supply and demand curves, highlighting their intersection point. Label the diagram appropriately. 
+	
+	\vspace{0.2in}
+	See ExR-17, slide 5 for an example.
+	\vspace{0.2in}
+	
+	\item Consider the following demand and the supply curves of foreign currency, where $\text{ExR}$ represents the local currency to foreign currency (e.g. USD-GBP) exchange rate.
+	$\text{FC}$ represents the units of foreign currency reserves held in the ``local" economy. 
+	\begin{align*}
+	D: \text{ExR} =  4 - 0.075 \text{FC} \ \ , & \ \ S: \text{ExR} =  0.5 + 0.025 \text{FC}
+	\end{align*}
+	
+	\vspace{0.2in}
+	Setting D=S and solving for FC:
+	\begin{align*}
+	 4 - 0.075 \text{FC}^* = & 0.5 + 0.025 \text{FC}^* \\
+	 \implies \text{FC}^* = &35 \\
+	 \text{ExR}^* =  4 - 0.075 \text{FC}^* =& 4 - 0.075 (35) = 1.375 \\
+	\{\text{FC}^*,\text{ExR}^*\}=&\{35,1.375\}
+	\end{align*}
+	
+	\item Consider a case in which the foreign interest rate, $i^*$, rises such that demand sees a 0.5 level-shift increase such that the new demand curve can be represented by $D^{'} = D + 0.5$.
+	What are the new exchange rate and currency reserve values?
+	
+		Setting D$'$=S and solving for FC:
+	\begin{align*}
+	4 - 0.075 \text{FC}^* + 0.5 = & 0.5 + 0.025 \text{FC}^* \\
+	\implies \text{FC}^* = &40 \\
+	\text{ExR}^* =  4.5 - 0.075 \text{FC}^* =& 4.5 - 0.075 (40) = 1.5 \\
+	\{\text{FC}^*,\text{ExR}^*\}=&\{40,1.5\}
+	\end{align*}
+	
+	\item How would you describe the change in both currencies? Which has depreciated and which has appreciated?
+	
+	\vspace{0.2in}
+	Local depreciated, foreign appreciated
+	\vspace{0.2in}
+	
+	\item What is the percentage change in currency reserves?
+	
+	\vspace{0.2in}
+	$100*(40-15)/35 = 14.3\%$
+	\vspace{0.2in}
+	
+\end{enumerate}
+
+
+\noindent Q3. Consider purchasing power parity (PPP) holding across long-run exchange rates.
+Suppose an identical basket of goods is available in the US and Japan. In the US the goods are valued at 1,400 USD whereas in Japan they are valued at 194,775 Japanese Yen (JPY).
+
+\begin{enumerate}[1)]
+	\item What is the implicit USD-JPY exchange rate, if the PPP relationship is satisfied under this scenario?
+	
+	$$\left(USD-JPY\right)^{\text{PPP}} = \frac{194,775}{1,400} = 139.12$$
+	
+		\newpage
+	
+	\item Suppose that the exchange rate, USD-JPY, is currently 112 JPY per USD. Is the USD undervalued or overvalued? Explain why.
+	
+	\vspace{0.2in}
+	USD undervalued. While it should be exchanged for 139.12 under equal basket of good costs across countries, currently, it is only fetching 112 JPY per USD.
+	\vspace{0.2in}
+	
+
+	
+	\item Given the disparity between goods prices for the same basket from the US and Japan, would this classify as an arbitrage opportunity?  
+	
+	\vspace{0.2in}
+	Yes, a price differential can be exploited in this scenario since the USD is undervalued and the JPY is overvalued.
+	\vspace{0.2in}
+	
+	\item How would a Japanese merchant go about exploiting price differences between the US and Japan for the same basket of identical goods?
+	
+	\vspace{0.2in}
+	Japanese imports could purchase USD to buy American products at a cheaper price than what they observe locally, then resell the items for a net profit.
+	\vspace{0.2in}
+	
+	
+	\item What effect would these actions have on the USD-JPY exchange rate? At what stage of the exchange rate would these price pressures cease?
+	
+	\vspace{0.2in}
+	As demand for the USD increases, the currency will continue appreciating (causes rise from 112 USD-JPY).
+	Increases in the strength of the dollar halt when PPP is satisfied.
+	Once the PPP is satisfied, at USD-JPY = 139.12
+	\vspace{0.2in}
+	
+\end{enumerate}
+
+	\newpage
+
+\noindent Q4. Answer the following short questions, which cover our lessons from the medium and short run patterns observed in exchange rate movements.
+
+\begin{enumerate}[1)]
+\item What contributes to medium-run exchange rate variation? What time intervals do we consider when it comes to adjustments in these medium-run trends?
+
+\vspace{0.2in}
+Business cycle movements, 4-5 years.
+\vspace{0.2in}
+
+\item What three factors explain short-run variation in exchange rates? List and describe each factor.
+
+\vspace{0.2in}
+Interest rate adjustments, speculation and shocks. Interest rate adjustments are frequency and cause readjustments in investors' priority over holding currencies such that the interest rate parity relationship remains satisfied.
+Speculation are any bids on purchasing or selling currencies in lieu of an anticipated shock or change in the economy later on.
+The realization of these shocks also introduces further exchange rate movements. This remaining factor is largely attributed to unanticipated shocks.
+\vspace{0.2in}
+
+\item What is price discovery? How does this relate to arbitrage opportunities?
+
+\vspace{0.2in}
+Individuals try to perceive arbitrage opportunities. Those that perceive the risks correctly, and carefully allocate their resources across investments are rewarded with profit. 
+This trial and error process of influencing short-term exchange rates contributes to broaded trends at arriving on the ``true" exchange rate. 
+\vspace{0.2in}
+
+	\newpage
+
+\item State and define the interest rate parity relationship.
+
+\vspace{0.2in}
+The difference between the home and foreign interest rates should be equal to the expected change (appreciation or depreciation) of the exchange rate.
+$$i-i^* = \frac{F-R}{R},$$
+where $i$ is the domestic interest rate, $i^*$ is the foreign interest rate, $R$ is the current exchange rate in the market and $F$ is the expected future exchange rate. 
+\vspace{0.2in}
+
+\item  Why are multinational firms particularly exposed to exchange rate risk? How do individual investors hedge themselves away from exchange rate risk?
+
+\vspace{0.2in}
+Forward contracts, because portions of their revenue are denominated in foreign currency values. To repatriate, need to convert at some later date at an uncertain rate of exchange.
+
+A company's factory overheads will also be subject to uncertainty due to foreign exchange rates changing the explicit costs that firms face abroad.
+\vspace{0.2in}
+
+
+\end{enumerate}
+
+
+
+\end{document}
