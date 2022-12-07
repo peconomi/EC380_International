@@ -29,6 +29,6 @@ vignettes/*.pdf
 .Rproj.user
 # R assignment files
 assignment/solution_keys/
-assignment/assess_performance/*
-assignment/Midterm/*
+assignment/assess_performance/
+assignment/Midterm/
 assignment/post_dates.txt
