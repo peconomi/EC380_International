@@ -19,35 +19,35 @@ The HTML versions of the lecture slides allow you to view animations and interac
 
 3. **Ricardian Model: Free-Trade** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%202/03-ricardian.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%202/03-ricardian.pdf)
 
-4. **Heckscher-Ohlin & Income Distribution** <br> [.html](https://raw.githack.com/peconomi/EC320_Econometrics/main/Lectures/04_Fundamental_Problem/04-Fun_Problem.html) | [.pdf](https://raw.githack.com/peconomi/EC320_Econometrics/main/Lectures/04_Fundamental_Problem/04-Fun_Problem.pdf)
+4. **Heckscher-Ohlin & Income Distribution** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%202/04-heck-ohlin.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%202/04-heck-ohlin.pdf)
 
-5. **Specific Factor Model + Extensions** <br> [.html](https://raw.githack.com/peconomi/EC320_Econometrics/main/Lectures/05_Regression/05-Regression.html) | [.pdf](https://raw.githack.com/peconomi/EC320_Econometrics/main/Lectures/05_Regression/05-Regression.pdf)
+5. **Specific Factor Model + Extensions** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%203/05-heck-ohlin.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%203/05-heck-ohlin.pdf)
 
-6. **Empiricial Evidence: Jobs, Wages and Migration** <br> [.html](https://raw.githack.com/peconomi/EC320_Econometrics/main/Lectures/06_SimpleLR_I/06-Simple_Linear_Regression_Estimation_I.html) | [.pdf](https://raw.githack.com/peconomi/EC320_Econometrics/main/Lectures/06_SimpleLR_I/06-Simple_Linear_Regression_Estimation_I.pdf) | [Handout]()
+6. **Empiricial Evidence: Jobs, Wages and Migration** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%203/06-empirics-trade.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%203/06-empirics-trade.pdf) 
 
-7. **Tariffs, Quotas and Subsidies I** <br> [.html](https://raw.githack.com/peconomi/EC320_Econometrics/main/Lectures/07_SimpleLR_II/07-Simple_Linear_Regression_Estimation_II.html) | [.pdf](https://raw.githack.com/peconomi/EC320_Econometrics/main/Lectures/07_SimpleLR_II/07-Simple_Linear_Regression_Estimation_II.pdf)
+7. **Tariffs, Quotas and Subsidies I** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%204/07-tariff-quota.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%204/07-tariff-quota.pdf)
 
-8. **Tariffs, Quotas and Subsidies II** <br> [.html](https://raw.githack.com/peconomi/EC320_Econometrics/main/Lectures/08_Classical_Assumptions/08-Classical_Assumptions.html) | [.pdf](https://raw.githack.com/peconomi/EC320_Econometrics/main/Lectures/08_Classical_Assumptions/08-Classical_Assumptions.pdf)
+8. **Tariffs, Quotas and Subsidies II** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%204/08-tariff-quota.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%204/08-tariff-quota.pdf)
 
-9. **International Agreements - Trade** <br> [.html]() | [.pdf]()
+9. **International Agreements - Trade** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%205/09-int-agree.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%205/09-int-agree.pdf)
 
 10. **Midterm Review**<br>
 
-11. **International Agreements - Environment** <br> [.html]() | [.pdf]()
+11. **International Agreements - Environment** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%206/11-int-agree.Rmd) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%206/11-int-agree.pdf)
 
-12. **Effects of Globalization** <br> [.html]() | [.pdf]()
+12. **Effects of Globalization** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%207/12-globalization.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%207/12-globalization.pdf)
 
-13. **International Financial Crises** <br> [.html]() | [.pdf]()
+13. **International Financial Crises** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%207/13-financial-crisis.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%207/13-financial-crisis.pdf)
 
-14. **Balance of Payments I** <br> [.html]() | [.pdf]()
+14. **Balance of Payments I** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%208/14-BoP-I.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%208/14-BoP-I.pdf)
 
-15. **Balance of Payments II** <br> [.html]() | [.pdf]()
+15. **Balance of Payments II** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%208/15-BoP-II.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%208/15-BoP-II.pdf)
 
-16. **Exchange Rate: Long Run** <br> [.html]() | [.pdf]()
+16. **Exchange Rate: Long Run** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%209/16-ExR.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%209/16-ExR.pdf)
 
-17. **Exchange Rate: Short-Medium Run** <br> [.html]() | [.pdf]()
+17. **Exchange Rate: Short-Medium Run** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%209/17-ExR.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%209/17-ExR.pdf)
 
-18. **Exchange Rate Policies** <br> [.html]() | [.pdf]()
+18. **Exchange Rate Policies** <br> [.html](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%2010/18-ExR.html) | [.pdf](https://raw.githack.com/peconomi/EC380_International/main/lecture/Week%2010/18-ExR.pdf)
 
 19. **Final Review**<br>
 
