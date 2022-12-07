@@ -1,6 +1,6 @@
 # International Economic Issues <img align="right" height="45" src="UO.png">
 
-Welcome to EC 380: International Economic Issues (Fall/Winter 2022) at the University of Oregon.
+Welcome to EC 380: International Economic Issues (Fall 2022 & Winter 2022) at the University of Oregon.
 
 - Instructor: [Philip Economides](https://philip-economides.com/)
 - [Syllabus](https://raw.githack.com/peconomi/EC380_International/main/syllabus/EC380_syllabus_int_econ.pdf)
