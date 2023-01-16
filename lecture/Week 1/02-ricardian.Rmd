@@ -2,7 +2,7 @@
 title: "EC 380: Lecture 2"
 subtitle: "Trade Theory: The Ricardian Model"
 author: "Philip Economides"
-date: "Fall 2022"
+date: "Winter 2023"
 output:
   xaringan::moon_reader:
     css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
@@ -18,7 +18,7 @@ class: inverse, middle
 options(htmltools.dir.version = FALSE)
 library(pacman)
 p_load(ggthemes, viridis, knitr, dslabs, gapminder, extrafont, Ecdat, wooldridge, tidyverse, magrittr)
-devtools::install_github("R-CoderDotCom/econocharts")
+#devtools::install_github("R-CoderDotCom/econocharts")
 
 library(econocharts)
 # Define colors
