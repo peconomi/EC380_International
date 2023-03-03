@@ -2,7 +2,7 @@
 title: "EC 380: Lecture 7"
 subtitle: "Trade Policy: Tariffs, Quotas and Subsidies"
 author: "Philip Economides"
-date: "Fall 2022"
+date: "Winter 2023"
 output:
   xaringan::moon_reader:
     css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
@@ -316,13 +316,13 @@ chart + theme(legend.title=element_blank(),
 
 To calculate the area of .hi-pink[consumer surplus]:
 
-$$\text{CS} = \frac{1}{2} \times \left[ \ \text{Demand}(q=0) - \ p^{*} \  \right] \times q^*$$
+$$\text{CS} = \frac{1}{2} \times \left[ \ \text{Demand}(q=0) - \ p^{*} \  \right] \times q_d^*$$
 
 --
 
 To calculate the area of .hi-pink[producer surplus]:
 
-$$\text{PS} = \frac{1}{2} \times \left[ \ p^*-\text{Supply}(q=0) \ \right] \times q^*$$
+$$\text{PS} = \frac{1}{2} \times \left[ \ p^*-\text{Supply}(q=0) \ \right] \times q_s^*$$
 
 --
 

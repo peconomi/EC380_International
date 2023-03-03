@@ -2,7 +2,7 @@
 title: "EC 380: Lecture 9"
 subtitle: "Trade Policy: International Agreements"
 author: "Philip Economides"
-date: "Fall 2022"
+date: "Winter 2023"
 output:
   xaringan::moon_reader:
     css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
