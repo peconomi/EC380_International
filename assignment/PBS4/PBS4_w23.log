@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7.30) (preloaded format=xelatex 2022.8.12)  13 MAR 2023 09:53
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.7.30) (preloaded format=xelatex 2022.8.12)  3 MAR 2023 11:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./practilce_sol_final.tex
-(practilce_sol_final.tex
+**./PBS4_w23.tex
+(PBS4_w23.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-07-15>
 (C:\Users\phili\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -361,8 +361,8 @@ File: l3backend-xetex.def 2022-07-01 L3 backend support: XeTeX
 \g__pdf_backend_object_int=\count290
 \g__pdf_backend_annotation_int=\count291
 \g__pdf_backend_link_int=\count292
-) (practilce_sol_final.aux)
-\openout1 = `practilce_sol_final.aux'.
+) (PBS4_w23.aux)
+\openout1 = `PBS4_w23.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
 LaTeX Font Info:    ... okay on input line 42.
@@ -426,69 +426,36 @@ LaTeX Font Info:    ... okay on input line 42.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 42.
-(practilce_sol_final.out) (practilce_sol_final.out)
+(PBS4_w23.out) (PBS4_w23.out)
 \@outlinefile=\write4
-\openout4 = `practilce_sol_final.out'.
+\openout4 = `PBS4_w23.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
+ [1
+
+] [2]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 96.
 
 
 (C:\Users\phili\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 96.
 
 
 (C:\Users\phili\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (25.77318pt too wide) in paragraph at lines 57--67
- [][] 
- []
-
-
-Overfull \hbox (22.50919pt too wide) in paragraph at lines 70--80
- [][] 
- []
-
-
-Overfull \hbox (19.24516pt too wide) in paragraph at lines 83--93
- [][] 
- []
-
-
-Overfull \hbox (8.13318pt too wide) in paragraph at lines 96--106
- [][] 
- []
-
-[1
-
-]
-Overfull \hbox (27.16515pt too wide) in paragraph at lines 116--131
- [][] 
- []
-
-
-Overfull \hbox (27.16515pt too wide) in paragraph at lines 139--154
- [][] 
- []
-
-
-Overfull \hbox (27.16515pt too wide) in paragraph at lines 162--177
- [][] 
- []
-
-[2] [3] [4] (practilce_sol_final.aux)
-Package rerunfilecheck Info: File `practilce_sol_final.out' has not changed.
+[3] [4] [5] [6] [7] [8] (PBS4_w23.aux)
+Package rerunfilecheck Info: File `PBS4_w23.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 10436 strings out of 410653
- 160221 string characters out of 2816265
- 500202 words of memory out of 3000000
- 31375 multiletter control sequences out of 15000+600000
- 474304 words of font info for 52 fonts, out of 8000000 for 9000
+ 10440 strings out of 410653
+ 160115 string characters out of 2816265
+ 472147 words of memory out of 3000000
+ 31376 multiletter control sequences out of 15000+600000
+ 474312 words of font info for 53 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 72i,10n,76p,277b,322s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,8n,76p,291b,421s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
-Output written on practilce_sol_final.pdf (4 pages).
+Output written on PBS4_w23.pdf (8 pages).
