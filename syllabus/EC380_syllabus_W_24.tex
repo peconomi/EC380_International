@@ -1,0 +1,377 @@
+\documentclass[10pt]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+% \usepackage{fontspec}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{setspace, titling}
+%\newcommand{\subtitle}[1]{%
+%	\posttitle{%
+%		\par\end{center}
+%	\begin{center}\large#1\end{center}
+%	\vskip0.5em}%
+%}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{uo_green}{HTML}{154731}
+\definecolor{forest_green}{HTML}{006241}
+\definecolor{pine_green}{HTML}{007935}
+\definecolor{grass_green}{HTML}{62A70F}
+\definecolor{golden_yellow}{HTML}{FFD200}
+\definecolor{cool_gray}{HTML}{54565B}
+\definecolor{light_cool_gray}{HTML}{A8A8AA}
+%% FONTS
+\usepackage{fontspec}
+% See: https://tex.stackexchange.com/a/50593
+\setmainfont[
+BoldFont=FiraSans-Semibold.otf,
+ItalicFont = FiraSans-Italic.otf,
+BoldItalicFont = FiraSans-SemiBoldItalic.otf
+]{FiraSans-Regular.otf} %
+\setmonofont[
+BoldFont = FiraCode-Bold.ttf
+]{FiraCode-Regular.ttf}
+\usepackage{marvosym} % For cool symbols.
+\usepackage{fontawesome} % Ditto
+\usepackage{graphicx}
+\usepackage{twemojis}
+%\usepackage{emoji}
+
+\usepackage[normalem]{ulem} %% For strikeout font: \sout()
+
+
+
+\usepackage[colorlinks = true,
+linkcolor = pine_green,
+urlcolor  = pine_green,
+citecolor = pine_green,
+anchorcolor = black]{hyperref}
+\usepackage{graphicx}
+
+% For table formatting:
+\usepackage{array, booktabs, caption, siunitx}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+
+\begin{document}
+
+\title{
+	\texttt{\textbf{International Economic Issues} [EC 380]}\\[1em]
+	\large Winter 2024 Syllabus
+}
+\author{\textbf{Philip Economides} \\ Department of Economics \\ University of Oregon}
+%\date{}  % Toggle commenting to test
+\date{\vspace{-1ex}}
+
+\maketitle
+
+%\section*{Course at a glance}
+% 1F1EE 1F1EA
+% flag-ireland
+% \emoji{flag-ireland}
+
+\begin{table}[!h]
+	\ra{1.1}
+	\begin{tabular}{l @{\hspace{1.25\tabcolsep}} l l l @{\hspace{1.25\tabcolsep}} l l l @{\hspace{1.25\tabcolsep}} l @{}}
+		& \textbf{{Lecture}} & & &  & & & \textbf{{Materials}} \\
+		\faGlobe & Asynchronous classes & & & & & \faBook & International Economics by Gerber J. \\
+		\faClockO & Uploads: Every MW & & & & & & Recommend eText option of $8^{\text{th}}$ Ed.\\
+	\end{tabular}
+\end{table}
+
+\begin{table}[!h]
+	\ra{1.1}
+	\begin{tabular}{l @{\hspace{1.25\tabcolsep}} l @{}}
+		& \textbf{{Instructor}}\\
+		\faUser & Philip Economides \twemoji{flag: Ireland} \\
+		\faGlobe & \href{https://philip-economides.com/}{philip-economides.com} \\
+		\faPaperPlaneO & \href{mailto:peconomi@uoregon.edu}{peconomi@uoregon.edu} \\
+		\faMapMarker & \href{https://map.uoregon.edu/e99ccec73}{PLC 520} \\
+		\faClockO & Office Hours: T 1500--1600, Th 1000--1100, or by appointment	
+	\end{tabular}
+\end{table}
+
+\section*{General Information}
+
+\noindent Online economics classes are offered for students who are unable to attend regular classes (because of job or other commitments, distance from Eugene, etc.). 
+Also, some students take online classes because they prefer the flexibility that an online class adds to their schedule.
+The material in an online economics class is the same as that in a face-to-face class, and the exams are identical in format and difficulty.
+However, online classes require more discipline by students than those in face-to-face classes given the necessity of mastering the material primarily from online content and the textbook. \\
+
+\noindent Thus, contrary to what many students anticipate, online classes are harder, not easier, than face-to-face classes. 
+To succeed in an online class, a student must be extremely motivated and well organized. \\  
+
+\noindent Exams for online economics classes, unlike those in face-to-face classes, are taken at a day and time chosen by the student, although exams must be taken by a deadline.
+It is encouraged that students coordinate the timing of their online exams with exams for other classes to minimize conflicts and create ``space" for exam preparation for each course. \\
+
+\paragraph{Canvas:} Frequent use of Canvas is essential to pass this course, analogous to the importance of class attendance in a face-to-face class. 
+Thus, you need to make sure that you can log on to Canvas at http://canvas.uoregon.edu, following the instructions on the homepage of Canvas. 
+Once you log on to Canvas, click on this course and then click on Modules, as course material is separated by weeks into separate modules. 
+Canvas contains the course syllabus, class emails (with weekly study checklists), study suggestions, and weekly modules.
+Each weekly module contains the lecture notes, recorded lectures, recorded exercises, sets of practice questions and answers, and the quiz/exams (if applicable).  
+As the course proceeds, five homeworks, two quizzes and two exams will be posted and completed on Canvas.  For Canvas assistance, addresses are http://canvas.uoregon.edu and http://blogs.uoregon.edu/canvas/support/. 
+
+\paragraph{Email:} Emails will be sent frequently to students and posted on Canvas; they provide information/updates on scheduling of exams, the course quizzes, and exam results.  It is essential that you receive and read the class emails carefully.  Important: if you do not receive the emails, contact the instructor ASAP, as you are probably not using your official UO email account address. 
+Email me with any course structure questions you might have.  I am typically available seven days a week.  When emailing me, please include ``EC380” in the subject line.  This helps ensure that I will not overlook your email by accident. 
+
+\section*{Course summary}
+
+\paragraph{Description:} The objective of this course is to examine international economic issues using the economic tools developed in the principles of economics.  This course is presented in two sections. The first section focuses on INTERNATIONAL TRADE and has three primary goals.  The first goal is to develop the fundamental economic models that explain why countries trade with one another.  Theoretical explanations for trade patterns include technological differences, resource differences, and competitiveness differences; these explanations are examined and compared to the observed patterns of trade.  The second goal is to analyze the effects of international trade on specific groups within a country as well as the country as a whole.  One key result is that, although countries as a whole benefit from international trade, some groups within a country should be expected to lose from trade.  The third goal is to discuss how government policies influence international trade and how these policies influence special interests within a country as well as the country as a whole. Examples of these policies include tariffs, quotas, and free-trade agreements. 
+ 
+\bigskip
+
+\noindent The second part of the course, INTERNATIONAL FINANCE, turns from trade in goods to trade in financial instruments.  Here too there are three primary goals.  The first goal is to explain how international financial markets are structured and how currencies across countries relate to one another in foreign exchange markets.  From this foundation, the second goal is to develop an understanding of how a country's individual macroeconomic situation (e.g., inflation and unemployment) influences other countries through foreign exchange markets.  The third goal is to investigate how government policies might help address objectives of full employment and low inflation in a world with trade.  Policies include monetary and fiscal policy, the choice of the optimal exchange rate regime (e.g., fixed versus floating exchange rates), currency unions (e.g., the Euro area), and the role of international organizations (e.g., the International Monetary Fund).   
+
+\paragraph{Prerequisites:} The prerequisite for this course is EC 201, Principles of Microeconomics.  In addition, EC 202, Principles of Macroeconomics, is strongly recommended. 
+
+\newpage
+
+\subsection*{Learning Material}
+
+\paragraph{Textbooks:} There is one required textbook for this course:
+
+\begin{enumerate}
+	\item {\textbf{International Economics}, 7\textsuperscript{th}-8\textsuperscript{th} ed.} by James Gerber (\textbf{IE}), required
+\end{enumerate}
+You can purchase this item at the Duckstore or your preferred online bookseller.
+The 8th edition includes an eText option which leases use of the book online through the Pearson platform at a monthly rate.
+For courses like ours with short term lengths, this ends up making it the cheapest option.  
+You should complete the assigned readings from the textbooks \textit{before} lecture. Attending lecture is not a substitute for reading and comprehending the texts. Likewise, reading is not a substitute for attending lecture. The lectures and the readings are meant to \textit{complement} one another. The tentative course schedule (further below) lists the assigned readings for each topic.
+In addition to the textbook readings, I may occasionally assign readings from peer-reviewed studies for classroom discussion. I will post these readings on Canvas within weekly modules.
+
+\bigskip
+
+\noindent \textbf{Related Materials on Canvas, organized by Week in Modules} 
+
+\paragraph{Lecture Notes:} These are outlines of the recorded lecture videos. During the lecture videos I will fill in these outlines. Students typically find these to be a useful way to keep their notes organized 
+
+\paragraph{Video lectures:} I will talk through the contents of the course and provide elaboration on the prescribed chapters of reading. 
+
+\paragraph{Video Questions and Answers:} These short answer questions will work through simple exercises in preparation for your homework.
+
+\section*{Course Structure}
+
+\subsection*{Grades}
+
+All assignments must be turned in by 11:59PM on the day they are due. 
+I will award grades based on your relative performance in the class, as determined by the following weights:
+\begin{table}[!h]
+	\ra{1.2}
+	\centering
+	\begin{tabular}{@{\extracolsep{1cm}}ll@{}}
+		\textbf{Problem Sets $\times 5$} & 25\% \\
+		\textbf{Quizzes $\times 3$} (top 2) & 10\% \\
+		\textbf{Midterm Exam} & 25\% \\
+		\textbf{Final Exam}   & 40\%
+	\end{tabular}
+\end{table}
+
+\subsection*{Exams} 
+
+All exams are taken in a proctored environment. 
+There are no make-up exams. 
+In the event of a missed exam for ANY reason, the weight of that exam will be put on the final. 
+Second, exams will be made available to take one week prior to the deadline. 
+You can take your exam at any time during this period. 
+Third, the exams are timed. 
+The midterm will be 80 minutes in length and the final is 120 minutes. 
+You may use a set of writing utensils, a non-programmable calculator, and a blank 3-by-5-inch notecard. 
+
+\bigskip 
+
+\noindent Proctored Exams are those taken in-person and supervised by university staff members. 
+You will need to read and review the proctored exam policies and procedures on the \href{https://online.uoregon.edu/examcenter}{UO Online Exam Center Website}. 
+You must make a reservation to take each exam in this course through the \href{https://online.uoregon.edu/}{UO Online Exam Center}, and you must take the exam on or before the deadline. 
+
+
+\bigskip 
+%\noindent Given the ongoing pandemic, should I observe any students experiencing profuse coughing during the exam, I reserve the choice to interrupt their exams immediately.
+%This otherwise becomes a major distraction for all other individuals taking their exam, and a particular safety hazard for any individuals unable to be vaccinated (e.g. auto-immune disorders, religious grounds, etc.).
+\textbf{If You Will Be in Eugene} 
+
+\bigskip
+
+\noindent You will need to schedule an appointment to take each exam in-person at the \href{https://online.uoregon.edu/examcenter}{UO Online Exam Center}, which is located in Room 19 of the \href{https://online.uoregon.edu/campus-proctoring}{Knight Library}. The exams will be supervised by university staff. Consult the course syllabus or Canvas for the exam deadlines. 
+If you require accommodations when taking exams, you will need to schedule your exams through the \href{https://aec.uoregon.edu/}{Accessible Education Center}. 
+
+\bigskip
+
+Before your exam:
+
+\bigskip
+
+\textbf{1. Schedule an appointment}
+
+\noindent You must reserve a time slot to complete your exam in-person. You can schedule an appointment using the scheduling form on the \href{https://online.uoregon.edu/campus-proctoring}{Exam Center Website}. Exam appointments are scheduled on a first-come, first-served basis. Without an appointment, you will not be able to take your exam. 
+You cannot reserve a time slot more than two weeks in advance of the first day that the exam is available to take. The exam deadline date is the last day to take your exam. We recommend taking your exam before this date. 
+
+\bigskip
+
+\noindent Example: if your exam is available Mon-Fri of Week 6, you will have to wait until the Monday of Week 4 to schedule your exam. 
+
+\bigskip
+
+\textbf{2. Bring login details and ID}
+\begin{itemize}
+	\item Bring your photo ID, DuckID credentials, and DUO Authentication Device
+	\item You may not begin an exam without proper ID
+	\item Exams are delivered through Canvas
+	\item You must know your login credentials and be able to acquire a DUO Authentication code
+	\item You will not be able to take your exam without your DuckID credentials and DUO Authentication
+\end{itemize}
+
+\bigskip
+
+\textbf{ 3. Arrive 10 minutes before your exam appointment at Knight Library, Room 19.}
+
+\bigskip
+
+\noindent You may not begin your exam later than 10 minutes after your scheduled appointment. If you arrive more than 10 minutes after your exam’s scheduled start time, you may forfeit your appointment and need to create a new one. 
+
+\bigskip
+
+\textbf{If You Will Not Be in Eugene}
+
+\bigskip
+
+\noindent If you are located outside of the Eugene-Springfield area, you will need to obtain a remote proctor at a local college, university, tutoring center, or public library to administer your course exam. Web proctoring services and K-12 proctors are not accepted. You should locate a proctor by the end of Week 1. This deadline reflects the academic calendar for tuition refund if a student will not be able to locate a suitable proctor.
+
+\bigskip 
+
+\noindent The only exception is for students located in the \href{https://online.uoregon.edu/off-campus-proctoring#portland}{Portland area}, where you may be able to take your exams at the UO White Stag Building in Portland. Note that exam appointments at the Portland location are extremely limited. Typically, there is one testing session on Monday and one on Friday. Hours vary each term, but you can only take exams during regular business hours. Students whose schedules do not align with the White Stag Building will need to locate a remote proctor.  
+
+\bigskip
+
+\noindent International students will need to provide a URL to the institution's website in the "Additional Notes" section of the request form that includes the Remote Proctors name, position, and email address. Request that do not include a URL listing the email address will not be approved. 
+
+\bigskip
+
+\noindent If you set up off-campus proctoring, you can still complete your online exams on campus. To do this, you will use the \href{https://online.uoregon.edu/campus-proctoring}{on-campus scheduling system}. 
+If you have questions about locating a remote proctor, contact the \href{https://online.uoregon.edu/examcenter#contact}{Online Exam Center staff}. 
+See the \href{https://online.uoregon.edu/examcenter}{UO Online Exam Center website} for more information. 
+
+\subsection*{Problem Sets} 
+
+I will assign \textbf{five} problem sets throughout the quarter. Problems will function as added practice for demonstrating an understanding of the exercises displayed in the provided recordings. Consider this material good practice for the exam setting too.
+\begin{itemize}
+	\setlength{\itemsep}{0pt}
+	\item I will announce due dates in class. 
+	\item You will turn in an \textbf{electronic copy} of each problem set on Canvas.
+\end{itemize}
+I encourage you to work together on the problem sets as this will help iron out any misunderstandings early on. 
+Unless explicitly stated, \textbf{each student is required to write and submit independent answers}. 
+I will take word-for-word duplicates of submitted work as evidence of academic dishonesty. 
+If you work with others, list their names at the top of your assignment. Groups must consist of {\bf three or less} individuals. 
+If you fail to list your collaborators, you will receive a score of zero.
+
+\subsection*{Quizzes}
+
+I will assign \textbf{three} quizzes during the term, aimed at testing your knowledge on the recent content we've covered.
+They'll be relatively easy compared to the homework, 10 questions per quiz, featuring MCQ's and true/false questions. 
+I will provide 45 minutes for each quiz and several days to complete it. 
+This maps closely to the recommendation that you read prescribed material \text{before class}. 
+These three quizzes will cover three separate portions of course content recently addressed in class.
+Feel free to use your textbook throughout.
+% Discuss length in terms of time and question count. 
+
+\bigskip
+
+Your top two performances will contribute to your grade, the worst performance will be dropped. 
+
+\newpage
+
+\section*{Course Policies}
+
+\subsection*{Accommodations}
+
+The University of Oregon continues working to create inclusive learning environments.
+Notify me if there are aspects of this course that pose disability-related barriers to your participation. 
+If you require special accommodations for a documented disability, then you will need to provide me a letter from the \href{https://aec.uoregon.edu/}{Accessible Education Center} (AEC) that verifies your need and details the appropriate accommodations. 
+Please make arrangements with the AEC by the end of Week 1. If your accommodations include exam proctoring at the AEC, then you are responsible for scheduling those exams with the AEC \textit{at least seven days in advance}. 
+
+\subsection*{Late Policy} 
+
+I will not accept late problem sets after the due date. If you turn in a problem set on the due date, but after the deadline, points will be deducted for lateness. If you turn it in after I post a key, you will receive a zero.
+
+\bigskip
+
+\noindent I do not give makeup assignments. This blanket ban extends to exams. In extreme circumstances that lead you to miss one of the midterm exams---such as death in the family or grave illness or injury---I will consider re-weighting your grade toward the final. To qualify for re-weighting, you will need to notify me no later than two days after the exam.
+
+\subsection*{Grade Appeals} 
+
+You must submit any request for re-grading in writing within one week of the day grades are posted for the problem set or exam in question. Your request should include a cogent argument explaining why your responses warrant full credit.
+
+\subsection*{Academic Integrity} 
+
+I will not tolerate cheating, plagiarism, and other violations of the \href{https://studentlife.uoregon.edu/conduct}{Student Conduct Code}. If you are caught cheating or plagiarizing on any component of this course, you will receive a failing grade for the term and I will report your offense to the university. 
+
+\subsection*{Academic Disruption}
+
+In the event of a campus emergency that disrupts academic activities, course requirements, deadlines, and grading percentages are subject to change. 
+Information about changes in this course will be communicated as soon as possible by email, and on Canvas. 
+Since we are not able to meet face-to-face, students should make sure to frequently log onto Canvas and read any announcements and/or access alternative assignments. 
+Students are also expected to continue coursework as outlined in this syllabus or other instructions on Canvas.
+
+
+\newpage
+\section*{Tentative Schedule}
+
+\begin{table}[h!]
+	\caption*{\large\textbf{Lectures and Exams}}
+	\centering
+	\ra{1.5}
+	\begin{tabular}{@{\extracolsep{0.5cm}} c c l l @{}}
+		\toprule
+		\textbf{Week} & \textbf{Date} & \textbf{Topic} & \textbf{Reading}  \\ \toprule
+		 \multicolumn{2}{c}{\textbf{Theory of Trade}} & & \\
+		01 & 01/08 & Intro. to World Economy & IE Ch 1 \\
+		01 & 01/10 & Ricardian Model: Closed Economy & IE Ch 3 \\
+		02 & 01/15 & Ricardian Model: Free-Trade & IE Ch 3 \\
+		02 & 01/17 & Heckscher-Ohlin \& Income Distribution & IE Ch 4.1:4.3 \\
+		03 & 01/22 & Specific Factor Model + Extensions & IE Ch 4.3.2:4.5  \\
+		03 & 01/24 & Empirical Ev: Jobs, Wages, Migration  & IE Ch 4.6:4:7  \\ 
+		\multicolumn{2}{c}{\textbf{Trade Policy}} & & \\
+		04 & 01/29 & Tariffs, Quotas and Subsidies I & IE Ch.6.1\\ 
+		04 & 01/31 & Tariffs, Quotas and Subsidies II & IE Ch.6.2, 6.3  \\
+		05 & 02/05 & International Agreements - Trade &  \\
+		05 & 02/07 & Midterm Review & \\ \midrule 
+		06 & - & \textbf{Midterm Exam} (see syllabus guidelines for arranging) & \\ \midrule
+		06 & 02/14 & International Agreements - Environment &   \\
+		07 & 02/19 & Effects of Globalization  &   \\
+		\multicolumn{2}{c}{\textbf{Global Finance}} & & \\
+		07 & 02/21 & International Financial Crises &  IE Ch.12  \\ 
+		08 & 02/26 & Balance of Payments I & IE Ch.9.1, 9.2  \\ 
+		08 & 02/28 & Balance of Payments II & IE Ch.9.3:9.5 \\
+		09 & 03/05 & Exchange Rate: Long Run & IE Ch.10.1:10.3  \\
+		09 & 03/07 & Exchange Rate: Short-Medium Run & IE Ch.10.3   \\
+		10 & 03/12 & Exchange Rate Policies & IE Ch.10.4:10.6 \\ 
+		10 & 03/14 & Final Review &   \\  \midrule
+		11 & - & \textbf{Final Exam} (see syllabus guidelines for arranging) & \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Note: The Final Exam will feature pre-midterm course content.
+
+\newpage
+
+\begin{table}[h!]
+	\caption*{\large\textbf{Exams, Quizzes and Problem Set Deadlines}}
+	\centering
+	\ra{1.5}
+	\begin{tabular}{@{\extracolsep{0.5cm}} c c l c @{}}
+		\toprule
+		\textbf{Week} & \textbf{Date} & \textbf{Topic} & \textbf{Coverage}  \\ \toprule 
+		02 & 01/19 & \textbf{Problem Set 1} (due on Canvas by 11:59pm) & Ch.1 + Ch.3  \\
+		03 & 01/26 & \textbf{Quiz 1}: \textit{Theory of Trade} (due on Canvas by 11:59pm) & Ch.1,.3,.4  \\ 
+		04 & 02/02 & \textbf{Problem Set 2} (due on Canvas by 11:59pm) & Ch.4 \\
+		05 & 02/09 & \textbf{Problem Set 3} (due on Canvas by 11:59pm) & Ch.6 \\ 
+		06 & - & Complete midterm any weekday of week 6 & All above\\
+		07 & 02/23 & \textbf{Quiz 2}: \textit{Trade Policy} (due on Canvas by 11:59pm) & Int. Agree \\ 
+		08 & 03/01 & \textbf{Problem Set 4} (due on Canvas by 11:59pm) &  Ch.9 \\
+		09 & 03/08 & \textbf{Quiz 3}: \textit{Global Finance} (due on Canvas by 11:59pm)&  Ch.9 + Ch.10 \\ 
+		10 & 03/16 & \textbf{Problem Set 5} (due on Canvas by 11:59pm)& Ch.10 \\
+		11 & - & Complete final any weekday of finals week & All above \\  \bottomrule
+	\end{tabular}
+\end{table}
+
+
+\end{document}
