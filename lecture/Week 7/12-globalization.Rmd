@@ -2,7 +2,7 @@
 title: "EC 380: Lecture 12"
 subtitle: "Effects of Globalization"
 author: "Philip Economides"
-date: "Winter 2023"
+date: "Winter 2024"
 output:
   xaringan::moon_reader:
     css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
